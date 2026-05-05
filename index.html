@@ -35,9 +35,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Cinzel:wght@700;900&display=swap">
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700;900&display=swap">
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Cinzel:wght@700;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700;900&display=swap"
         rel="stylesheet">
 
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
@@ -51,7 +51,7 @@
             --color-brand-alice:  #caebd8;
             --color-brand-beige:  #caebd8;
             --color-brand-text:   #1a3528;
-            --font-heading: 'Marcus Traianus', 'Cinzel', Georgia, serif;
+            --font-heading: 'Playfair Display', serif;
             --font-body:    'DM Sans', sans-serif;
         }
     </style>
@@ -425,382 +425,407 @@
             </div>
         </div>
 
-        <!-- -------------------------------------------------- --------------------------------------------------              
-             ABOUT / TRUST SECTION
+<!-- -------------------------------------------------- --------------------------------------------------              
+             ABOUT / TRUST SECTION (DUAL PARALLAX LAYOUT)
         -------------------------------------------------- --------------------------------------------------               -->
-        <section class="relative py-20 lg:py-32 flex flex-col items-center justify-center overflow-hidden"
+        <section id="about-parallax-section" class="relative py-24 lg:py-32 flex flex-col items-center justify-center overflow-hidden"
             style="background:#ffffff;">
+            
+            <style>
+                /* Premium Word Mask Animation */
+                .word-mask { 
+                    display: inline-block; 
+                    overflow: hidden; 
+                    vertical-align: bottom; 
+                    padding-bottom: 0.15em; 
+                    margin-bottom: -0.15em;
+                }
+                .word-mask-inner { 
+                    display: inline-block; 
+                    transform: translateY(110%); 
+                    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
+                    will-change: transform;
+                }
+                .reveal.active .word-mask-inner { 
+                    transform: translateY(0); 
+                }
+                
+                /* Title Underline Animation */
+                .title-underline-anim {
+                    opacity: 0;
+                }
+                .reveal.active .title-underline-anim {
+                    animation: revealUnderline 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 500ms forwards;
+                }
+                @keyframes revealUnderline {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+
+                /* Square Editorial Overrides */
+                #about-parallax-section .btn-bubble,
+                #about-parallax-section .btn-bubble-fill,
+                #about-parallax-section .btn-bubble-icon-container {
+                    border-radius: 0 !important;
+                }
+            </style>
+
             <div
-                class="w-full max-w-4xl mx-auto px-4 sm:px-8 relative z-20 flex flex-col items-center text-center reveal reveal-up">
+                class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
-                <span
-                    class="inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-6 cursor-pointer bg-[#caebd8] text-[#1a3528] hover:bg-[#825c3e] hover:text-white transition-colors duration-300">
-                    About Green Seasons
-                </span>
+                <!-- Left Column: Text & Stats -->
+                <div class="w-full lg:w-5/12 flex flex-col items-center text-center lg:items-start lg:text-left reveal z-20">
 
-                <h2
-                    class="group font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[#668e78] mb-6 leading-tight flex flex-col items-center cursor-default w-full text-center">
-                    A Second-Generation Gardener You Can Trust
                     <span
-                        class="block w-12 md:w-16 h-0.5 md:h-[2px] bg-[#d49813] mt-4 lg:mt-6 rounded-full transition-all duration-300 ease-in-out group-hover:w-24 md:group-hover:w-32 group-hover:bg-[#825c3e]/80"></span>
-                </h2>
-
-                <div class="font-body text-base sm:text-lg text-[#1a3528]/80 leading-relaxed space-y-5 mb-10 w-full">
-                    <p>
-                        Green Seasons is run by Tim Harris — a second-generation gardener with a deep horticultural background and years of hands-on experience. Based in Kingston Bagpuize, we serve private estates, housing developments, business parks, and local authority spaces across South Oxfordshire.
-                    </p>
-                    <p class="hidden sm:block">
-                        Whether you need a one-off site clearance or a long-term maintenance contract, Tim provides a genuinely personal service backed by professional-grade equipment and an unwavering commitment to high standards.
-                    </p>
-                </div>
-
-                <div
-                    class="grid grid-cols-3 gap-4 sm:gap-8 border-t border-[#668e78]/20 pt-8 mt-2 mb-12 w-full max-w-lg mx-auto">
-                    <div class="group flex flex-col items-center cursor-default text-center">
-                        <p
-                            class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[#668e78] transition-all duration-500 group-hover:-translate-y-2 group-hover:text-[#d49813] whitespace-nowrap">
-                            <span class="auto-counter" data-target="8">0</span>+
-                        </p>
-                        <p
-                            class="font-body text-[10px] sm:text-xs md:text-sm uppercase tracking-widest mt-2 font-bold text-[#668e78]/60">
-                            Years of Experience</p>
-                    </div>
-                    <div class="group flex flex-col items-center cursor-default text-center">
-                        <p
-                            class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[#668e78] transition-all duration-500 group-hover:-translate-y-2 group-hover:text-[#d49813] whitespace-nowrap">
-                            <span class="auto-counter" data-target="5">0</span>★
-                        </p>
-                        <p
-                            class="font-body text-[10px] sm:text-xs md:text-sm uppercase tracking-widest mt-2 font-bold text-[#668e78]/60">
-                            Google Rating</p>
-                    </div>
-                    <div class="group flex flex-col items-center cursor-default text-center">
-                        <p
-                            class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[#668e78] transition-all duration-500 group-hover:-translate-y-2 group-hover:text-[#d49813] whitespace-nowrap">
-                            <span class="auto-counter" data-target="100">0</span>%
-                        </p>
-                        <p
-                            class="font-body text-[10px] sm:text-xs md:text-sm uppercase tracking-widest mt-2 font-bold text-[#668e78]/60">
-                            Owner-Led Service</p>
-                    </div>
-                </div>
-
-                <a href="pages/about.html" class="btn-bubble btn-light-section font-body">
-                    <span class="btn-bubble-fill"></span>
-                    <span class="btn-bubble-text text-base">Our Story</span>
-                    <span class="btn-bubble-icon-container">
-                        <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                d="M5 12h14m-6-6l6 6-6 6"></path>
-                        </svg>
+                        class="word-mask-inner inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase mb-6 cursor-pointer bg-[#caebd8] text-[#825c3e] hover:bg-[#825c3e] hover:text-white transition-colors duration-300"
+                        style="transition-delay: 50ms;">
+                        About Green Seasons
                     </span>
-                </a>
 
-            </div>
+                    <h2
+                        class="group font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[#668e78] mb-6 leading-tight flex flex-col items-center lg:items-start cursor-default w-full">
+                        <span class="flex flex-wrap justify-center lg:justify-start gap-x-3 lg:gap-x-4 leading-tight">
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">A</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Second-Generation</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Gardener</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">You</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 500ms;">Can</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 600ms;">Trust</span></span>
+                        </span>
+                        
+                        <!-- Underline -->
+                        <span class="title-underline-anim block w-12 md:w-16 h-0.5 md:h-[2px] bg-[#d49813] mt-4 lg:mt-6 transition-all duration-300 ease-in-out group-hover:w-24 md:group-hover:w-32 group-hover:bg-[#825c3e]"></span>
+                    </h2>
 
-            <!-- Slideshow underneath -->
-            <div class="w-full max-w-6xl mx-auto mt-16 px-4 sm:px-8 relative z-20">
-                <div class="relative h-[300px] sm:h-[450px] lg:h-[600px] rounded-[2rem] overflow-hidden reveal reveal-up shadow-2xl"
-                    id="trust-slideshow">
-                    <img src="assets/imgs/a1.jpeg" alt="Green Seasons professional garden and grounds maintenance" loading="lazy"
-                        decoding="async" class="slide absolute inset-0 w-full h-full object-cover opacity-100">
-                    <img src="assets/imgs/c5.jpg" alt="Green Seasons professional garden and grounds maintenance" loading="lazy"
-                        decoding="async" class="slide absolute inset-0 w-full h-full object-cover opacity-0">
-                    <img src="assets/imgs/a2.jpeg" alt="Green Seasons professional garden and grounds maintenance" loading="lazy"
-                        decoding="async" class="slide absolute inset-0 w-full h-full object-cover opacity-0 z-0">
-
-                    <!-- Gradient overlay for dot visibility -->
-                    <div
-                        class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 to-transparent z-20 pointer-events-none">
+                    <div class="title-underline-anim font-body text-base sm:text-lg text-[#1a3528]/80 leading-relaxed space-y-5 mb-8 w-full max-w-xl mx-auto lg:mx-0" style="animation-delay: 700ms;">
+                        <p>
+                            Green Seasons is run by Tim Harris — a second-generation gardener with a deep horticultural background and years of hands-on experience. Based in Kingston Bagpuize, we serve private estates, housing developments, business parks, and local authority spaces across South Oxfordshire.
+                        </p>
+                        <p>
+                            Whether you need a one-off site clearance or a long-term maintenance contract, Tim provides a genuinely personal service backed by professional-grade equipment and an unwavering commitment to high standards.
+                        </p>
                     </div>
 
-                    <!-- Navigation Dots -->
-                    <div
-                        class="absolute bottom-6 lg:bottom-8 left-0 right-0 flex justify-center items-center gap-2.5 z-30">
-                        <button
-                            class="trust-slide-dot w-8 h-2.5 rounded-full bg-[#d49813] transition-all duration-300 focus:outline-none"
-                            aria-label="Go to slide 1"></button>
-                        <button
-                            class="trust-slide-dot w-2.5 h-2.5 rounded-full bg-[#f5fef8]/50 hover:bg-[#f5fef8] transition-all duration-300 focus:outline-none"
-                            aria-label="Go to slide 2"></button>
-                        <button
-                            class="trust-slide-dot w-2.5 h-2.5 rounded-full bg-[#f5fef8]/50 hover:bg-[#f5fef8] transition-all duration-300 focus:outline-none"
-                            aria-label="Go to slide 3"></button>
+                    <!-- Compact Stats Grid -->
+                    <div id="about-stats"
+                        class="title-underline-anim grid grid-cols-3 gap-4 sm:gap-6 border-y border-[#668e78]/20 py-6 mb-10 w-full max-w-lg mx-auto lg:mx-0" style="animation-delay: 800ms;">
+                        <div class="group flex flex-col items-center lg:items-start cursor-default">
+                            <p class="font-heading text-3xl sm:text-4xl font-bold text-[#668e78] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#d49813] whitespace-nowrap">
+                                <span class="auto-counter" data-target="8">0</span>+
+                            </p>
+                            <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-[#668e78]/60">
+                                Years Exp.</p>
+                        </div>
+                        <div class="group flex flex-col items-center lg:items-start cursor-default">
+                            <p class="font-heading text-3xl sm:text-4xl font-bold text-[#668e78] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#d49813] whitespace-nowrap">
+                                <span class="auto-counter" data-target="5">0</span>★
+                            </p>
+                            <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-[#668e78]/60">
+                                Google Rating</p>
+                        </div>
+                        <div class="group flex flex-col items-center lg:items-start cursor-default">
+                            <p class="font-heading text-3xl sm:text-4xl font-bold text-[#668e78] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#d49813] whitespace-nowrap">
+                                <span class="auto-counter" data-target="100">0</span>%
+                            </p>
+                            <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-[#668e78]/60">
+                                Owner-Led</p>
+                        </div>
                     </div>
 
-                    <style>
-                        #trust-slideshow .slide {
-                            transition: opacity 1000ms ease-in-out, transform 700ms ease-in-out;
-                            transform: scale(1);
-                        }
+                    <div class="title-underline-anim" style="animation-delay: 900ms;">
+                        <a href="pages/about.html" class="btn-bubble btn-light-section font-body rounded-none">
+                            <span class="btn-bubble-fill"></span>
+                            <span class="btn-bubble-text text-base font-bold tracking-wide">Our Story</span>
+                            <span class="btn-bubble-icon-container">
+                                <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M5 12h14m-6-6l6 6-6 6"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
 
-                        #trust-slideshow:hover .slide {
-                            transform: scale(1.05);
-                        }
-
-                        .font-signature {
-                            font-family: var(--font-signature);
-                        }
-
-                        .bg-noise {
-                            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-                            opacity: 0.04;
-                            mix-blend-mode: multiply;
-                        }
-
-                        @keyframes float {
-
-                            0%,
-                            100% {
-                                transform: translateY(0);
-                            }
-
-                            50% {
-                                transform: translateY(-10px);
-                            }
-                        }
-
-                        .animate-float {
-                            animation: float 6s ease-in-out infinite;
-                        }
-
-                        .char-reveal {
-                            display: inline-block;
-                            opacity: 0;
-                            transform: translateY(20px);
-                            animation: textReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-                        }
-
-                        @keyframes textReveal {
-                            to {
-                                opacity: 1;
-                                transform: translateY(0);
-                            }
-                        }
-                    </style>
-
-                    <script>
-                        document.addEventListener('DOMContentLoaded', () => {
-                            const slides = document.querySelectorAll('#trust-slideshow .slide');
-                            const dots = document.querySelectorAll('.trust-slide-dot');
-                            let currentSlide = 0;
-                            let slideInterval;
-
-                            if (slides.length === 0) return;
-
-                            // Ensure first slide has z-10 initially
-                            slides[0].classList.add('z-10');
-
-                            const updateSlide = (index) => {
-                                // Fade out current
-                                slides[currentSlide].classList.remove('opacity-100', 'z-10');
-                                slides[currentSlide].classList.add('opacity-0', 'z-0');
-                                if (dots[currentSlide]) {
-                                    dots[currentSlide].classList.remove('bg-[#d49813]', 'w-8');
-                                    dots[currentSlide].classList.add('bg-[#f5fef8]/50', 'w-2.5');
-                                }
-
-                                currentSlide = index;
-
-                                // Fade in new
-                                slides[currentSlide].classList.remove('opacity-0', 'z-0');
-                                slides[currentSlide].classList.add('opacity-100', 'z-10');
-                                if (dots[currentSlide]) {
-                                    dots[currentSlide].classList.remove('bg-[#f5fef8]/50', 'w-2.5');
-                                    dots[currentSlide].classList.add('bg-[#d49813]', 'w-8');
-                                }
-                            };
-
-                            const nextSlide = () => {
-                                const nextIndex = (currentSlide + 1) % slides.length;
-                                updateSlide(nextIndex);
-                            };
-
-                            const startAutoplay = () => {
-                                slideInterval = setInterval(nextSlide, 3500);
-                            };
-
-                            const resetAutoplay = () => {
-                                clearInterval(slideInterval);
-                                startAutoplay();
-                            };
-
-                            // Dot click interactions
-                            dots.forEach((dot, index) => {
-                                dot.addEventListener('click', () => {
-                                    if (currentSlide !== index) {
-                                        updateSlide(index);
-                                        resetAutoplay();
-                                    }
-                                });
-                            });
-
-                            // Start the slideshow
-                            startAutoplay();
-                        });
-                    </script>
                 </div>
+
+                <!-- Right Column: Dual Parallax Images (Squared & Scaled Up) -->
+                <!-- Container height vastly increased to let the sharp rectangles breathe -->
+                <div class="w-full lg:w-7/12 relative h-[500px] sm:h-[700px] lg:h-[850px] mt-12 lg:mt-0 z-10 reveal reveal-up delay-100">
+                    
+                    <!-- Image 1: Back/Right (Pans UP as you scroll down) -->
+                    <!-- Removed border-radius, increased width/height -->
+                    <div class="js-parallax-up absolute right-0 top-0 w-[85%] h-[85%] overflow-hidden shadow-2xl will-change-transform z-0">
+                        <div class="absolute inset-0 bg-[#668e78]/10 mix-blend-multiply z-10 pointer-events-none"></div>
+                        <img src="assets/imgs/a1.jpeg" alt="Professional grounds maintenance by Tim Harris" loading="lazy"
+                            class="w-full h-full object-cover scale-[1.15]">
+                    </div>
+
+                    <!-- Image 2: Front/Left (Pans DOWN as you scroll down) -->
+                    <!-- Removed border, removed border-radius, increased width/height -->
+                    <div class="js-parallax-down absolute left-0 bottom-0 w-[70%] h-[75%] overflow-hidden shadow-2xl will-change-transform z-10">
+                        <div class="absolute inset-0 bg-[#668e78]/10 mix-blend-multiply z-10 pointer-events-none"></div>
+                        <img src="assets/imgs/a2.jpeg" alt="High-standard garden care in South Oxfordshire" loading="lazy"
+                            class="w-full h-full object-cover scale-[1.15]">
+                    </div>
+
+                </div>
+
             </div>
+
+            <!-- Custom Parallax Script -->
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const section = document.getElementById('about-parallax-section');
+                    const imgUp = document.querySelector('.js-parallax-up');
+                    const imgDown = document.querySelector('.js-parallax-down');
+
+                    if (!section || !imgUp || !imgDown || window.innerWidth < 1024) return;
+
+                    let ticking = false;
+
+                    const updateParallax = () => {
+                        const rect = section.getBoundingClientRect();
+                        const viewportCenter = window.innerHeight / 2;
+                        const sectionCenter = rect.top + (rect.height / 2);
+                        
+                        const offset = sectionCenter - viewportCenter;
+
+                        // Panning speeds
+                        const yUp = offset * -0.15; 
+                        const yDown = offset * 0.15;
+
+                        imgUp.style.transform = `translate3d(0, ${yUp}px, 0)`;
+                        imgDown.style.transform = `translate3d(0, ${yDown}px, 0)`;
+                        
+                        ticking = false;
+                    };
+
+                    window.addEventListener('scroll', () => {
+                        if (!ticking) {
+                            window.requestAnimationFrame(updateParallax);
+                            ticking = true;
+                        }
+                    }, { passive: true });
+
+                    updateParallax();
+                });
+            </script>
+
+            <!-- Fixed Rock-Solid Counter Script -->
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const counters = document.querySelectorAll('#about-stats .auto-counter');
+                    const speed = 2000; // Animation duration in milliseconds
+
+                    if (counters.length === 0) return;
+
+                    const counterObserver = new IntersectionObserver((entries, observer) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const target = +entry.target.getAttribute('data-target');
+                                
+                                const updateCount = () => {
+                                    const current = +entry.target.innerText;
+                                    const increment = target / (speed / 16); // 16ms roughly equals 60fps
+
+                                    if (current < target) {
+                                        entry.target.innerText = Math.ceil(current + increment);
+                                        setTimeout(updateCount, 16);
+                                    } else {
+                                        entry.target.innerText = target;
+                                    }
+                                };
+
+                                updateCount();
+                                observer.unobserve(entry.target); // Only animate once
+                            }
+                        });
+                    }, { threshold: 0.5 }); // Triggers when 50% of the counter is visible
+
+                    counters.forEach(counter => {
+                        counterObserver.observe(counter);
+                    });
+                });
+            </script>
         </section>
 
-        <!-- Counter script -->
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const duration = 2000;
-                const frameRate = 1000 / 60;
-                const totalFrames = Math.round(duration / frameRate);
-                const easeOutQuad = t => t * (2 - t);
-                const animateCounter = (counter) => {
-                    let frame = 0;
-                    const target = parseInt(counter.getAttribute('data-target'), 10);
-                    const counterInterval = setInterval(() => {
-                        frame++;
-                        const progress = easeOutQuad(frame / totalFrames);
-                        const currentCount = Math.round(target * progress);
-                        if (parseInt(counter.innerText, 10) !== currentCount) counter.innerText = currentCount;
-                        if (frame === totalFrames) { clearInterval(counterInterval); counter.innerText = target; }
-                    }, frameRate);
-                };
-                const observer = new IntersectionObserver((entries, obs) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.querySelectorAll('.auto-counter').forEach(animateCounter);
-                            obs.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.3 });
-                const firstCounter = document.querySelector('.auto-counter');
-                if (firstCounter) { const statsSection = firstCounter.closest('section'); if (statsSection) observer.observe(statsSection); }
-            });
-        </script>
-
-        <!-- -------------------------------------------------- --------------------------------------------------              
+<!-- -------------------------------------------------- --------------------------------------------------              
              SERVICES SECTION
         -------------------------------------------------- --------------------------------------------------               -->
-        <section class="relative min-h-[100svh] py-20 lg:py-32 flex items-center justify-center overflow-hidden"
+        <section id="services-section" class="relative min-h-[100svh] py-20 lg:py-32 flex items-center justify-center overflow-hidden"
             style="background:#ffffff;">
+            
+            <style>
+                /* Premium Word Mask Animation */
+                .word-mask { 
+                    display: inline-block; 
+                    overflow: hidden; 
+                    vertical-align: bottom; 
+                    /* Prevents cutting off descending letters like 'g' or 'p' */
+                    padding-bottom: 0.15em; 
+                    margin-bottom: -0.15em;
+                }
+                .word-mask-inner { 
+                    display: inline-block; 
+                    transform: translateY(110%); 
+                    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
+                    will-change: transform;
+                }
+                .reveal.active .word-mask-inner { 
+                    transform: translateY(0); 
+                }
+                
+                /* Title Underline Animation - Fixed to allow hover transitions */
+                .title-underline-anim {
+                    opacity: 0;
+                }
+                .reveal.active .title-underline-anim {
+                    animation: revealUnderline 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 500ms forwards;
+                }
+                @keyframes revealUnderline {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+
+                /* Square Editorial Overrides for this section */
+                #services-section .btn-bubble,
+                #services-section .btn-bubble-fill,
+                #services-section .btn-bubble-icon-container {
+                    border-radius: 0 !important;
+                }
+            </style>
+
             <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
 
-                <div class="flex flex-col items-center text-center mb-16 lg:mb-20 reveal reveal-up">
+                <!-- Staggered Title Animation Container -->
+                <div class="flex flex-col items-center text-center mb-16 lg:mb-20 reveal">
+                    
                     <span
-                        class="inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-6 cursor-pointer bg-[#caebd8] text-[#1a3528] hover:bg-[#825c3e] hover:text-white transition-colors duration-300">
+                        class="word-mask-inner inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase mb-6 cursor-pointer bg-[#caebd8] text-[#825c3e] hover:bg-[#825c3e] hover:text-white transition-colors duration-300"
+                        style="transition-delay: 50ms;">
                         Our Services
                     </span>
 
                     <h2
                         class="group font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-[#668e78] mb-6 leading-tight flex flex-col items-center text-center cursor-default w-full">
-                        Everything Your Outdoor Space Needs
-                        <span
-                            class="block w-12 md:w-16 h-0.5 md:h-[2px] bg-[#d49813] mt-4 lg:mt-6 rounded-full transition-all duration-300 ease-in-out group-hover:w-24 md:group-hover:w-32 group-hover:bg-[#825c3e]/80"></span>
+                        <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Everything</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Your</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Outdoor</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">Space</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 500ms;">Needs</span></span>
+                        </span>
+                        
+                        <!-- Underline -->
+                        <span class="title-underline-anim block w-12 md:w-16 h-0.5 md:h-[2px] bg-[#d49813] mt-4 lg:mt-6 transition-all duration-300 ease-in-out group-hover:w-24 md:group-hover:w-32 group-hover:bg-[#825c3e]"></span>
                     </h2>
 
-                    <p class="font-body text-lg md:text-xl text-[#1a3528]/80 max-w-2xl mx-auto leading-relaxed mt-4">
+                    <p class="title-underline-anim font-body text-lg md:text-xl text-[#1a3528]/80 max-w-2xl mx-auto leading-relaxed mt-4" style="animation-delay: 600ms;">
                         From weekly maintenance contracts to one-off site clearances, Green Seasons offers a comprehensive range of garden and grounds services tailored to both residential and commercial clients across South Oxfordshire.
                     </p>
                 </div>
 
+                <!-- Full-Image Square Cards Grid (No rounding, No borders) -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 w-full">
 
-                    <!-- Card 1: Garden Design & Landscaping -->
+                    <!-- Card 1: Grounds & Garden Maintenance -->
                     <a href="pages/services.html#garden-design"
-                        class="group flex flex-col rounded-3xl overflow-hidden reveal reveal-up transition-all duration-500 hover:-translate-y-2"
-                        style="background:#668e78;">
-                        <div class="w-full h-48 sm:h-52 lg:h-48 relative overflow-hidden bg-gray-200 shrink-0">
-                            <img src="assets/imgs/c8.jpeg" alt="Green Seasons professional garden and grounds maintenance"
-                                loading="lazy" decoding="async"
-                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div
-                            class="w-full flex flex-col flex-grow justify-between p-5 lg:p-6 text-left transition-colors duration-500 group-hover:bg-[#825c3e]">
-                            <div>
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-3 text-white">
-                                    Grounds &amp; Garden Maintenance
-                                </h3>
-                                <p class="font-body text-white/80 text-sm lg:text-base leading-relaxed mb-5">
-                                    Regular grass cutting, strimming, edging, and comprehensive site presentation to keep your property looking its best year-round.
-                                </p>
-                            </div>
-                            <div class="mt-auto pt-4 border-t border-white/20 w-full">
-                                <p class="font-heading font-bold text-white text-sm md:text-base mb-1">Included Services</p>
-                                <p class="font-body text-sm text-white/80">Ideal for residential estates, business parks, and housing developments requiring consistent upkeep.</p>
+                        class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none reveal reveal-up transition-all duration-500 hover:-translate-y-2 h-[420px] sm:h-[480px]">
+                        <!-- Background Image -->
+                        <img src="assets/imgs/c8.jpeg" alt="Green Seasons professional garden and grounds maintenance"
+                            loading="lazy" decoding="async"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <!-- Dark Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
+                        
+                        <!-- Text Content -->
+                        <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
+                            <h3 class="font-heading text-2xl lg:text-3xl font-bold mb-3 text-white transition-colors duration-300 group-hover:text-[#d49813]">
+                                Grounds &amp; Garden Maintenance
+                            </h3>
+                            <p class="font-body text-white/80 text-sm lg:text-base leading-relaxed mb-5">
+                                Regular grass cutting, strimming, edging, and comprehensive site presentation to keep your property looking its best year-round.
+                            </p>
+                            <div class="pt-4 border-t border-white/20 w-full transition-colors duration-300 group-hover:border-[#d49813]/50">
+                                <p class="font-heading font-bold text-white text-sm mb-1">Included Services</p>
+                                <p class="font-body text-xs sm:text-sm text-white/70">Ideal for residential estates, business parks, and housing developments requiring consistent upkeep.</p>
                             </div>
                         </div>
                     </a>
 
-                    <!-- Card 2: Groundworks & Drainage -->
+                    <!-- Card 2: Lawn Care & Renovation -->
                     <a href="pages/services.html#groundworks"
-                        class="group flex flex-col rounded-3xl overflow-hidden reveal reveal-up transition-all duration-500 hover:-translate-y-2"
-                        style="background:#668e78; transition-delay: 100ms;">
-                        <div class="w-full h-48 sm:h-52 lg:h-48 relative overflow-hidden bg-gray-200 shrink-0">
-                            <img src="assets/imgs/groundworks and drainage.jpeg"
-                                alt="Green Seasons professional garden and grounds maintenance" loading="lazy" decoding="async"
-                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div
-                            class="w-full flex flex-col flex-grow justify-between p-5 lg:p-6 text-left transition-colors duration-500 group-hover:bg-[#825c3e]">
-                            <div>
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-3 text-white">
-                                    Lawn Care &amp; Renovation
-                                </h3>
-                                <p class="font-body text-white/80 text-sm lg:text-base leading-relaxed mb-5">
-                                    Full lawn overhauls, seasonal fertiliser programmes, targeted weed and moss control — designed to improve long-term turf health.
-                                </p>
-                            </div>
-                            <div class="mt-auto pt-4 border-t border-white/20 w-full">
-                                <p class="font-heading font-bold text-white text-sm md:text-base mb-1">What's Included</p>
-                                <p class="font-body text-sm text-white/80">Includes aeration, scarification, slow-release fertiliser, and wetting agent applications.</p>
+                        class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none reveal reveal-up transition-all duration-500 hover:-translate-y-2 h-[420px] sm:h-[480px]"
+                        style="transition-delay: 100ms;">
+                        <!-- Background Image -->
+                        <img src="assets/imgs/groundworks and drainage.jpeg"
+                            alt="Green Seasons professional garden and grounds maintenance" loading="lazy" decoding="async"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <!-- Dark Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
+                        
+                        <!-- Text Content -->
+                        <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
+                            <h3 class="font-heading text-2xl lg:text-3xl font-bold mb-3 text-white transition-colors duration-300 group-hover:text-[#d49813]">
+                                Lawn Care &amp; Renovation
+                            </h3>
+                            <p class="font-body text-white/80 text-sm lg:text-base leading-relaxed mb-5">
+                                Full lawn overhauls, seasonal fertiliser programmes, targeted weed and moss control — designed to improve long-term turf health.
+                            </p>
+                            <div class="pt-4 border-t border-white/20 w-full transition-colors duration-300 group-hover:border-[#d49813]/50">
+                                <p class="font-heading font-bold text-white text-sm mb-1">What's Included</p>
+                                <p class="font-body text-xs sm:text-sm text-white/70">Includes aeration, scarification, slow-release fertiliser, and wetting agent applications.</p>
                             </div>
                         </div>
                     </a>
 
                     <!-- Card 3: Hedge Cutting -->
                     <a href="pages/services.html#digger-hire"
-                        class="group flex flex-col rounded-3xl overflow-hidden reveal reveal-up transition-all duration-500 hover:-translate-y-2"
-                        style="background:#668e78; transition-delay: 200ms;">
-                        <div class="w-full h-48 sm:h-52 lg:h-48 relative overflow-hidden bg-gray-200 shrink-0">
-                            <img src="assets/imgs/c11.jpeg" alt="Green Seasons professional garden and grounds maintenance" loading="lazy"
-                                decoding="async"
-                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div
-                            class="w-full flex flex-col flex-grow justify-between p-5 lg:p-6 text-left transition-colors duration-500 group-hover:bg-[#825c3e]">
-                            <div>
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-3 text-white">
-                                    Hedge Cutting &amp; Shrub Maintenance
-                                </h3>
-                                <p class="font-body text-white/80 text-sm lg:text-base leading-relaxed mb-5">
-                                    Regular trimming, shaping, and dedicated plant care to ensure landscapes remain tidy, healthy, and well-structured.
-                                </p>
-                            </div>
-                            <div class="mt-auto pt-4 border-t border-white/20 w-full">
-                                <p class="font-heading font-bold text-white text-sm md:text-base mb-1">Our Approach</p>
-                                <p class="font-body text-sm text-white/80">Scheduled visits tailored to your hedge species and growth rate for the best results throughout the season.</p>
+                        class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none reveal reveal-up transition-all duration-500 hover:-translate-y-2 h-[420px] sm:h-[480px]"
+                        style="transition-delay: 200ms;">
+                        <!-- Background Image -->
+                        <img src="assets/imgs/c11.jpeg" alt="Green Seasons professional garden and grounds maintenance" loading="lazy"
+                            decoding="async"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <!-- Dark Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
+                        
+                        <!-- Text Content -->
+                        <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
+                            <h3 class="font-heading text-2xl lg:text-3xl font-bold mb-3 text-white transition-colors duration-300 group-hover:text-[#d49813]">
+                                Hedge Cutting &amp; Shrub Maintenance
+                            </h3>
+                            <p class="font-body text-white/80 text-sm lg:text-base leading-relaxed mb-5">
+                                Regular trimming, shaping, and dedicated plant care to ensure landscapes remain tidy, healthy, and well-structured.
+                            </p>
+                            <div class="pt-4 border-t border-white/20 w-full transition-colors duration-300 group-hover:border-[#d49813]/50">
+                                <p class="font-heading font-bold text-white text-sm mb-1">Our Approach</p>
+                                <p class="font-body text-xs sm:text-sm text-white/70">Scheduled visits tailored to your hedge species and growth rate for the best results throughout the season.</p>
                             </div>
                         </div>
                     </a>
 
                     <!-- Card 4: Clearance & Site Prep -->
                     <a href="pages/services.html#clearance"
-                        class="group flex flex-col rounded-3xl overflow-hidden reveal reveal-up transition-all duration-500 hover:-translate-y-2"
-                        style="background:#668e78; transition-delay: 300ms;">
-                        <div class="w-full h-48 sm:h-52 lg:h-48 relative overflow-hidden bg-gray-200 shrink-0">
-                            <img src="assets/imgs/clearance and site prep.jpeg"
-                                alt="Green Seasons professional garden and grounds maintenance" loading="lazy" decoding="async"
-                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div
-                            class="w-full flex flex-col flex-grow justify-between p-5 lg:p-6 text-left transition-colors duration-500 group-hover:bg-[#825c3e]">
-                            <div>
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-3 text-white">
-                                    Weed Control &amp; Site Clearance
-                                </h3>
-                                <p class="font-body text-white/80 text-sm lg:text-base leading-relaxed mb-5">
-                                    Safe and professional herbicide applications for lawns and hard surfaces, plus one-off site clearance works to restore overgrown properties.
-                                </p>
-                            </div>
-                            <div class="mt-auto pt-4 border-t border-white/20 w-full">
-                                <p class="font-heading font-bold text-white text-sm md:text-base mb-1">Certified Applications</p>
-                                <p class="font-body text-sm text-white/80">All treatments are carried out with professional-grade equipment by a fully qualified applicator.</p>
+                        class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none reveal reveal-up transition-all duration-500 hover:-translate-y-2 h-[420px] sm:h-[480px]"
+                        style="transition-delay: 300ms;">
+                        <!-- Background Image -->
+                        <img src="assets/imgs/clearance and site prep.jpeg"
+                            alt="Green Seasons professional garden and grounds maintenance" loading="lazy" decoding="async"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <!-- Dark Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
+                        
+                        <!-- Text Content -->
+                        <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
+                            <h3 class="font-heading text-2xl lg:text-3xl font-bold mb-3 text-white transition-colors duration-300 group-hover:text-[#d49813]">
+                                Weed Control &amp; Site Clearance
+                            </h3>
+                            <p class="font-body text-white/80 text-sm lg:text-base leading-relaxed mb-5">
+                                Safe and professional herbicide applications for lawns and hard surfaces, plus one-off site clearance works to restore overgrown properties.
+                            </p>
+                            <div class="pt-4 border-t border-white/20 w-full transition-colors duration-300 group-hover:border-[#d49813]/50">
+                                <p class="font-heading font-bold text-white text-sm mb-1">Certified Applications</p>
+                                <p class="font-body text-xs sm:text-sm text-white/70">All treatments are carried out with professional-grade equipment by a fully qualified applicator.</p>
                             </div>
                         </div>
                     </a>
@@ -808,9 +833,9 @@
                 </div>
 
                 <div class="mt-16 lg:mt-20 flex justify-center reveal reveal-up w-full">
-                    <a href="pages/services.html" class="btn-bubble btn-light-section font-body">
+                    <a href="pages/services.html" class="btn-bubble btn-light-section font-body shadow-lg">
                         <span class="btn-bubble-fill"></span>
-                        <span class="btn-bubble-text">View All Services</span>
+                        <span class="btn-bubble-text font-bold tracking-wide">View All Services</span>
                         <span class="btn-bubble-icon-container">
                             <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
@@ -823,50 +848,103 @@
             </div>
         </section>
 
-        <!-- -------------------------------------------------- --------------------------------------------------              
+<!-- -------------------------------------------------- --------------------------------------------------              
              GALLERY / BEFORE & AFTER
         -------------------------------------------------- --------------------------------------------------               -->
-        <section
-            class="relative min-h-[100svh] py-12 lg:py-20 flex items-center justify-center text-[#caebd8] overflow-hidden"
+        <section id="gallery-section" class="relative min-h-[100svh] py-12 lg:py-20 flex items-center justify-center text-[#caebd8] overflow-hidden"
             style="background:#668e78;">
+            
+            <style>
+                /* Premium Word Mask Animation */
+                .word-mask { 
+                    display: inline-block; 
+                    overflow: hidden; 
+                    vertical-align: bottom; 
+                    padding-bottom: 0.15em; 
+                    margin-bottom: -0.15em;
+                }
+                .word-mask-inner { 
+                    display: inline-block; 
+                    transform: translateY(110%); 
+                    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
+                    will-change: transform;
+                }
+                .reveal.active .word-mask-inner { 
+                    transform: translateY(0); 
+                }
+                
+                /* Delayed Fade-in Animation (Keyframes fix hover conflict) */
+                .fade-up-anim {
+                    opacity: 0;
+                }
+                .reveal.active .fade-up-anim {
+                    animation: revealFadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+                }
+                @keyframes revealFadeUp {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+
+                /* Square Editorial Overrides for this section */
+                #gallery-section .btn-bubble,
+                #gallery-section .btn-bubble-fill,
+                #gallery-section .btn-bubble-icon-container {
+                    border-radius: 0 !important;
+                }
+            </style>
+
             <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
                 <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
 
-                    <div
-                        class="w-full lg:w-5/12 flex flex-col items-center text-center lg:items-start lg:text-left reveal reveal-up mt-4 lg:mt-0">
+                    <!-- Left Column: Staggered Title Animation -->
+                    <!-- The reveal class acts as the trigger for all children -->
+                    <div class="w-full lg:w-5/12 flex flex-col items-center text-center lg:items-start lg:text-left reveal mt-4 lg:mt-0">
 
                         <span
-                            class="inline-block px-5 py-2 font-body font-bold text-sm tracking-widest uppercase rounded-full mb-4 lg:mb-6 cursor-pointer bg-[#caebd8] text-[#1a3528] hover:bg-[#825c3e] hover:text-white transition-colors duration-300 pill-dark-bg">
+                            class="word-mask-inner inline-block px-5 py-2 font-body font-bold text-sm tracking-widest uppercase rounded-none mb-4 lg:mb-6 cursor-pointer bg-[#caebd8] text-[#1a3528] hover:bg-[#825c3e] hover:text-white transition-colors duration-300"
+                            style="transition-delay: 50ms;">
                             Our Work
                         </span>
 
                         <h2
-                            class="group font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-white leading-tight mb-6 lg:mb-8 flex flex-col items-center lg:items-start cursor-default">
-                            See the Difference We Make
-                            <span
-                                class="block w-16 md:w-20 h-0.5 md:h-[2px] bg-[#d49813] mt-4 lg:mt-6 rounded-full transition-all duration-300 ease-in-out group-hover:w-32 md:group-hover:w-44 group-hover:bg-[#825c3e]/80"></span>
+                            class="group font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-white leading-tight mb-6 lg:mb-8 flex flex-col items-center lg:items-start cursor-default w-full">
+                            <span class="flex flex-wrap justify-center lg:justify-start gap-x-3 lg:gap-x-4 leading-tight">
+                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">See</span></span>
+                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">the</span></span>
+                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Difference</span></span>
+                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">We</span></span>
+                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 500ms;">Make</span></span>
+                            </span>
+                            
+                            <!-- Underline - Changed to animation-delay so hover transition works instantly -->
+                            <span class="fade-up-anim block w-16 md:w-20 h-0.5 md:h-[2px] bg-[#d49813] mt-4 lg:mt-6 transition-all duration-300 ease-in-out group-hover:w-32 md:group-hover:w-44 group-hover:bg-[#825c3e]" style="animation-delay: 500ms;"></span>
                         </h2>
 
                         <p
-                            class="font-body text-base sm:text-lg md:text-xl text-[#caebd8]/80 leading-relaxed mb-8 lg:mb-10 max-w-xl mx-auto lg:mx-0">
-                            All treatments are carried out with certified equipment by a qualified applicator.
+                            class="fade-up-anim font-body text-base sm:text-lg md:text-xl text-[#caebd8]/80 leading-relaxed mb-8 lg:mb-10 max-w-xl mx-auto lg:mx-0"
+                            style="animation-delay: 600ms;">
+                            All treatments are carried out with certified equipment by a qualified applicator. Explore the transformations achieved through professional care.
                         </p>
 
-                        <a href="pages/gallery.html" class="btn-bubble btn-dark-bg font-body">
-                            <span class="btn-bubble-fill"></span>
-                            <span class="btn-bubble-text">View Our Gallery</span>
-                            <span class="btn-bubble-icon-container">
-                                <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M5 12h14m-6-6l6 6-6 6"></path>
-                                </svg>
-                            </span>
-                        </a>
+                        <div class="fade-up-anim w-full flex justify-center lg:justify-start" style="animation-delay: 700ms;">
+                            <a href="pages/gallery.html" class="btn-bubble btn-dark-bg font-body shadow-xl">
+                                <span class="btn-bubble-fill"></span>
+                                <span class="btn-bubble-text font-bold tracking-wide">View Our Gallery</span>
+                                <span class="btn-bubble-icon-container">
+                                    <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 12h14m-6-6l6 6-6 6"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
                     </div>
 
+                    <!-- Right Column: Before/After Slider -->
+                    <!-- Completely squared off (rounded-none), removed border and black background -->
                     <div class="w-full lg:w-6/12 reveal reveal-up" style="transition-delay: 100ms;">
                         <div
-                            class="ba-slider touch-pan-y relative w-full aspect-[25/24] md:aspect-[10/9] lg:aspect-[25/24] rounded-[2.5rem] overflow-hidden cursor-ew-resize shadow-2xl border-4 border-white/5 group bg-[#0A0914]">
+                            class="ba-slider touch-pan-y relative w-full aspect-[25/24] md:aspect-[10/9] lg:aspect-[25/24] rounded-none overflow-hidden cursor-ew-resize shadow-2xl border-none group bg-transparent">
                             <img src="assets/imgs/after.jpg" alt="Green Seasons professional garden and grounds maintenance"
                                 loading="lazy" decoding="async"
                                 class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none">
@@ -876,10 +954,11 @@
                                 class="ba-before absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
                                 style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
 
+                            <!-- Slider Handle (Squared off) -->
                             <div
                                 class="ba-handle absolute top-0 bottom-0 left-[50%] w-1.5 bg-[#f5fef8] shadow-[0_0_15px_rgba(0,0,0,0.8)] pointer-events-none -ml-[3px] flex items-center justify-center z-10">
                                 <div
-                                    class="w-14 h-14 bg-[#f5fef8] rounded-full shadow-2xl border border-gray-100 flex items-center justify-center text-[#668e78] transition-transform group-hover:scale-110">
+                                    class="w-14 h-14 bg-[#f5fef8] rounded-none shadow-2xl border border-gray-100 flex items-center justify-center text-[#668e78] transition-transform group-hover:scale-110">
                                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M8 9l-3 3m0 0l3 3m-3-3h14m0 0l-3-3m3 3l-3 3"></path>
@@ -887,11 +966,12 @@
                                 </div>
                             </div>
 
+                            <!-- Labels (Squared off) -->
                             <div
-                                class="absolute bottom-6 left-6 bg-black/60 backdrop-blur-sm text-white px-4 py-1.5 rounded text-xs font-bold tracking-widest font-body uppercase pointer-events-none z-20">
+                                class="absolute bottom-6 left-6 bg-black/60 backdrop-blur-sm text-white px-4 py-1.5 rounded-none text-xs font-bold tracking-widest font-body uppercase pointer-events-none z-20">
                                 Before</div>
                             <div
-                                class="absolute bottom-6 right-6 bg-black/60 backdrop-blur-sm text-white px-4 py-1.5 rounded text-xs font-bold tracking-widest font-body uppercase pointer-events-none z-20">
+                                class="absolute bottom-6 right-6 bg-black/60 backdrop-blur-sm text-white px-4 py-1.5 rounded-none text-xs font-bold tracking-widest font-body uppercase pointer-events-none z-20">
                                 After</div>
                         </div>
                     </div>
@@ -900,10 +980,20 @@
             </div>
         </section>
 
-        <!-- -------------------------------------------------- --------------------------------------------------              
+       <!-- -------------------------------------------------- --------------------------------------------------              
              PROCESS SECTION
         -------------------------------------------------- --------------------------------------------------               -->
-        <section class="relative py-20 border-t border-[#668e78]/5 bg-[#f5fef8]">
+        <section id="process-section" class="relative py-20 border-t border-[#668e78]/5 bg-[#f5fef8]">
+            
+            <style>
+                /* Square Editorial Overrides for this section */
+                #process-section .btn-bubble,
+                #process-section .btn-bubble-fill,
+                #process-section .btn-bubble-icon-container {
+                    border-radius: 0 !important;
+                }
+            </style>
+
             <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12">
 
                 <div class="flex flex-col-reverse lg:flex-row gap-12 lg:gap-20 items-start w-full">
@@ -912,7 +1002,7 @@
                     <div class="w-full lg:w-[58%] flex flex-col gap-4 sm:gap-6">
 
                         <!-- Step 1 -->
-                        <div class="group flex flex-col sm:flex-row items-center text-center sm:text-left gap-5 p-6 sm:p-8 rounded-[1.5rem] transition-all duration-500 border border-[#825c3e]/15 hover:border-transparent hover:shadow-xl reveal reveal-up cursor-default"
+                        <div class="group flex flex-col sm:flex-row items-center text-center sm:text-left gap-5 p-6 sm:p-8 rounded-none transition-all duration-500 border border-[#825c3e]/15 hover:border-transparent hover:shadow-xl reveal reveal-up cursor-default"
                             style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                             onmouseleave="this.style.background='#668e78'">
                             <div
@@ -924,7 +1014,7 @@
                                     How It Works</h3>
                                 <p
                                     class="font-body text-white/80 text-sm sm:text-base leading-relaxed transition-colors duration-500">
-                                    Browse our project gallery to see the quality of finish Green Seasons delivers — from lawn renovations and hedge transformations to full garden clearances. The results speak for themselves.
+                                    Take the time to browse through our comprehensive project gallery to see the exceptional quality of finish Green Seasons consistently delivers. Whether you are looking at complete lawn renovations, intricate hedge transformations, or extensive full garden clearances, the final results truly speak for themselves and demonstrate our commitment to excellence.
                                 </p>
                             </div>
                             <div
@@ -938,7 +1028,7 @@
                         </div>
 
                         <!-- Step 2 -->
-                        <div class="group flex flex-col sm:flex-row items-center text-center sm:text-left gap-5 p-6 sm:p-8 rounded-[1.5rem] transition-all duration-500 border border-[#825c3e]/15 hover:border-transparent hover:shadow-xl reveal reveal-up cursor-default"
+                        <div class="group flex flex-col sm:flex-row items-center text-center sm:text-left gap-5 p-6 sm:p-8 rounded-none transition-all duration-500 border border-[#825c3e]/15 hover:border-transparent hover:shadow-xl reveal reveal-up cursor-default"
                             style="background:#668e78; transition-delay: 100ms;"
                             onmouseenter="this.style.background='#825c3e'"
                             onmouseleave="this.style.background='#668e78'">
@@ -951,7 +1041,7 @@
                                     Free Site Assessment</h3>
                                 <p
                                     class="font-body text-white/80 text-sm sm:text-base leading-relaxed transition-colors duration-500">
-                                    Call or email Tim and tell us what your outdoor space needs. We'll arrange a convenient time for a site visit at no obligation.
+                                    Reach out to us by phone or email to discuss the specific needs and vision you have for your outdoor space. Tim will personally get back to you to arrange a completely free and no obligation site visit at a time that works best for your schedule.
                                 </p>
                             </div>
                             <div
@@ -965,7 +1055,7 @@
                         </div>
 
                         <!-- Step 3 -->
-                        <div class="group flex flex-col sm:flex-row items-center text-center sm:text-left gap-5 p-6 sm:p-8 rounded-[1.5rem] transition-all duration-500 border border-[#825c3e]/15 hover:border-transparent hover:shadow-xl reveal reveal-up cursor-default"
+                        <div class="group flex flex-col sm:flex-row items-center text-center sm:text-left gap-5 p-6 sm:p-8 rounded-none transition-all duration-500 border border-[#825c3e]/15 hover:border-transparent hover:shadow-xl reveal reveal-up cursor-default"
                             style="background:#668e78; transition-delay: 200ms;"
                             onmouseenter="this.style.background='#825c3e'"
                             onmouseleave="this.style.background='#668e78'">
@@ -978,7 +1068,7 @@
                                     Receive a Clear, Fair Quote</h3>
                                 <p
                                     class="font-body text-white/80 text-sm sm:text-base leading-relaxed transition-colors duration-500">
-                                    Tim visits your property to assess the current condition, understand the scope of work, and discuss your specific requirements in detail.
+                                    During the site assessment, Tim will carefully walk through your property to evaluate the current condition of your garden or grounds. This allows us to fully understand the necessary scope of work, discuss your specific requirements in absolute detail, and provide expert recommendations.
                                 </p>
                             </div>
                             <div
@@ -992,7 +1082,7 @@
                         </div>
 
                         <!-- Step 4 -->
-                        <div class="group flex flex-col sm:flex-row items-center text-center sm:text-left gap-5 p-6 sm:p-8 rounded-[1.5rem] transition-all duration-500 border border-[#825c3e]/15 hover:border-transparent hover:shadow-xl reveal reveal-up cursor-default"
+                        <div class="group flex flex-col sm:flex-row items-center text-center sm:text-left gap-5 p-6 sm:p-8 rounded-none transition-all duration-500 border border-[#825c3e]/15 hover:border-transparent hover:shadow-xl reveal reveal-up cursor-default"
                             style="background:#668e78; transition-delay: 300ms;"
                             onmouseenter="this.style.background='#825c3e'"
                             onmouseleave="this.style.background='#668e78'">
@@ -1005,7 +1095,7 @@
                                     Consistent, Professional Results</h3>
                                 <p
                                     class="font-body text-white/80 text-sm sm:text-base leading-relaxed transition-colors duration-500">
-                                    We provide a clear, fair quote covering all agreed works. No hidden charges — just straightforward, transparent pricing.
+                                    Following the assessment, we will provide you with a comprehensive, clear, and perfectly fair quotation that covers every aspect of the agreed upon works. You will never encounter any hidden charges or unexpected fees, just straightforward and transparent pricing from start to finish.
                                 </p>
                             </div>
                             <div
@@ -1021,33 +1111,41 @@
                     </div>
 
                     <!-- RIGHT: Sticky title panel -->
-                    <div class="w-full lg:w-[42%] lg:sticky lg:top-[35vh] self-start flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <div class="w-full lg:w-[42%] lg:sticky lg:top-[35vh] self-start flex flex-col items-center lg:items-start text-center lg:text-left reveal">
                         <span
-                            class="inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-6 cursor-pointer bg-[#caebd8] text-[#1a3528] hover:bg-[#825c3e] hover:text-white">
+                            class="word-mask-inner inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase mb-6 cursor-pointer bg-[#caebd8] text-[#825c3e] hover:bg-[#825c3e] hover:text-white transition-colors duration-300"
+                            style="transition-delay: 50ms;">
                             Simple. Reliable. Professional.
                         </span>
 
                         <h2
                             class="group font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[3.75rem] xl:text-[4.5rem] font-bold text-[#668e78] leading-tight mb-6 cursor-default flex flex-col items-center lg:items-start">
-                            Request a Quote
-                            <span
-                                class="block w-12 md:w-16 h-0.5 md:h-[2px] bg-[#d49813] mt-4 lg:mt-6 rounded-full transition-all duration-300 ease-in-out group-hover:w-24 md:group-hover:w-32 group-hover:bg-[#825c3e]/80"></span>
+                            <span class="flex flex-wrap justify-center lg:justify-start gap-x-3 lg:gap-x-4 leading-tight">
+                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Request</span></span>
+                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">a</span></span>
+                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Quote</span></span>
+                            </span>
+                            
+                            <!-- Underline -->
+                            <span class="title-underline-anim block w-12 md:w-16 h-0.5 md:h-[2px] bg-[#d49813] mt-4 lg:mt-6 transition-all duration-300 ease-in-out group-hover:w-24 md:group-hover:w-32 group-hover:bg-[#825c3e]"></span>
                         </h2>
 
-                        <p class="font-body text-base sm:text-lg text-[#1a3528]/80 leading-relaxed mb-10">
-                            Once work begins, expect punctual, professional service on every visit — with consistently high standards maintained throughout the contract.
+                        <p class="title-underline-anim font-body text-base sm:text-lg text-[#1a3528]/80 leading-relaxed mb-10" style="animation-delay: 400ms;">
+                            Once the project begins, you can always expect highly punctual and deeply professional service on every single visit. We pride ourselves on ensuring that consistently high standards are maintained throughout the entire duration of your maintenance contract.
                         </p>
 
-                        <a href="pages/contact.html" class="btn-bubble btn-light-section font-body">
-                            <span class="btn-bubble-fill"></span>
-                            <span class="btn-bubble-text">Get in Touch</span>
-                            <span class="btn-bubble-icon-container">
-                                <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M5 12h14m-6-6l6 6-6 6"></path>
-                                </svg>
-                            </span>
-                        </a>
+                        <div class="title-underline-anim" style="animation-delay: 500ms;">
+                            <a href="pages/contact.html" class="btn-bubble btn-light-section font-body rounded-none">
+                                <span class="btn-bubble-fill"></span>
+                                <span class="btn-bubble-text">Get in Touch</span>
+                                <span class="btn-bubble-icon-container">
+                                    <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 12h14m-6-6l6 6-6 6"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
                     </div>
 
                 </div>
@@ -1088,6 +1186,36 @@
                     100% {
                         transform: translateX(-50%);
                     }
+                }
+
+                /* Premium Word Mask Animation */
+                .word-mask { 
+                    display: inline-block; 
+                    overflow: hidden; 
+                    vertical-align: bottom; 
+                    padding-bottom: 0.15em; 
+                    margin-bottom: -0.15em;
+                }
+                .word-mask-inner { 
+                    display: inline-block; 
+                    transform: translateY(110%); 
+                    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
+                    will-change: transform;
+                }
+                .reveal.active .word-mask-inner { 
+                    transform: translateY(0); 
+                }
+                
+                /* Title Underline Animation */
+                .title-underline-anim {
+                    opacity: 0;
+                }
+                .reveal.active .title-underline-anim {
+                    animation: revealUnderline 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 500ms forwards;
+                }
+                @keyframes revealUnderline {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
                 }
 
                 .font-signature {
@@ -1132,20 +1260,28 @@
             </style>
 
             <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
-                <div class="flex flex-col items-center text-center mb-12 lg:mb-16 reveal reveal-up w-full">
+                <div class="flex flex-col items-center text-center mb-12 lg:mb-16 reveal w-full">
                     <span
-                        class="inline-block px-5 py-1.5 font-body font-bold text-sm tracking-widest uppercase rounded-full mb-6 cursor-pointer bg-[#caebd8] text-[#1a3528] hover:bg-[#825c3e] hover:text-white transition-colors duration-300">
-                        Free Site Assessment
+                        class="word-mask-inner inline-block px-5 py-1.5 font-body font-bold text-sm tracking-widest uppercase mb-6 cursor-pointer bg-[#caebd8] text-[#825c3e] hover:bg-[#825c3e] hover:text-white transition-colors duration-300"
+                        style="transition-delay: 50ms;">
+                        Client Reviews
                     </span>
                     <h2
-                        class="group font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-[#668e78] leading-tight flex flex-col items-center cursor-default w-full mb-6">
-                        Transparent Quotation
-                        <span
-                            class="block w-12 md:w-16 h-0.5 md:h-[2px] bg-[#d49813] mt-4 lg:mt-6 rounded-full transition-all duration-300 ease-in-out group-hover:w-24 md:group-hover:w-32 group-hover:bg-[#825c3e]/80"></span>
+                        class="group font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-[#668e78] mb-6 leading-tight flex flex-col items-center text-center cursor-default w-full">
+                        <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">What</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Our</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Clients</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">Are</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 500ms;">Saying</span></span>
+                        </span>
+                        
+                        <!-- Underline -->
+                        <span class="title-underline-anim block w-12 md:w-16 h-0.5 md:h-[2px] bg-[#d49813] mt-4 lg:mt-6 transition-all duration-300 ease-in-out group-hover:w-24 md:group-hover:w-32 group-hover:bg-[#825c3e]"></span>
                     </h2>
                     <p
-                        class="font-body text-base sm:text-lg md:text-xl text-[#1a3528]/80 max-w-2xl mx-auto leading-relaxed mt-2">
-                        We keep things simple so you can focus on enjoying your outdoor space. From first contact to ongoing maintenance, Green Seasons makes the process effortless.
+                        class="title-underline-anim font-body text-base sm:text-lg md:text-xl text-[#1a3528]/80 max-w-2xl mx-auto leading-relaxed mt-2" style="animation-delay: 600ms;">
+                        Don't just take our word for it. Here's what our clients across South Oxfordshire say about the Green Seasons service and the transformations we deliver.
                     </p>
                 </div>
             </div>
@@ -1158,7 +1294,7 @@
                         <div class="flex gap-4 sm:gap-6 md:gap-8 pr-4 sm:pr-6 md:pr-8 w-max">
 
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1181,7 +1317,7 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1201,7 +1337,7 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1221,7 +1357,7 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1241,7 +1377,7 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1261,7 +1397,7 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1281,7 +1417,7 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1301,7 +1437,7 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1321,7 +1457,7 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1341,7 +1477,7 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1364,7 +1500,7 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1384,7 +1520,7 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1404,7 +1540,7 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1424,7 +1560,7 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1444,7 +1580,7 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1464,7 +1600,7 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
@@ -1484,20 +1620,20 @@
                                 </div>
                             </div>
                             <div class="w-[85vw] sm:w-[350px] lg:w-[380px] flex-shrink-0">
-                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-3xl h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
+                                <div class="group relative p-6 sm:p-6 lg:p-8 rounded-none h-full flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15"
                                     style="background:#668e78;" onmouseenter="this.style.background='#825c3e'"
                                     onmouseleave="this.style.background='#668e78'">
                                     <div>
                                         <div class="flex justify-center sm:justify-start text-yellow-400 group-hover:text-white transition-colors duration-500 mb-5 text-xl tracking-widest"
                                             aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                                         <p
-                                            class="font-body text-center sm:text-left text-white/80 group-hover:text-white italic mb-8 text-sm sm:text-sm lg:text-base leading-relaxed transition-colors duration-500">
-                                            Something went wrong. Please call Tim on 07545 285408.
+                                            class="font-body text-center sm:text-left text-white/80 group-hover:text-white mb-8 text-sm sm:text-sm lg:text-base leading-relaxed transition-colors duration-500">
+                                            Based in Kingston Bagpuize, Green Seasons provides expert garden care across South Oxfordshire. Call Tim today on 07545 285408 for a free quote.
                                         </p>
                                     </div>
                                     <div class="border-t border-white/10 group-hover:border-white/30 transition-colors duration-500 pt-4 mt-auto text-center sm:text-left pr-8 sm:pr-0">
                                         <p class="font-body font-bold text-white text-sm lg:text-base transition-colors duration-500">
-                                            Green Seasons</p>
+                                            Tim Harris — Green Seasons</p>
                                     </div>
                                     <svg class="absolute bottom-6 lg:bottom-8 right-6 lg:right-8 w-5 h-5 text-white/40 group-hover:text-white/90 transition-colors duration-500" viewBox="0 0 24 24" fill="currentColor">
                                             <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>                                    </svg>
@@ -1522,26 +1658,26 @@
 
                     <div class="flex flex-col items-center lg:items-start text-center lg:text-left order-1 lg:order-2">
                         <span
-                            class="inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-7 cursor-pointer bg-[#caebd8] text-[#1a3528] hover:bg-[#825c3e] hover:text-white shadow-sm transition-colors duration-300">
-                            FAQs
+                            class="inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase mb-7 cursor-pointer bg-[#caebd8] text-[#1a3528] hover:bg-[#825c3e] hover:text-white shadow-sm transition-colors duration-300 rounded-none">
+                            Happy with Our Work?
                         </span>
 
                         <h2
                             class="group font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[#668e78] mb-7 leading-tight flex flex-col items-center lg:items-start cursor-default">
-                            Common Questions
+                            Leave Us a Google Review
                             <span
-                                class="block w-16 md:w-20 h-0.5 md:h-[2px] bg-[#d49813] mt-4 lg:mt-6 rounded-full transition-all duration-300 ease-in-out group-hover:w-32 md:group-hover:w-44 group-hover:bg-[#825c3e]/80"></span>
+                                class="block w-16 md:w-20 h-0.5 md:h-[2px] bg-[#d49813] mt-4 lg:mt-6 transition-all duration-300 ease-in-out group-hover:w-32 md:group-hover:w-44 group-hover:bg-[#825c3e]/80"></span>
                         </h2>
 
                         <p
                             class="font-body text-lg sm:text-xl lg:text-2xl text-[#1a3528]/80 leading-relaxed mb-10 font-light max-w-lg">
-                            Are you fully insured?
+                            Your feedback helps other homeowners in South Oxfordshire find a trusted local landscaping team. It takes less than a minute and means the world to us.
                         </p>
 
                         <a href="https://maps.app.goo.gl/ppN6kKj6Lmj53CPx8" target="_blank" rel="noopener noreferrer"
-                            class="btn-bubble btn-light-section font-body">
+                            class="btn-bubble btn-light-section font-body rounded-none">
                             <span class="btn-bubble-fill"></span>
-                            <span class="btn-bubble-text">Get a Free Quote</span>
+                            <span class="btn-bubble-text">Write a Review</span>
                             <span class="btn-bubble-icon-container">
                                 <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
@@ -1576,14 +1712,17 @@
                                 </div>
                             </div>
                             <div
-                                class="flex-shrink-0 w-[250px] h-[250px] md:w-[307px] md:h-[307px] rounded-2xl overflow-hidden">
+                                class="flex-shrink-0 w-[250px] h-[250px] md:w-[307px] md:h-[307px] rounded-none overflow-hidden">
                                 <img src="assets/imgs/qrcode.png"
                                     alt="Green Seasons professional garden and grounds maintenance"
                                     class="w-full h-full object-contain mix-blend-multiply">
+                                <div class="mt-2 flex flex-col items-center gap-1 opacity-60">
+                                    <p class="font-body text-sm font-bold tracking-widest uppercase text-[#1a3528]">07545 285408</p>
+                                    <p class="font-body text-[10px] md:text-xs tracking-widest uppercase text-[#1a3528]">Kingston Bagpuize &bull; South Oxfordshire</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 

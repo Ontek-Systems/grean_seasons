@@ -1,11 +1,11 @@
 {
-  "name": "JB Outdoor Services Ltd",
-  "short_name": "JB Outdoors",
-  "description": "Expert Landscaping & Groundworks in Wincanton, Somerset.",
+  "name": "Green Seasons",
+  "short_name": "Green Seasons",
+  "description": "Professional Garden & Grounds Maintenance in South Oxfordshire.",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#141229",
-  "background_color": "#F5F3EE",
+  "theme_color": "#668e78",
+  "background_color": "#caebd8",
   "icons": [
     {
       "src": "android-chrome-192x192.png",

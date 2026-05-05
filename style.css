@@ -18,7 +18,7 @@
     --color-brand-alice:  #caebd8;
     --color-brand-beige:  #caebd8;
     --color-brand-text:   #1a3528;
-    --font-heading: 'Marcus Traianus', 'Cinzel', Georgia, serif;
+    --font-heading: 'Playfair Display', serif;
     --font-body:    'DM Sans', sans-serif;
 }
 
@@ -213,7 +213,7 @@ div[onmouseenter][style*="background:#141229"] {
     font-family: inherit;
     font-weight: 700;
     font-size: 1.125rem; /* text-lg */
-    border-radius: 9999px; /* rounded-full */
+    border-radius: 0; /* Squared Editorial */
     overflow: hidden;
     transition: transform 0.5s ease;
     cursor: pointer;
@@ -230,7 +230,7 @@ div[onmouseenter][style*="background:#141229"] {
     transform: translateY(-50%);
     width: 2.5rem; /* w-10 */
     height: 2.5rem; /* h-10 */
-    border-radius: 9999px;
+    border-radius: 0;
     transition: transform 0.7s cubic-bezier(0.19,1,0.22,1);
     z-index: 0;
 }
@@ -252,7 +252,7 @@ div[onmouseenter][style*="background:#141229"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 9999px;
+    border-radius: 0;
     flex-shrink: 0;
     transition: background-color 0.5s ease;
 }
@@ -514,7 +514,7 @@ div[onmouseenter][style*="background:#141229"] {
         gap: 0.75rem !important;
     }
     /* The golden circle icon — keep it fixed size and top-aligned */
-    main section div.space-y-4 > div.flex > div.rounded-full {
+    main section div.space-y-4 > div.flex > div.rounded-none {
         flex-shrink: 0 !important;
         margin-top: 0.15rem !important;      /* optical alignment with first text line */
     }

@@ -33,6 +33,26 @@
     #header-container .logo-wrapper {
         transform: none !important;
     }
+
+    /* Nav Underline */
+    .nav-link {
+        position: relative;
+    }
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #caebd8;
+        transition: width 0.3s ease;
+    }
+    .nav-link:hover::after,
+    .nav-link.active-nav::after {
+        width: 100%;
+    }
 </style>
 
 <header id="site-header"
@@ -129,7 +149,27 @@
             .top-bar-marquee:hover {
                 animation-play-state: paused;
             }
-        </style>
+        
+    /* Nav Underline */
+    .nav-link {
+        position: relative;
+    }
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #caebd8;
+        transition: width 0.3s ease;
+    }
+    .nav-link:hover::after,
+    .nav-link.active-nav::after {
+        width: 100%;
+    }
+</style>
 
         <div class="top-bar-marquee items-center">
 
@@ -447,22 +487,22 @@
             </div>
 
             <a href="pages/about.html"
-                class="inline-block whitespace-nowrap transition-all duration-150 hover:scale-105 hover:text-[#caebd8]">About</a>
+                class="nav-link inline-block whitespace-nowrap transition-all duration-150 hover:scale-105 hover:text-[#caebd8]">About</a>
 
             <a href="pages/gallery.html"
-                class="inline-block whitespace-nowrap transition-all duration-150 hover:scale-105 hover:text-[#caebd8]">Gallery</a>
+                class="nav-link inline-block whitespace-nowrap transition-all duration-150 hover:scale-105 hover:text-[#caebd8]">Gallery</a>
             <a href="index.html#faq"
-                class="inline-block whitespace-nowrap transition-all duration-150 hover:scale-105 hover:text-[#caebd8]">FAQ</a>
+                class="nav-link inline-block whitespace-nowrap transition-all duration-150 hover:scale-105 hover:text-[#caebd8]">FAQ</a>
 
             <!-- Contact and Wincanton Location -->
             <div class="flex items-center gap-8 ml-4">
                 <a href="pages/contact.html"
-                    class="inline-block whitespace-nowrap transition-all duration-150 hover:scale-105 hover:text-[#caebd8]">Contact</a>
+                    class="nav-link inline-block whitespace-nowrap transition-all duration-150 hover:scale-105 hover:text-[#caebd8]">Contact</a>
 
-                <a href="javascript:void(0);" style="cursor: default;"
+                <span style="cursor: default;"
                     class="group inline-flex items-center gap-1.5 whitespace-nowrap transition-all duration-150 hover:scale-105 hover:text-[#caebd8]">
                     Kingston Bagpuize
-                </a>
+                </span>
             </div>
         </nav>
 
@@ -625,4 +665,35 @@
         window.addEventListener('scroll', updateHeader);
         updateHeader(); // Initial check
     })();
+
+    // -- Active Nav Underline --
+    (function () {
+        const path = window.location.pathname;
+
+        // Map of keyword → nav link text content to match
+        const matchers = [
+            { test: p => p === '/' || p.endsWith('index.html'),       label: 'Home'     },
+            { test: p => p.includes('/pages/services'),               label: 'Services' },
+            { test: p => p.includes('/pages/about'),                  label: 'About'    },
+            { test: p => p.includes('/pages/gallery'),                label: 'Gallery'  },
+            { test: p => p.includes('/pages/contact'),                label: 'Contact'  },
+        ];
+
+        // Find which label matches the current path
+        let activeLabel = null;
+        for (const m of matchers) {
+            if (m.test(path)) { activeLabel = m.label; break; }
+        }
+
+        if (!activeLabel) return;
+
+        // Apply active-nav to matching .nav-link elements in desktop nav only
+        document.querySelectorAll('nav .nav-link').forEach(el => {
+            const text = el.textContent.trim();
+            if (text === activeLabel) {
+                el.classList.add('active-nav');
+            }
+        });
+    })();
+
 </script>

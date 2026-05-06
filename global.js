@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     initHeaderScroll();
+    setActiveNav();
 
     // ==========================================
     // 2. SCROLL REVEAL ANIMATIONS
@@ -121,4 +122,32 @@ function initHeaderScroll() {
         // call once
         handleScroll();
     }
+}
+
+function setActiveNav() {
+    const path = window.location.pathname;
+
+    // Map page segments to nav link labels
+    const matchers = [
+        { test: p => p === '/' || p.endsWith('index.html'),   label: 'Home'     },
+        { test: p => p.includes('/pages/services'),           label: 'Services' },
+        { test: p => p.includes('/pages/about'),              label: 'About'    },
+        { test: p => p.includes('/pages/gallery'),            label: 'Gallery'  },
+        { test: p => p.includes('/pages/contact'),            label: 'Contact'  },
+    ];
+
+    let activeLabel = null;
+    for (const m of matchers) {
+        if (m.test(path)) { activeLabel = m.label; break; }
+    }
+
+    if (!activeLabel) return;
+
+    // Only target desktop nav links (inside <nav>), not mobile menu links
+    document.querySelectorAll('nav .nav-link').forEach(el => {
+        const text = el.textContent.trim();
+        if (text === activeLabel) {
+            el.classList.add('active-nav');
+        }
+    });
 }

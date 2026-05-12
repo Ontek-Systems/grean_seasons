@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             mobileNav.classList.toggle('invisible');
             mobileNav.classList.toggle('-translate-y-4');
             mobileNav.classList.toggle('pointer-events-none');
-            
+
             // Toggle the hamburger icon to an 'X' icon
             const svg = menuBtn.querySelector('svg');
             if (mobileNav.classList.contains('opacity-0')) {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 2. SCROLL REVEAL ANIMATIONS
     // ==========================================
     const revealElements = document.querySelectorAll('.reveal');
-    
+
     // Create an observer that triggers when elements are 10% visible
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }, {
         root: null,
-        threshold: 0.1, 
+        threshold: 0.1,
         rootMargin: "0px 0px -50px 0px" // Triggers slightly before hitting the bottom of viewport
     });
 
@@ -60,7 +60,7 @@ async function loadComponents() {
     const isPagesDir = !isPagesServiceDir && path.includes('/pages/');
     let basePath = '';
     if (isPagesServiceDir) basePath = '../../';
-    else if (isPagesDir)   basePath = '../';
+    else if (isPagesDir) basePath = '../';
 
     const headerPlaceholder = document.getElementById('header-placeholder');
     if (headerPlaceholder) {
@@ -117,7 +117,7 @@ function initHeaderScroll() {
                 container.classList.remove('py-2', 'md:py-3');
             }
         };
-        
+
         window.addEventListener('scroll', handleScroll);
         // call once
         handleScroll();
@@ -129,11 +129,11 @@ function setActiveNav() {
 
     // Map page segments to nav link labels
     const matchers = [
-        { test: p => p === '/' || p.endsWith('index.html'),   label: 'Home'     },
-        { test: p => p.includes('/pages/services'),           label: 'Services' },
-        { test: p => p.includes('/pages/about'),              label: 'About'    },
-        { test: p => p.includes('/pages/gallery'),            label: 'Gallery'  },
-        { test: p => p.includes('/pages/contact'),            label: 'Contact'  },
+        { test: p => p === '/' || p.endsWith('index.html'), label: 'Home' },
+        { test: p => p.includes('/pages/services'), label: 'Services' },
+        { test: p => p.includes('/pages/about'), label: 'About' },
+        { test: p => p.includes('/pages/gallery'), label: 'Gallery' },
+        { test: p => p.includes('/pages/contact'), label: 'Contact' },
     ];
 
     let activeLabel = null;

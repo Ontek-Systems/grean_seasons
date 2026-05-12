@@ -32,42 +32,100 @@
 
 /* ============================================================
    Green Seasons — Global Stylesheet
-   Brand Palette:
-     --forest:    #668e78  (Forest Green — primary)
-     --mint:      #caebd8  (Mint Green — light background)
-     --amber:     #d49813  (Golden Amber — accent)
-     --earth:     #825c3e  (Warm Earth Brown — secondary)
-     --white:     #ffffff  (Pure White)
+   Brand Palette (5-colour system — no exceptions):
+     #668e78  Forest Green  — primary brand, nav, buttons, accents
+     #ffffff  White         — main page backgrounds
+     #fff7e6  Warm Cream    — secondary backgrounds, light panels
+     #1a3528  Dark Green    — footer, CTA sections, body text
+     #db9f1b  Gold          — hover states, accent touches only
 
    PURPOSE: This file defines the global Tailwind v4 theme,
    as well as custom classes and CSS variables.
    ============================================================ */
 
 @theme {
-    --color-brand-dark:   #668e78;
-    --color-brand-ocean:  #668e78;
-    --color-brand-bronze: #d49813;
-    --color-brand-alice:  #caebd8;
-    --color-brand-beige:  #caebd8;
-    --color-brand-text:   #1a3528;
+    --color-brand-dark:   #668e78;   /* Forest Green — primary */
+    --color-brand-ocean:  #668e78;   /* Forest Green — alias */
+    --color-brand-bronze: #db9f1b;   /* Gold — hover & accent */
+    --color-brand-alice:  #fff7e6;   /* Warm Cream — light bg */
+    --color-brand-beige:  #fff7e6;   /* Warm Cream — alias */
+    --color-brand-text:   #1a3528;   /* Dark Green — text & dark sections */
     --font-heading: 'Marcus Traianus', 'Cinzel', Georgia, serif;
     --font-body:    'DM Sans', sans-serif;
 }
 
 body  { font-family: var(--font-body); background-color: #ffffff; color: #1a3528; }
 h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); }
-img   { filter: saturate(1.35); }
+/* Global Image Filters - Overridable via inline style e.g. style="--img-saturate: 1.5;" */
+img { 
+    --img-saturate: 1.05;
+    --img-contrast: 1.05;
+    --img-brightness: 1.05;
+    filter: saturate(var(--img-saturate)) contrast(var(--img-contrast)) brightness(var(--img-brightness));
+}
 
 /* --CSS Custom Properties (available globally) --------------------------------------------------*/
 :root {
+  /* === Core 5-Colour Palette === */
+  --forest:       #668e78;   /* Forest Green — primary */
+  --cream:        #fff7e6;   /* Warm Cream   — light bg */
+  --dark:         #1a3528;   /* Dark Green   — footer/CTA/text */
+  --gold:         #db9f1b;   /* Gold         — hover & accent */
+  --white:        #ffffff;   /* Pure White   — main bg */
+
+  /* Forest tints (internal use only) */
+  --forest-light: #82ab97;
+  --forest-dark:  #4e7060;
+
+  /* Legacy aliases — do not add new references to these */
   --midnight:     #668e78;
   --ocean:        #668e78;
   --ocean-light:  #82ab97;
   --ocean-dark:   #4e7060;
-  --bronze:       #d49813;
-  --bronze-light: #e0b84a;
-  --bronze-dark:  #a8790e;
-  --alice:        #caebd8;
+  --bronze:       #db9f1b;
+  --alice:        #fff7e6;
+}
+
+/* --Global Button Component --------------------------------------------------*/
+.btn-primary, .btn-primary-white {
+    display: inline-block;
+    border-width: 1.5px;
+    border-style: solid;
+    background-color: transparent;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-family: var(--font-body), sans-serif;
+    font-size: 1rem;
+    font-weight: 800; /* extrabold */
+    letter-spacing: 0.025em; /* tracking-wide */
+    border-radius: 1px;
+}
+
+.btn-primary {
+    border-color: #1a3528;
+    color: #1a3528;
+}
+
+.btn-primary:hover {
+    border-color: #db9f1b;
+    background-color: #db9f1b;
+    color: #ffffff;
+}
+
+.btn-primary-white {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.btn-primary-white:hover {
+    border-color: #db9f1b;
+    background-color: #db9f1b;
+    color: #ffffff;
 }
 
 /* --Scroll Reveal Animations --------------------------------------------------*/
@@ -159,6 +217,8 @@ details > div {
 }
 details > summary::-webkit-details-marker { display: none; }
 
+
+
 /* --Custom Checkbox (form tick) --------------------------------------------------*/
 .custom-tick {
     -webkit-appearance: none;
@@ -170,8 +230,8 @@ details > summary::-webkit-details-marker { display: none; }
     transition: all 0.2s ease-in-out;
 }
 .custom-tick:checked {
-    background-color: #e8b01e !important;
-    border-color: #e8b01e !important;
+    background-color: #db9f1b !important;
+    border-color: #db9f1b !important;
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
     background-size: 100% 100%;
     background-position: center;
@@ -188,11 +248,11 @@ details > summary::-webkit-details-marker { display: none; }
    Bronze pill  →  hover to Ocean Deep
    Ocean pill   →  hover to Golden Bronze
 */
-span[style*="background:#d49813"] {
+span[style*="background:#db9f1b"] {
     transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     cursor: default;
 }
-span[style*="background:#d49813"]:hover {
+span[style*="background:#db9f1b"]:hover {
     background: #668e78 !important;
     color: #ffffff !important;
     box-shadow: 0 4px 16px rgba(102, 142, 120, 0.30);
@@ -203,9 +263,9 @@ span[style*="background:#668e78"] {
     cursor: default;
 }
 span[style*="background:#668e78"]:hover {
-    background: #d49813 !important;
+    background: #db9f1b !important;
     color: #1a3528 !important;
-    box-shadow: 0 4px 16px rgba(212, 152, 19, 0.30);
+    box-shadow: 0 4px 16px rgba(219, 159, 27, 0.30);
 }
 
 /* --Dark Background Pills --------------------------------------------------*/
@@ -214,9 +274,9 @@ span.pill-dark-bg {
     cursor: default;
 }
 span.pill-dark-bg:hover {
-    background: #caebd8 !important;
+    background: #fff7e6 !important;
     color: #1a3528 !important;
-    box-shadow: 0 4px 16px rgba(202, 235, 216, 0.30);
+    box-shadow: 0 4px 16px rgba(255, 247, 230, 0.30);
 }
 
 /* --Carousel card background transition --------------------------------------------------*/
@@ -224,7 +284,7 @@ span.pill-dark-bg:hover {
    Smooths the onmouseenter background swap on commitment
    cards (about.html). Scoped to div only, never affects pills.
 */
-div[onmouseenter][style*="background:#141229"] {
+div[onmouseenter][style*="background:#1a3528"] {
     transition: background 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -234,196 +294,6 @@ div[onmouseenter][style*="background:#141229"] {
 
 
 
-/* --Global Button Component: Bubble Fill --------------------------------------------------*/
-.btn-bubble {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 1.125rem; /* text-lg */
-    border-radius: 0; /* Squared Editorial */
-    overflow: hidden;
-    transition: transform 0.5s ease;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(20, 18, 41, 0.05);
-}
-.btn-bubble:hover {
-    transform: scale(1.05);
-}
-
-.btn-bubble-fill {
-    position: absolute;
-    right: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2.5rem; /* w-10 */
-    height: 2.5rem; /* h-10 */
-    border-radius: 0;
-    transition: transform 0.7s cubic-bezier(0.19,1,0.22,1);
-    z-index: 0;
-}
-.btn-bubble:hover .btn-bubble-fill {
-    transform: translateY(-50%) scale(25);
-}
-
-.btn-bubble-text {
-    position: relative;
-    z-index: 10;
-    transition: color 0.5s ease;
-}
-
-.btn-bubble-icon-container {
-    position: relative;
-    z-index: 10;
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0;
-    flex-shrink: 0;
-    transition: background-color 0.5s ease;
-}
-.btn-bubble-icon {
-    width: 1.25rem;
-    height: 1.25rem;
-    transform: rotate(-45deg);
-    transition: transform 0.5s ease-in-out;
-}
-.btn-bubble:hover .btn-bubble-icon {
-    transform: rotate(0deg);
-}
-
-/* For Light Sections (White background) - Forest Green -> Earth Brown Hover */
-.btn-primary, .btn-light-section {
-    background-color: #668e78;
-    color: #ffffff;
-}
-.btn-primary .btn-bubble-fill, .btn-light-section .btn-bubble-fill {
-    background-color: #825c3e;
-    transition: transform 0.7s cubic-bezier(0.19,1,0.22,1), background-color 0.3s ease;
-}
-.btn-primary:hover .btn-bubble-fill, .btn-light-section:hover .btn-bubble-fill {
-    background-color: #825c3e;
-}
-.btn-primary .btn-bubble-text, .btn-light-section .btn-bubble-text {
-    color: #ffffff;
-}
-.btn-primary:hover .btn-bubble-text, .btn-light-section:hover .btn-bubble-text {
-    color: #ffffff;
-}
-.btn-primary .btn-bubble-icon-container, .btn-light-section .btn-bubble-icon-container {
-    background-color: #825c3e;
-}
-.btn-primary:hover .btn-bubble-icon-container, .btn-light-section:hover .btn-bubble-icon-container {
-    background-color: #ffffff;
-}
-.btn-primary .btn-bubble-icon, .btn-light-section .btn-bubble-icon {
-    color: #ffffff;
-}
-.btn-primary:hover .btn-bubble-icon, .btn-light-section:hover .btn-bubble-icon {
-    color: #668e78;
-}
-
-/* For Dark Sections (Forest Green background) - White -> Earth Brown Hover */
-.btn-dark-bg {
-    background-color: #ffffff;
-    color: #1a3528;
-}
-.btn-dark-bg .btn-bubble-fill {
-    background-color: #825c3e;
-    transition: transform 0.7s cubic-bezier(0.19,1,0.22,1), background-color 0.3s ease;
-}
-.btn-dark-bg:hover .btn-bubble-fill {
-    background-color: #825c3e;
-}
-.btn-dark-bg .btn-bubble-text {
-    color: #1a3528;
-}
-.btn-dark-bg:hover .btn-bubble-text {
-    color: #ffffff;
-}
-.btn-dark-bg .btn-bubble-icon-container {
-    background-color: #825c3e;
-}
-.btn-dark-bg:hover .btn-bubble-icon-container {
-    background-color: #ffffff;
-}
-.btn-dark-bg .btn-bubble-icon {
-    color: #ffffff;
-}
-.btn-dark-bg:hover .btn-bubble-icon {
-    color: #668e78;
-}
-
-/* Secondary Button (Forest Green background, Earth Brown hover fill) */
-.btn-secondary {
-    background-color: var(--midnight);
-    color: var(--alice);
-}
-.btn-secondary .btn-bubble-fill {
-    background-color: #825c3e;
-}
-.btn-secondary .btn-bubble-text {
-    color: var(--alice);
-}
-.btn-secondary:hover .btn-bubble-text {
-    color: #ffffff;
-}
-.btn-secondary .btn-bubble-icon {
-    color: #ffffff;
-}
-.btn-secondary .btn-bubble-icon-container {
-    background-color: #825c3e;
-}
-.btn-secondary:hover .btn-bubble-icon-container {
-    background-color: #ffffff;
-}
-.btn-secondary:hover .btn-bubble-icon {
-    color: #668e78;
-}
-
-/* Light/Beige Button (Beige background, Black hover fill) */
-.btn-light {
-    background-color: var(--alice);
-    color: var(--midnight);
-    border: 1px solid rgba(20, 18, 41, 0.15);
-}
-.btn-light .btn-bubble-fill {
-    background-color: var(--midnight);
-}
-.btn-light .btn-bubble-text {
-    color: var(--midnight);
-}
-.btn-light:hover .btn-bubble-text {
-    color: var(--alice);
-}
-.btn-light .btn-bubble-icon {
-    color: var(--alice);
-}
-
-/* Outline Button (Transparent background, Black hover fill) */
-.btn-outline {
-    background-color: transparent;
-    color: var(--midnight);
-    border: 1.5px solid rgba(20, 18, 41, 0.15);
-}
-.btn-outline .btn-bubble-fill {
-    background-color: var(--midnight);
-}
-.btn-outline .btn-bubble-text {
-    color: var(--midnight);
-}
-.btn-outline:hover .btn-bubble-text {
-    color: var(--alice);
-}
-.btn-outline .btn-bubble-icon {
-    color: var(--alice);
-}
 
 /* 
    GLOBAL MOBILE OVERRIDES (max-width: 768px)
@@ -436,21 +306,6 @@ div[onmouseenter][style*="background:#141229"] {
         transform-origin: left center !important;
     }
 
-    /* 2. Component Scaling: Buttons */
-    /* Disable full-width behavior, scale padding and font size for the capsule aesthetic */
-    .btn-bubble {
-        width: auto !important;
-        max-width: 80vw !important;
-        padding: 0.35rem 0.35rem 0.35rem 1.25rem !important;
-        font-size: 1rem !important; /* text-base instead of text-lg */
-        justify-content: center !important;
-    }
-    
-    .btn-bubble-icon-container,
-    .btn-bubble-fill {
-        width: 2.25rem !important;
-        height: 2.25rem !important;
-    }
 
     /* 3. Alignment & Layout: Centralization */
     /* Force-center text, headlines, and paragraphs within main content sections */
@@ -497,13 +352,6 @@ div[onmouseenter][style*="background:#141229"] {
         text-align: center !important;
     }
 
-    /* Force buttons to be centered */
-    main section a.btn-bubble,
-    main section button.btn-bubble {
-        margin-left: auto !important;
-        margin-right: auto !important;
-        display: inline-flex !important;
-    }
 
     /* 3. Alignment & Layout: Spacing */
     /* Implement consistent horizontal section padding to ensure text never hits the edge */
@@ -577,9 +425,7 @@ div[onmouseenter][style*="background:#141229"] {
     #site-header a.group\/logo > div {
         transform: scale(1) !important;
     }
-    .btn-bubble {
-        max-width: none !important;
-    }
+
 }
 
 /* --- Extracted from about.html --- */
@@ -610,7 +456,7 @@ div[onmouseenter][style*="background:#141229"] {
             border-radius: 0;
             overflow: hidden;
             cursor: zoom-in;
-            box-shadow: 0 8px 32px rgba(20,18,41,0.12);
+            box-shadow: 0 8px 32px rgba(26, 53, 40,0.12);
             border: 1px solid rgba(0,0,0,0.05);
         }
         .masonry-item img {
@@ -620,18 +466,18 @@ div[onmouseenter][style*="background:#141229"] {
             display: block;
             object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.2,0.8,0.2,1), filter 0.4s ease-in-out;
-            filter: saturate(1.35);
+            --img-saturate: 1.35;
         }
         @media (hover: hover) {
             .masonry-item:hover img {
                 transform: scale(1.06);
-                filter: saturate(1.5);
+                --img-saturate: 1.5;
             }
         }
         .masonry-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(20,18,41,0.88) 0%, transparent 55%);
+            background: linear-gradient(to top, rgba(26, 53, 40,0.88) 0%, transparent 55%);
             opacity: 0;
             transition: opacity 0.4s ease-in-out;
             display: flex;
@@ -684,7 +530,7 @@ div[onmouseenter][style*="background:#141229"] {
             height: 2px;
             width: 3rem;
             border-radius: 9999px;
-            background-color: #e8b01e;
+            background-color: #db9f1b;
             margin: 0.75rem auto 0;
             transition: width 0.3s ease-in-out;
         }
@@ -700,11 +546,11 @@ div[onmouseenter][style*="background:#141229"] {
             @apply transition-all duration-150 inline-flex items-center;
         }
         #site-header nav a:hover {
-            color: #caebd8;
+            color: #fff7e6;
             transform: scale(1.08);
         }
         #site-header.scrolled nav a:hover {
-            color: #caebd8;
+            color: #fff7e6;
         }
     
         .font-signature { font-family: var(--font-signature); }
@@ -740,8 +586,8 @@ div[onmouseenter][style*="background:#141229"] {
             transition: all 0.2s ease-in-out;
         }
         .custom-tick:checked {
-            background-color: #e8b01e !important;
-            border-color: #e8b01e !important;
+            background-color: #db9f1b !important;
+            border-color: #db9f1b !important;
             background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
             background-size: 100% 100%;
             background-position: center;
@@ -752,17 +598,17 @@ div[onmouseenter][style*="background:#141229"] {
             @apply transition-all duration-150 inline-flex items-center;
         }
         #site-header nav a:hover {
-            color: #caebd8;
+            color: #fff7e6;
             transform: scale(1.10);
         }
 
         #site-header.scrolled nav a:hover {
-            color: #caebd8;
+            color: #fff7e6;
             transform: scale(1.10);
         }
 
         #site-header.scrolled #menuBtn:hover {
-            color: #caebd8;
+            color: #fff7e6;
         }
 
         /* --- LOGO SWAP LOGIC --- */
@@ -826,4 +672,4 @@ div[onmouseenter][style*="background:#141229"] {
             transition: background 0.3s ease-in-out, width 0.3s ease-in-out, transform 0.2s ease-in-out;
         }
         .svc-dot:hover { transform: scale(1.3); }
-        .svc-dot.active { background: #d49813; width: 24px; }
+        .svc-dot.active { background: #db9f1b; width: 24px; }

@@ -35,7 +35,7 @@
    Brand Palette (5-colour system — no exceptions):
      #668e78  Forest Green  — primary brand, nav, buttons, accents
      #ffffff  White         — main page backgrounds
-     #fff7e6  Warm Cream    — secondary backgrounds, light panels
+     #ffffff  Warm Cream    — secondary backgrounds, light panels
      #1a3528  Dark Green    — footer, CTA sections, body text
      #db9f1b  Gold          — hover states, accent touches only
 
@@ -47,8 +47,8 @@
     --color-brand-dark:   #668e78;   /* Forest Green — primary */
     --color-brand-ocean:  #668e78;   /* Forest Green — alias */
     --color-brand-bronze: #db9f1b;   /* Gold — hover & accent */
-    --color-brand-alice:  #fff7e6;   /* Warm Cream — light bg */
-    --color-brand-beige:  #fff7e6;   /* Warm Cream — alias */
+    --color-brand-alice:  #ffffff;   /* Warm Cream — light bg */
+    --color-brand-beige:  #ffffff;   /* Warm Cream — alias */
     --color-brand-text:   #1a3528;   /* Dark Green — text & dark sections */
     --font-heading: 'Marcus Traianus', 'Cinzel', Georgia, serif;
     --font-body:    'DM Sans', sans-serif;
@@ -68,7 +68,7 @@ img {
 :root {
   /* === Core 5-Colour Palette === */
   --forest:       #668e78;   /* Forest Green — primary */
-  --cream:        #fff7e6;   /* Warm Cream   — light bg */
+  --cream:        #ffffff;   /* Warm Cream   — light bg */
   --dark:         #1a3528;   /* Dark Green   — footer/CTA/text */
   --gold:         #db9f1b;   /* Gold         — hover & accent */
   --white:        #ffffff;   /* Pure White   — main bg */
@@ -83,11 +83,153 @@ img {
   --ocean-light:  #82ab97;
   --ocean-dark:   #4e7060;
   --bronze:       #db9f1b;
-  --alice:        #fff7e6;
+  --alice:        #ffffff;
 }
 
-/* --Global Button Component --------------------------------------------------*/
-.btn-primary, .btn-primary-white {
+/* ============================================================
+   GREEN SEASONS — DESIGN TOKEN SYSTEM
+   
+   HOW IT WORKS:
+   - All semantic tokens are defined on :root (light mode defaults)
+   - Adding class="section-dark" to any <section> or wrapper
+     overrides the tokens automatically — no per-element changes needed.
+   
+   LIGHT sections (white/cream bg):  use as-is, no extra class
+   DARK sections (dark green bg):    add class="section-dark" to the <section>
+   
+   BUTTONS:
+   - .btn-adaptive  resolves to gold-solid on light, ghost on dark automatically
+   - .btn-primary   always gold solid (explicit override)
+   - .btn-ghost     always transparent white (explicit override)
+   ============================================================ */
+
+/* ─── Semantic tokens: LIGHT mode (default) ───────────────── */
+:root {
+  /* Foreground */
+  --gs-fg:           #1a3528;                  /* headings, taglines */
+  --gs-fg-muted:     rgba(26, 53, 40, 0.80);   /* body text */
+  --gs-fg-subtle:    rgba(26, 53, 40, 0.60);   /* stat labels, captions */
+
+  /* Background */
+  --gs-bg:           #ffffff;
+
+  /* Brand constants (never change between light/dark) */
+  --gs-accent:       #db9f1b;   /* gold — hover target */
+  --gs-accent-alt:   #668e78;   /* forest green — secondary hover */
+
+  /* Button (light mode = gold solid) */
+  --gs-btn-bg:       #db9f1b;
+  --gs-btn-fg:       #ffffff;
+  --gs-btn-border:   transparent;
+  --gs-btn-bg-hover: #668e78;
+  --gs-btn-border-hover: transparent;
+}
+
+/* ─── Semantic tokens: DARK mode override ─────────────────── */
+.section-dark {
+  /* Foreground */
+  --gs-fg:           #ffffff;
+  --gs-fg-muted:     rgba(255, 255, 255, 0.90);
+  --gs-fg-subtle:    rgba(255, 255, 255, 0.60);
+
+  /* Background */
+  --gs-bg:           #1a3528;
+
+  /* Button (dark mode = ghost/outline) */
+  --gs-btn-bg:       transparent;
+  --gs-btn-fg:       #ffffff;
+  --gs-btn-border:   #ffffff;
+  --gs-btn-bg-hover: #db9f1b;
+  --gs-btn-border-hover: #db9f1b;
+}
+
+/* ─── Utility classes that consume the tokens ─────────────── */
+
+/* Tagline / eyebrow — works on both light and dark */
+.gs-tagline {
+  display: inline-block;
+  font-family: var(--font-body), sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;       /* text-xl */
+  letter-spacing: 0.1em;    /* tracking-widest */
+  text-transform: uppercase;
+  color: var(--gs-fg);
+  cursor: default;
+  margin-bottom: 2rem;
+  transition: color 300ms ease;
+}
+.gs-tagline:hover { color: var(--gs-accent); }
+
+/* Section heading (h2) — works on both */
+.gs-heading {
+  font-family: var(--font-heading), serif;
+  font-weight: 900;
+  font-size: clamp(2.25rem, 5vw, 3rem);  /* text-4xl → text-5xl */
+  line-height: 1.15;
+  color: var(--gs-fg);
+  cursor: default;
+  transition: color 500ms ease;
+}
+.gs-heading:hover { color: var(--gs-accent); }
+
+/* Body / subtitle text — works on both */
+.gs-body {
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);  /* text-base → text-lg */
+  line-height: 1.75;
+  color: var(--gs-fg-muted);
+}
+
+/* Stat label (About section) */
+.gs-stat-label {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--gs-fg-subtle);
+}
+
+/* Adaptive button — automatically gold on light, ghost on dark */
+.btn-adaptive {
+  display: inline-block;
+  border-width: 1.5px;
+  border-style: solid;
+  padding: 0.75rem 2rem;
+  font-family: var(--font-body), sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.025em;
+  border-radius: 1px;
+  width: auto;
+  align-self: flex-start;
+  background-color: var(--gs-btn-bg);
+  color: var(--gs-btn-fg);
+  border-color: var(--gs-btn-border);
+  transition: background-color 300ms ease, border-color 300ms ease, color 300ms ease;
+}
+.btn-adaptive:hover {
+  background-color: var(--gs-btn-bg-hover);
+  border-color: var(--gs-btn-border-hover);
+  color: #ffffff;
+}
+
+/* --Global Button Component --------------------------------------------------
+   RULE — choose the class based on the section background:
+   
+   .btn-primary  → GOLD solid button
+                   Use on: white, cream (#ffffff), pale green (#f5fef8), any LIGHT bg
+                   Resting:  gold fill (#db9f1b), white text
+                   Hover:    forest green (#668e78)
+
+   .btn-ghost    → TRANSPARENT / WHITE OUTLINE button
+                   Use on: dark green (#1a3528), image/photo backgrounds, frosted glass
+                   Resting:  transparent bg, white border, white text
+                   Hover:    gold fill (#db9f1b), gold border
+
+   .btn-primary-white → LEGACY alias for .btn-ghost (kept for compatibility)
+   --------------------------------------------------------------------------*/
+.btn-primary, .btn-primary-white, .btn-ghost {
     display: inline-block;
     border-width: 1.5px;
     border-style: solid;
@@ -104,6 +246,8 @@ img {
     font-weight: 800; /* extrabold */
     letter-spacing: 0.025em; /* tracking-wide */
     border-radius: 1px;
+    width: auto;
+    align-self: flex-start;
 }
 
 .btn-primary {
@@ -117,12 +261,12 @@ img {
     color: #ffffff;
 }
 
-.btn-primary-white {
+.btn-primary-white, .btn-ghost {
     border-color: #ffffff;
     color: #ffffff;
 }
 
-.btn-primary-white:hover {
+.btn-primary-white:hover, .btn-ghost:hover {
     border-color: #db9f1b;
     background-color: #db9f1b;
     color: #ffffff;
@@ -274,7 +418,7 @@ span.pill-dark-bg {
     cursor: default;
 }
 span.pill-dark-bg:hover {
-    background: #fff7e6 !important;
+    background: #ffffff !important;
     color: #1a3528 !important;
     box-shadow: 0 4px 16px rgba(255, 247, 230, 0.30);
 }
@@ -546,11 +690,11 @@ div[onmouseenter][style*="background:#1a3528"] {
             @apply transition-all duration-150 inline-flex items-center;
         }
         #site-header nav a:hover {
-            color: #fff7e6;
+            color: #ffffff;
             transform: scale(1.08);
         }
         #site-header.scrolled nav a:hover {
-            color: #fff7e6;
+            color: #ffffff;
         }
     
         .font-signature { font-family: var(--font-signature); }
@@ -598,17 +742,17 @@ div[onmouseenter][style*="background:#1a3528"] {
             @apply transition-all duration-150 inline-flex items-center;
         }
         #site-header nav a:hover {
-            color: #fff7e6;
+            color: #ffffff;
             transform: scale(1.10);
         }
 
         #site-header.scrolled nav a:hover {
-            color: #fff7e6;
+            color: #ffffff;
             transform: scale(1.10);
         }
 
         #site-header.scrolled #menuBtn:hover {
-            color: #fff7e6;
+            color: #ffffff;
         }
 
         /* --- LOGO SWAP LOGIC --- */

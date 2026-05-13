@@ -79,7 +79,6 @@ html = """
                     </span>
                     <h1 class="group font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#141229] leading-tight flex flex-col items-center cursor-default w-full">
                         Green Seasons Gallery
-                        <span class="block w-12 md:w-16 h-0.5 md:h-[2px] bg-[#d49813] mt-4 lg:mt-6 rounded-full transition-all duration-300 ease-in-out group-hover:w-24 md:group-hover:w-32 group-hover:bg-[#d49813]/80"></span>
                     </h1>
                     <p class="font-body text-lg lg:text-xl mt-8 max-w-3xl mx-auto leading-relaxed" style="color:rgba(20,18,41,0.68);">
                         Explore our recent grounds and garden maintenance projects across South Oxfordshire. From lawn renovations to full site clearances, see the quality of our work.

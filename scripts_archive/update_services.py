@@ -84,7 +84,6 @@ hero_html = """
                     </span>
                     <h1 class="group font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#141229] leading-tight flex flex-col items-center cursor-default w-full">
                         Everything Your Outdoor Space Needs
-                        <span class="block w-12 md:w-16 h-0.5 md:h-[2px] bg-[#eab308] mt-4 lg:mt-6 rounded-full transition-all duration-300 ease-in-out group-hover:w-24 md:group-hover:w-32 group-hover:bg-[#eab308]/80"></span>
                     </h1>
                     <p class="font-body text-lg lg:text-xl mt-8 max-w-3xl mx-auto leading-relaxed" style="color:rgba(20,18,41,0.68);">
                         At Green Seasons we provide professional grounds and garden maintenance tailored to commercial and residential clients — helping protect and enhance the value of your property.
@@ -144,7 +143,6 @@ sectors_html = f"""
                 <div class="text-center mb-16 reveal reveal-up flex flex-col items-center">
                     <h2 class="group font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-[#141229] leading-tight flex flex-col items-center cursor-default w-full">
                         Who We Serve
-                        <span class="block w-12 md:w-16 h-0.5 md:h-[2px] bg-[#eab308] mt-4 lg:mt-6 rounded-full transition-all duration-300 ease-in-out group-hover:w-24 md:group-hover:w-32 group-hover:bg-[#eab308]/80"></span>
                     </h2>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 reveal reveal-up" style="transition-delay: 100ms;">

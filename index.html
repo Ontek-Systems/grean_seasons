@@ -1120,19 +1120,12 @@
 
  
  
+ 
  <!-- -------------------------------------------------- -------------------------------------------------- 
  PROCESS SECTION
  -------------------------------------------------- -------------------------------------------------- -->
  <section id="process-section" class="relative py-24 md:py-32 bg-white overflow-hidden">
  
- <!-- Vertical scroll lines on sides -->
- <div class="absolute top-0 bottom-0 left-4 md:left-12 w-[1px] bg-[#fdfbf7] z-0 overflow-hidden hidden sm:block">
- <div class="scroll-line-gold absolute top-0 left-0 w-full bg-[#db9f1b] origin-top" style="height: 100%; transform: scaleY(0);"></div>
- </div>
- <div class="absolute top-0 bottom-0 right-4 md:right-12 w-[1px] bg-[#fdfbf7] z-0 overflow-hidden hidden sm:block">
- <div class="scroll-line-gold absolute top-0 left-0 w-full bg-[#db9f1b] origin-top" style="height: 100%; transform: scaleY(0);"></div>
- </div>
-
  <style>
  .reveal-far-left { transform: translateX(-150px); opacity: 0; transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
  .reveal-far-right { transform: translateX(150px); opacity: 0; transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -1146,60 +1139,67 @@
  </style>
 
  <div class="relative z-10 w-full max-w-[96rem] mx-auto px-8 sm:px-16 lg:px-20">
-
- <!-- Title Section -->
- <div class="flex flex-col items-center text-center mb-24 lg:mb-32 reveal w-full">
+ <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start w-full">
+ 
+ <!-- LEFT: Sticky Title Panel -->
+ <div class="w-full lg:w-[45%] lg:sticky lg:top-[30vh] self-start flex flex-col items-start text-left reveal">
  <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-[#1a3528] hover:text-[#db9f1b] transition-colors duration-300" style="transition-delay: 50ms;">
  <span class="border-b-[1.5px] border-current pb-0.5">13</span>
  </span>
- <h2 class="group font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#1a3528] leading-[1.15] flex flex-col items-center text-center cursor-default w-full hover:text-[#db9f1b] transition-colors duration-500">
- <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
+ <h2 class="group font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#1a3528] leading-[1.15] mb-[22px] cursor-default flex flex-col items-start w-full hover:text-[#db9f1b] transition-colors duration-500">
+ <span class="flex flex-wrap justify-start gap-x-3 lg:gap-x-4 leading-tight">
  <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">How</span></span>
  <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">We</span></span>
  <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Work</span></span>
  </span>
  </h2>
+ <p class="title-underline-anim font-body text-base sm:text-lg text-[#1a3528]/80 leading-relaxed mb-10 max-w-md" style="animation-delay: 400ms;">
+ Once you reach out to us, our process is designed to be completely straightforward, transparent, and built around delivering the highest standard of service for your outdoor space.
+ </p>
+ <div class="title-underline-anim" style="animation-delay: 500ms;">
+ <a href="pages/contact.html" class="btn-adaptive">Request a Quote</a>
+ </div>
  </div>
 
- <!-- Steps -->
- <div class="flex flex-col gap-24 md:gap-32 max-w-4xl mx-auto">
+ <!-- RIGHT: Scrolling Steps -->
+ <div class="w-full lg:w-[55%] flex flex-col gap-24 md:gap-32">
  
- <!-- Step 1 (From Left) -->
- <div class="reveal reveal-far-left flex flex-col items-center text-center gap-4">
+ <!-- Step 1 -->
+ <div class="reveal reveal-far-left flex flex-col items-start text-left gap-4">
  <h3 class="font-heading font-bold text-3xl md:text-4xl text-[#1a3528] mb-2 flex items-center gap-3">
  <span class="text-[#db9f1b]">01</span> Initial Enquiry
  </h3>
- <p class="font-body text-[#1a3528]/80 text-lg md:text-xl leading-relaxed max-w-2xl">
+ <p class="font-body text-[#1a3528]/80 text-lg md:text-xl leading-relaxed">
  Reach out to us by phone or email to discuss the specific needs and vision you have for your outdoor space. Tim will personally get back to you to arrange a completely free and no obligation site visit at a time that works best for your schedule.
  </p>
  </div>
 
- <!-- Step 2 (From Right) -->
- <div class="reveal reveal-far-right flex flex-col items-center text-center gap-4">
+ <!-- Step 2 -->
+ <div class="reveal reveal-far-right flex flex-col items-start text-left gap-4">
  <h3 class="font-heading font-bold text-3xl md:text-4xl text-[#1a3528] mb-2 flex items-center gap-3">
  <span class="text-[#db9f1b]">02</span> Free Site Assessment
  </h3>
- <p class="font-body text-[#1a3528]/80 text-lg md:text-xl leading-relaxed max-w-2xl">
+ <p class="font-body text-[#1a3528]/80 text-lg md:text-xl leading-relaxed">
  During the site assessment, Tim will carefully walk through your property to evaluate the current condition of your garden or grounds. This allows us to fully understand the necessary scope of work, discuss your specific requirements in absolute detail, and provide expert recommendations.
  </p>
  </div>
 
- <!-- Step 3 (From Left) -->
- <div class="reveal reveal-far-left flex flex-col items-center text-center gap-4">
+ <!-- Step 3 -->
+ <div class="reveal reveal-far-left flex flex-col items-start text-left gap-4">
  <h3 class="font-heading font-bold text-3xl md:text-4xl text-[#1a3528] mb-2 flex items-center gap-3">
  <span class="text-[#db9f1b]">03</span> Clear, Fair Quote
  </h3>
- <p class="font-body text-[#1a3528]/80 text-lg md:text-xl leading-relaxed max-w-2xl">
+ <p class="font-body text-[#1a3528]/80 text-lg md:text-xl leading-relaxed">
  Following the assessment, we will provide you with a comprehensive, clear, and perfectly fair quotation that covers every aspect of the agreed upon works. You will never encounter any hidden charges or unexpected fees, just straightforward and transparent pricing from start to finish.
  </p>
  </div>
 
- <!-- Step 4 (From Right) -->
- <div class="reveal reveal-far-right flex flex-col items-center text-center gap-4">
+ <!-- Step 4 -->
+ <div class="reveal reveal-far-right flex flex-col items-start text-left gap-4">
  <h3 class="font-heading font-bold text-3xl md:text-4xl text-[#1a3528] mb-2 flex items-center gap-3">
  <span class="text-[#db9f1b]">04</span> Professional Results
  </h3>
- <p class="font-body text-[#1a3528]/80 text-lg md:text-xl leading-relaxed max-w-2xl">
+ <p class="font-body text-[#1a3528]/80 text-lg md:text-xl leading-relaxed">
  Once the project begins, you can always expect highly punctual and deeply professional service on every single visit. We pride ourselves on ensuring that consistently high standards are maintained throughout the entire duration of your maintenance contract.
  </p>
  </div>
@@ -1207,37 +1207,7 @@
  </div>
 
  </div>
-
- <script>
- document.addEventListener('DOMContentLoaded', () => {
- const processSection = document.getElementById('process-section');
- const goldLines = processSection.querySelectorAll('.scroll-line-gold');
- 
- window.addEventListener('scroll', () => {
- const rect = processSection.getBoundingClientRect();
- const windowHeight = window.innerHeight;
- 
- // Calculate how far through the section we have scrolled
- // 0 when top of section enters bottom of viewport
- // 1 when bottom of section enters top of viewport (or similar logic)
- 
- const scrollStart = rect.top - windowHeight;
- const scrollEnd = rect.bottom;
- const totalScroll = rect.height + windowHeight;
- 
- let progress = 0;
- if (scrollStart < 0) {
- progress = Math.abs(scrollStart) / totalScroll;
- // Ensure progress is clamped and maybe scale it to feel right
- progress = Math.min(Math.max(progress * 1.5, 0), 1); 
- }
- 
- goldLines.forEach(line => {
- line.style.transform = `scaleY(${progress})`;
- });
- });
- });
- </script>
+ </div>
  </section>
 
  <!-- -------------------------------------------------- -------------------------------------------------- 

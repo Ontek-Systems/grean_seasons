@@ -1287,11 +1287,32 @@
 
 
  
+ 
  <!-- -------------------------------------------------- -------------------------------------------------- 
  REVIEWS SECTION
  -------------------------------------------------- -------------------------------------------------- -->
  <section id="testimonials" class="relative py-24 md:py-32 overflow-hidden bg-white">
  
+ <style>
+ .rv-scroll-outer {
+ overflow: hidden;
+ display: flex;
+ width: 100%;
+ }
+ .rv-scroll-track {
+ display: flex;
+ width: max-content;
+ animation: scrollReviews 50s linear infinite;
+ }
+ .rv-scroll-outer:hover .rv-scroll-track {
+ animation-play-state: paused;
+ }
+ @keyframes scrollReviews {
+ 0% { transform: translateX(0); }
+ 100% { transform: translateX(-50%); }
+ }
+ </style>
+
  <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
  <div class="flex flex-col items-center text-center mb-16 lg:mb-20 reveal w-full">
  <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-[#1a3528] hover:text-[#db9f1b] transition-colors duration-300" style="transition-delay: 50ms;">
@@ -1310,182 +1331,316 @@
  Don't just take our word for it. Here's what our clients across Oxfordshire say about the Green Seasons service and the transformations we deliver.
  </p>
  </div>
+ </div>
+
+ <div class="relative reveal reveal-up mt-8 md:mt-12">
+ <div class="rv-scroll-outer py-4">
+ <div class="rv-scroll-track items-stretch">
  
- <!-- Minimalist 3-Card Carousel -->
- <div class="relative w-full max-w-[1200px] mx-auto reveal reveal-up flex flex-col items-center justify-center">
-     <!-- Navigation Arrows -->
-     <button id="carousel-prev" class="absolute left-0 md:-left-8 top-1/2 -translate-y-1/2 z-30 p-2 sm:p-3 text-[#1a3528]/40 hover:text-[#1a3528] transition-colors bg-white rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-[#1a3528]/5">
-         <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"></path></svg>
-     </button>
-     
-     <button id="carousel-next" class="absolute right-0 md:-right-8 top-1/2 -translate-y-1/2 z-30 p-2 sm:p-3 text-[#1a3528]/40 hover:text-[#1a3528] transition-colors bg-white rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-[#1a3528]/5">
-         <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path></svg>
-     </button>
-
-     <!-- Track -->
-     <div class="relative w-full h-[400px] sm:h-[350px] overflow-hidden md:overflow-visible perspective-[1000px] flex items-center justify-center">
-         <div id="carousel-track" class="relative w-full max-w-[600px] h-full flex items-center justify-center transition-transform duration-700 ease-in-out transform-style-preserve-3d">
-             <!-- Cards injected via JS -->
-         </div>
-     </div>
-
-     <!-- Indicators -->
-     <div id="carousel-dots" class="mt-10 flex items-center justify-center gap-3">
-         <!-- Dots injected via JS -->
-     </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Tim went above and beyond with our full lawn renovation. The before and after comparison is truly remarkable.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Andrew H., Abingdon</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
  </div>
  </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Very professional and thorough. Our lawn has never looked better since Green Seasons took over the maintenance.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Sarah M., Oxfordshire</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Outstanding grounds maintenance for our business park. Always presentable and professional every single visit.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">David K., Wantage</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Green Seasons took on our long-neglected grounds and had them looking superb within a single visit. Exceptional work.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Rachel P., Faringdon</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ We've used Green Seasons for seasonal treatments and lawn care programmes, the improvement has been remarkable.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Claire S., Didcot</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Cleared our completely neglected garden in a single day. Superb work ethic and a fantastic end result.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Tom W., Grove</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Green Seasons are our go-to for all garden maintenance. Highly professional, trustworthy, and great value.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Emma L., Steventon</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Punctual, pleasant to deal with, and the quality of work is second to none. Very happy customer!
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Jenny C., Oxfordshire</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Brilliant service all round, the garden looks amazing. Would recommend to anyone in Oxfordshire.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Lisa F., Wantage</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Brilliant end-to-end service. The garden looks absolutely stunning now. Would recommend Green Seasons to anyone.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Natasha L., Abingdon</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Tim went above and beyond with our full lawn renovation. The before and after comparison is truly remarkable.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Andrew H., Abingdon</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Very professional and thorough. Our lawn has never looked better since Green Seasons took over the maintenance.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Sarah M., Oxfordshire</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Outstanding grounds maintenance for our business park. Always presentable and professional every single visit.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">David K., Wantage</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Green Seasons took on our long-neglected grounds and had them looking superb within a single visit. Exceptional work.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Rachel P., Faringdon</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ We've used Green Seasons for seasonal treatments and lawn care programmes, the improvement has been remarkable.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Claire S., Didcot</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Cleared our completely neglected garden in a single day. Superb work ethic and a fantastic end result.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Tom W., Grove</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Green Seasons are our go-to for all garden maintenance. Highly professional, trustworthy, and great value.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Emma L., Steventon</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Punctual, pleasant to deal with, and the quality of work is second to none. Very happy customer!
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Jenny C., Oxfordshire</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Brilliant service all round, the garden looks amazing. Would recommend to anyone in Oxfordshire.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Lisa F., Wantage</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] px-8 sm:px-12 flex flex-col justify-between border-r border-[#1a3528]/10 group transition-opacity duration-300 hover:opacity-100">
+ <div>
+ <div class="flex items-center gap-1 mb-6">
+ <span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span><span class="text-[#db9f1b] text-base">&#9733;</span>
+ </div>
+ <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
+ <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
+ Brilliant end-to-end service. The garden looks absolutely stunning now. Would recommend Green Seasons to anyone.
+ </p>
+ </div>
+ <div class="mt-auto flex items-end justify-between pt-5">
+ <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">Natasha L., Abingdon</p>
+ <svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
 
- <script>
- const reviews = [
-    { stars: 5, quote: "Tim went above and beyond with our full lawn renovation. The before and after comparison is truly remarkable.", name: "Andrew H., Abingdon", source: "google" },
-    { stars: 5, quote: "Very professional and thorough. Our lawn has never looked better since Green Seasons took over the maintenance.", name: "Sarah M., Oxfordshire", source: "google" },
-    { stars: 5, quote: "Outstanding grounds maintenance for our business park. Always presentable and professional every single visit.", name: "David K., Wantage", source: "facebook" },
-    { stars: 5, quote: "Green Seasons took on our long-neglected grounds and had them looking superb within a single visit. Exceptional work.", name: "Rachel P., Faringdon", source: "google" },
-    { stars: 5, quote: "We've used Green Seasons for seasonal treatments and lawn care programmes, the improvement has been remarkable.", name: "Claire S., Didcot", source: "google" },
-    { stars: 5, quote: "Cleared our completely neglected garden in a single day. Superb work ethic and a fantastic end result.", name: "Tom W., Grove", source: "facebook" },
-    { stars: 5, quote: "Green Seasons are our go-to for all garden maintenance. Highly professional, trustworthy, and great value.", name: "Emma L., Steventon", source: "google" },
-    { stars: 5, quote: "Punctual, pleasant to deal with, and the quality of work is second to none. Very happy customer!", name: "Jenny C., Oxfordshire", source: "facebook" },
-    { stars: 5, quote: "Brilliant service all round, the garden looks amazing. Would recommend to anyone in Oxfordshire.", name: "Lisa F., Wantage", source: "facebook" },
-    { stars: 5, quote: "Brilliant end-to-end service. The garden looks absolutely stunning now. Would recommend Green Seasons to anyone.", name: "Natasha L., Abingdon", source: "google" }
- ];
-
- document.addEventListener('DOMContentLoaded', () => {
-     const track = document.getElementById('carousel-track');
-     const dotsContainer = document.getElementById('carousel-dots');
-     const prevBtn = document.getElementById('carousel-prev');
-     const nextBtn = document.getElementById('carousel-next');
-     
-     const icons = {
-         google: `<svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>`,
-         facebook: `<svg class="w-5 h-5 opacity-40 grayscale" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>`
-     };
-
-     let currentIndex = 0;
-     let autoAdvanceInterval;
-
-     // Initialize Cards
-     reviews.forEach((review, index) => {
-         const card = document.createElement('div');
-         card.className = `absolute top-1/2 left-1/2 w-full max-w-[340px] sm:max-w-[500px] bg-white border border-[#1a3528]/10 rounded-2xl p-8 sm:p-10 flex flex-col justify-center transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer carousel-card`;
-         card.style.transform = `translate(-50%, -50%)`;
-         card.style.boxShadow = `0 4px 24px rgba(0,0,0,0.02)`;
-         card.dataset.index = index;
-
-         const starsHTML = Array(review.stars).fill(`<span class="text-[#db9f1b] text-base">&#9733;</span>`).join('');
-         
-         card.innerHTML = `
-             <div class="flex items-center gap-1 mb-6">${starsHTML}</div>
-             <p class="font-body text-lg sm:text-xl italic text-[#1a3528]/80 leading-[1.7] mb-8 relative">
-                 <span class="absolute -left-2 sm:-left-3 -top-2 text-4xl text-[#1a3528]/10 font-serif leading-none">"</span>
-                 ${review.quote}
-             </p>
-             <div class="mt-auto flex items-end justify-between border-t border-[#1a3528]/5 pt-5">
-                 <p class="font-body font-medium text-sm sm:text-base text-[#1a3528]">${review.name}</p>
-                 ${icons[review.source] || ''}
-             </div>
-         `;
-         
-         card.addEventListener('click', () => {
-             if (index !== currentIndex) {
-                 goTo(index);
-             }
-         });
-         
-         track.appendChild(card);
-
-         // Indicator dot
-         const dot = document.createElement('button');
-         dot.className = `w-2 h-2 rounded-full transition-all duration-300 border border-[#1a3528]/40`;
-         dot.dataset.index = index;
-         dot.addEventListener('click', () => goTo(index));
-         dotsContainer.appendChild(dot);
-     });
-
-     const cards = document.querySelectorAll('.carousel-card');
-     const dots = dotsContainer.querySelectorAll('button');
-
-     function updateCarousel() {
-         const total = reviews.length;
-         
-         cards.forEach((card, i) => {
-             card.classList.remove('z-20', 'z-10', 'z-0');
-             card.style.opacity = '0';
-             card.style.pointerEvents = 'none';
-
-             let diff = i - currentIndex;
-             if (diff > total / 2) diff -= total;
-             if (diff < -total / 2) diff += total;
-
-             if (diff === 0) {
-                 // Center
-                 card.style.transform = `translate(-50%, -50%) scale(1)`;
-                 card.style.opacity = '1';
-                 card.classList.add('z-20');
-                 card.style.pointerEvents = 'auto';
-             } else if (diff === 1) {
-                 // Right
-                 card.style.transform = `translate(min(30%, 150px), -50%) scale(0.85)`;
-                 card.style.opacity = window.innerWidth < 768 ? '0' : '0.4';
-                 card.classList.add('z-10');
-                 if (window.innerWidth >= 768) card.style.pointerEvents = 'auto';
-             } else if (diff === -1) {
-                 // Left
-                 card.style.transform = `translate(max(-130%, -350px), -50%) scale(0.85)`;
-                 card.style.opacity = window.innerWidth < 768 ? '0' : '0.4';
-                 card.classList.add('z-10');
-                 if (window.innerWidth >= 768) card.style.pointerEvents = 'auto';
-             } else {
-                 // Hidden
-                 card.style.transform = `translate(-50%, -50%) scale(0.7)`;
-                 card.classList.add('z-0');
-             }
-         });
-
-         dots.forEach((dot, i) => {
-             if (i === currentIndex) {
-                 dot.classList.add('bg-[#1a3528]', 'w-6');
-                 dot.classList.remove('bg-transparent', 'w-2');
-             } else {
-                 dot.classList.remove('bg-[#1a3528]', 'w-6');
-                 dot.classList.add('bg-transparent', 'w-2');
-             }
-         });
-     }
-
-     function goTo(index) {
-         currentIndex = (index + reviews.length) % reviews.length;
-         updateCarousel();
-         resetInterval();
-     }
-
-     function next() { goTo(currentIndex + 1); }
-     function prev() { goTo(currentIndex - 1); }
-
-     prevBtn.addEventListener('click', prev);
-     nextBtn.addEventListener('click', next);
-
-     function startInterval() {
-         autoAdvanceInterval = setInterval(next, 6000);
-     }
-
-     function resetInterval() {
-         clearInterval(autoAdvanceInterval);
-         startInterval();
-     }
-
-     // Pause on hover
-     track.addEventListener('mouseenter', () => clearInterval(autoAdvanceInterval));
-     track.addEventListener('mouseleave', startInterval);
-     
-     // Handle resize for mobile visibility
-     window.addEventListener('resize', updateCarousel);
-
-     // Init
-     updateCarousel();
-     startInterval();
- });
- </script>
  </section>
 
  <!-- Review Request / QR -->

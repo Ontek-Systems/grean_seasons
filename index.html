@@ -419,8 +419,9 @@
 <!-- -------------------------------------------------- -------------------------------------------------- 
  ABOUT / TRUST SECTION (DUAL PARALLAX LAYOUT)
  -------------------------------------------------- -------------------------------------------------- -->
- <section id="about-parallax-section" class="relative py-24 lg:py-32 flex flex-col items-center justify-center overflow-hidden"
- style="background:#ffffff;">
+ <section id="about-parallax-section"
+            class="relative py-16 lg:py-24 flex flex-col items-center justify-center overflow-hidden"
+            style="background:#ffffff;">
  
  <style>
  /* Premium Word Mask Animation */
@@ -461,11 +462,32 @@
  }
  </style>
 
+            <!-- Back/Right Image spanning full section height on the right, bleeding to edges -->
+            <div class="absolute right-0 top-0 bottom-0 w-full lg:w-[40vw] overflow-hidden z-0">
+                <div class="absolute inset-0 bg-white/80 lg:bg-transparent z-10 pointer-events-none"></div>
+                <img src="assets/imgs/service_imgs/Routine%20Grass%20Cutting/Routine_Grass_Cutting_1.jpeg"
+                    alt="Professional grounds maintenance by Tim Harris" loading="lazy"
+                    class="w-full h-full object-cover"
+                    style="--img-saturate: 1.20; --img-brightness: 1.10;">
+            </div>
+
+            <!-- Front Image (Desktop Absolute, Centered on Break Line) -->
+            <div class="hidden lg:flex absolute top-1/2 -translate-y-1/2 right-[40vw] translate-x-1/2 z-10 w-[22vw] xl:w-[20vw] h-[365px] xl:h-[418px] items-center justify-center overflow-hidden will-change-transform" data-speed="0.3">
+                <div
+                    class="js-parallax-fast relative w-full h-full overflow-hidden shadow-2xl shadow-black/50 will-change-transform z-10" data-speed="0.3">
+                    <img src="assets/imgs/service_imgs/Custom%20Planting%20Schemes/Custom_Planting_Schemes_4.jpeg"
+                        alt="High-standard garden care in South Oxfordshire" loading="lazy"
+                        class="w-full h-full object-cover scale-[1.15]"
+                        style="--img-saturate: 1.25; --img-brightness: 1.10;">
+                </div>
+            </div>
+
  <div
  class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
  <!-- Left Column: Text & Stats -->
- <div class="w-full lg:w-5/12 flex flex-col items-center text-center lg:items-start lg:text-left reveal z-20">
+                <div
+                    class="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left reveal z-20">
 
  <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-[#1a3528] hover:text-[#db9f1b] transition-colors duration-300" style="transition-delay: 50ms;">
                             <span class="border-b-[1.5px] border-current pb-0.5">01</span>
@@ -483,7 +505,7 @@
  
  <!-- Underline --></h2>
 
- <div class="title-underline-anim font-body text-base sm:text-lg text-[#1a3528]/80 leading-relaxed space-y-5 mb-8 w-full max-w-xl mx-auto lg:mx-0" style="animation-delay: 700ms;">
+ <div class="title-underline-anim font-body text-base sm:text-lg text-[#1a3528]/80 leading-relaxed space-y-5 mb-7 w-full max-w-lg mx-auto lg:mx-0" style="animation-delay: 700ms;">
  <p>
  Green Seasons is run by Tim Harris, a second-generation gardener with a deep horticultural background and years of hands-on experience. Based in Kingston Bagpuize, we serve private estates, housing developments, business parks, and local authority spaces across South Oxfordshire.
  </p>
@@ -496,24 +518,27 @@
  <div id="about-stats"
  class="title-underline-anim flex flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-10 lg:gap-12 mb-8 w-full max-w-lg mx-auto lg:mx-0" style="animation-delay: 800ms;">
  <div class="group flex flex-col items-center lg:items-start cursor-default">
- <p class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-black transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#db9f1b] whitespace-nowrap">
+                            <p
+                                class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-[#1a3528] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#db9f1b] whitespace-nowrap">
  <span class="auto-counter" data-target="8">0</span>+
  </p>
- <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-black/60">
+                            <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-[#1a3528]/60">
  Years Exp.</p>
  </div>
  <div class="group flex flex-col items-center lg:items-start cursor-default">
- <p class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-black transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#db9f1b] whitespace-nowrap">
+                            <p
+                                class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-[#1a3528] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#db9f1b] whitespace-nowrap">
  5-Star
  </p>
- <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-black/60">
+                            <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-[#1a3528]/60">
  Google Rating</p>
  </div>
  <div class="group flex flex-col items-center lg:items-start cursor-default">
- <p class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-black transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#db9f1b] whitespace-nowrap">
+                            <p
+                                class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-[#1a3528] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#db9f1b] whitespace-nowrap">
  <span class="auto-counter" data-target="100">0</span>%
  </p>
- <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-black/60">
+                            <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-[#1a3528]/60">
  Owner-Led</p>
  </div>
  </div>
@@ -524,31 +549,15 @@
 
  </div>
 
- <!-- Right Column: Dual Parallax Images (Squared & Scaled Up) -->
- <!-- Container height vastly increased to let the sharp rectangles breathe -->
- <div class="w-full lg:w-7/12 relative h-[500px] sm:h-[700px] lg:h-[850px] mt-12 lg:mt-0 z-10 reveal reveal-up delay-100">
- 
- <!-- Image 1: Back/Right (Pans UP as you scroll down) -->
- <!-- Removed border-radius, increased width/height -->
- <div class="js-parallax-up absolute right-0 top-0 w-[85%] h-[85%] overflow-hidden shadow-2xl will-change-transform z-0">
- <div class="absolute inset-0 bg-[#668e78]/10 mix-blend-multiply z-10 pointer-events-none"></div>
- <img src="assets/imgs/service_imgs/Routine%20Grass%20Cutting/Routine_Grass_Cutting_1.jpeg"
- alt="Professional grounds maintenance by Tim Harris" loading="lazy"
- class="w-full h-full object-cover scale-[1.15]"
- style="--img-saturate: 1.15;">
- </div>
-
- <!-- Image 2: Front/Left (Pans DOWN as you scroll down) -->
- <!-- Removed border, removed border-radius, increased width/height -->
- <div class="js-parallax-down absolute left-0 bottom-0 w-[70%] h-[75%] overflow-hidden shadow-2xl will-change-transform z-10">
- <div class="absolute inset-0 bg-[#668e78]/10 mix-blend-multiply z-10 pointer-events-none"></div>
- <img src="assets/imgs/service_imgs/Custom%20Planting%20Schemes/Custom_Planting_Schemes_4.jpeg"
- alt="High-standard garden care in South Oxfordshire" loading="lazy"
- class="w-full h-full object-cover scale-[1.15]"
- style="--img-saturate: 1.25;">
- </div>
-
- </div>
+            <!-- Mobile Front Image (only visible on smaller screens) -->
+            <div class="lg:hidden w-full relative h-[400px] sm:h-[500px] mt-8 reveal reveal-up delay-100">
+                <div class="w-full h-full overflow-hidden shadow-2xl">
+                    <img src="assets/imgs/service_imgs/Custom%20Planting%20Schemes/Custom_Planting_Schemes_4.jpeg"
+                        alt="High-standard garden care in South Oxfordshire" loading="lazy"
+                        class="w-full h-full object-cover scale-[1.15]"
+                        style="--img-saturate: 1.25; --img-brightness: 1.10;">
+                </div>
+            </div>
 
  </div>
 
@@ -556,10 +565,9 @@
  <script>
  document.addEventListener('DOMContentLoaded', () => {
  const section = document.getElementById('about-parallax-section');
- const imgUp = document.querySelector('.js-parallax-up');
- const imgDown = document.querySelector('.js-parallax-down');
+            const frontImg = document.querySelector('.js-parallax-fast');
 
- if (!section || !imgUp || !imgDown || window.innerWidth < 1024) return;
+            if (!section || !frontImg || window.innerWidth < 1024) return;
 
  let ticking = false;
 
@@ -569,13 +577,10 @@
  const sectionCenter = rect.top + (rect.height / 2);
  
  const offset = sectionCenter - viewportCenter;
+                const speed = parseFloat(frontImg.dataset.speed) || 0.3;
+                const yFront = offset * -speed;
 
- // Panning speeds
- const yUp = offset * -0.20; 
- const yDown = offset * 0.20;
-
- imgUp.style.transform = `translate3d(0, ${yUp}px, 0)`;
- imgDown.style.transform = `translate3d(0, ${yDown}px, 0)`;
+                frontImg.style.transform = `translate3d(0, ${yFront}px, 0)`;
  
  ticking = false;
  };

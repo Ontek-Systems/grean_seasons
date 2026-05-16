@@ -1,760 +1,457 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Our Services | Green Seasons - Professional Grounds & Garden Maintenance</title>
+    <title>Our Services | Green Seasons – Professional Grounds & Garden Maintenance</title>
     <meta name="description" content="Green Seasons offers 23 professional grounds and garden maintenance services across Oxfordshire, including lawn care, hedge cutting, weed control, planting, and site clearance. Owner-led and fully insured." />
-    <link rel="canonical" href="https://www.greenseasons.co.uk/services.html" />
-
+    <link rel="canonical" href="https://www.green-seasons.co.uk/pages/services.html" />
     <meta property="og:title" content="Our Services | Green Seasons" />
-    <meta property="og:description" content="Green Seasons offers 23 professional grounds and garden maintenance services across Oxfordshire, including lawn care, hedge cutting, weed control, planting, and site clearance. Owner-led and fully insured." />
+    <meta property="og:description" content="Explore our full range of professional garden and grounds maintenance services across Oxfordshire." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.greenseasons.co.uk/services.html" />
-    <meta property="og:image" content="https://www.greenseasons.co.uk/assets/imgs/og-image.jpg" />
-
+    <meta property="og:image" content="https://www.green-seasons.co.uk/assets/imgs/og-image.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Our Services | Green Seasons" />
-    <meta name="twitter:description" content="Green Seasons offers 23 professional grounds and garden maintenance services across Oxfordshire, including lawn care, hedge cutting, weed control, planting, and site clearance. Owner-led and fully insured." />
-    <meta name="twitter:image" content="https://www.greenseasons.co.uk/assets/imgs/og-image.jpg" />
+    <meta name="twitter:description" content="Explore our full range of professional garden and grounds maintenance services across Oxfordshire." />
 
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="manifest" href="../site.webmanifest">
     <link rel="shortcut icon" href="../favicon.ico">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-
     <link rel="stylesheet" href="../style.css">
     <style type="text/tailwindcss">
         @theme {
             --color-brand-dark:   #668e78;
             --color-brand-ocean:  #668e78;
-            --color-brand-bronze: #825c3e;
+            --color-brand-bronze: #d49813;
             --color-brand-alice:  #ffffff;
             --color-brand-beige:  #ffffff;
             --color-brand-text:   #1a3528;
             --font-heading: 'Marcus Traianus', 'Cinzel', Georgia, serif;
             --font-body:    'DM Sans', sans-serif;
         }
+        .btn-primary {
+            background-color: #db9f1b !important;
+            color: #ffffff !important;
+            border-color: transparent !important;
+        }
+        .btn-primary:hover {
+            background-color: #668e78 !important;
+            color: #ffffff !important;
+        }
+        .btn-ghost {
+            background-color: rgba(0,0,0,0.25) !important;
+            color: #ffffff !important;
+            border-color: rgba(255,255,255,0.6) !important;
+        }
+        .btn-ghost:hover {
+            background-color: #db9f1b !important;
+            border-color: #db9f1b !important;
+            color: #ffffff !important;
+        }
     </style>
     <style>
-        /* Word-mask entrance animation */
-        .word-mask {
-            display: inline-block;
-            overflow: hidden;
-            vertical-align: bottom;
-            padding-bottom: 0.15em;
-            margin-bottom: -0.15em;
-        }
-        .word-mask-inner {
-            display: inline-block;
-            transform: translateY(110%);
-            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-            will-change: transform;
-        }
-        .reveal.active .word-mask-inner {
-            transform: translateY(0);
-        }
-        /* Title underline fade-up */
-        .title-underline-anim {
-            opacity: 0;
-        }
-        .reveal.active .title-underline-anim {
-            animation: revealUnderline 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 500ms forwards;
-        }
-        @keyframes revealUnderline {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        /* Square editorial overrides */
-        .btn-bubble,
-        .btn-bubble-fill,
-        .btn-bubble-icon-container { border-radius: 0 !important; }
+        .word-mask { display:inline-block; overflow:hidden; vertical-align:bottom; padding-bottom:0.15em; margin-bottom:-0.15em; }
+        .word-mask-inner { display:inline-block; transform:translateY(110%); transition:transform 0.8s cubic-bezier(0.2,0.8,0.2,1); will-change:transform; }
+        .reveal.active .word-mask-inner { transform:translateY(0); }
+        .title-underline-anim { opacity:0; }
+        .reveal.active .title-underline-anim { animation:revealUnderline 0.8s cubic-bezier(0.2,0.8,0.2,1) 500ms forwards; }
+        @keyframes revealUnderline { from {opacity:0;transform:translateY(20px)} to {opacity:1;transform:translateY(0)} }
+        @keyframes scrollBanner { 0% {transform:translateX(0)} 100% {transform:translateX(-50%)} }
+        /* Ken Burns */
+        .hero-zoom-slide { opacity:0; transform:scale(1); transition:opacity 1.5s ease-in-out, transform 15s linear; will-change:transform,opacity; position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+        .hero-zoom-slide.active { opacity:1; transform:scale(1.12); }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="flex flex-col min-h-screen antialiased">
 
     <div id="header-placeholder"></div>
 
-    <main>
+    <main class="flex-grow">
 
-        <!-- ══════════════════════════════════════════════════════
-             HERO SECTION (DARK)
-        ══════════════════════════════════════════════════════ -->
-        <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 flex items-center justify-center overflow-hidden"
-            style="background:#668e78;">
-            <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20 text-center text-white reveal flex flex-col items-center">
-
-                <!-- Pill -->
-                <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-white/80 hover:text-white transition-colors duration-300" style="transition-delay: 50ms;">
-                            <span class="border-b-[1.5px] border-current pb-0.5">01</span>
-                        </span>
-
-                <!-- Animated heading -->
-                <h1 class="group font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight flex flex-col items-center cursor-default" style="color:#ffffff;">
-                    <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
-                        <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Expert</span></span>
-                        <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Care</span></span>
-                        <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">for</span></span>
-                        <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">Every</span></span>
-                        <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 500ms;">Detail</span></span>
-                    </span>
-                </h1>
-
-                <!-- Subtitle -->
-                <p class="title-underline-anim font-body text-lg lg:text-xl mt-8 max-w-3xl mx-auto leading-relaxed text-white/70" style="animation-delay: 600ms;">
-                    Explore our comprehensive range of 23 professional grounds and garden services, each delivered with precision and expertise.
-                </p>
-
-            </div>
+        <!-- ══ PAGE HEADER ══ -->
+        <section style="background:#668e78;" class="pt-40 pb-14 text-white text-center">
+            <span class="inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-5 text-white border-b border-current pb-0.5 hover:text-[#db9f1b] transition-colors duration-300 cursor-default">01</span>
+            <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-4">Professional Grounds & Garden Services</h1>
+            <p class="font-body text-white/75 text-base sm:text-lg max-w-xl mx-auto">Expert grounds and garden care delivered across Oxfordshire by our owner-led team.</p>
         </section>
 
-        <!-- ══════════════════════════════════════════════════════
-             FILTER & GRID SECTION (LIGHT)
-        ══════════════════════════════════════════════════════ -->
-        <section class="relative py-16 md:py-24 flex flex-col items-center overflow-hidden" style="background:#ffffff;">
-            <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20 flex-grow flex flex-col">
-                
-                <!-- Filter Menu -->
-                <div class="w-full max-w-[98rem] mx-auto px-0 sm:px-6 lg:px-10 relative z-30 mb-16">
-                    <div class="relative group/nav flex items-center">
-                        <button id="scroll-left" class="absolute -left-4 sm:-left-6 lg:-left-12 z-40 w-10 h-10 bg-white rounded-full shadow-xl border border-[#1a3528]/10 hidden sm:flex items-center justify-center text-[#1a3528] transition-all duration-500 opacity-0 -translate-x-4 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:translate-x-0 group-hover/nav:pointer-events-auto hover:bg-[#825c3e] hover:text-white" aria-label="Scroll filter left">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
-                            </svg>
-                        </button>
-                        <div id="nav-container" class="bg-white rounded-full shadow-md border mx-4 sm:mx-0 p-2 overflow-x-auto hide-scrollbar scroll-smooth" style="border-color:rgba(26,53,40,0.06); -webkit-overflow-scrolling: touch;">
-                            <ul class="flex items-center gap-2 w-max px-4 sm:px-2 justify-start md:justify-center">
-                                <li>
-                                    <a href="#" class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-bold transition-all duration-300 whitespace-nowrap bg-[#ffffff] text-[#1a3528]" style="box-shadow:0 4px 16px rgba(202, 235, 216, 0.30);" data-filter="all">All Services (23)</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-bold transition-all duration-300 whitespace-nowrap text-[#1a3528]/80 hover:bg-[#ffffff] hover:text-[#1a3528]" data-filter="grounds">Grounds Maintenance</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-bold transition-all duration-300 whitespace-nowrap text-[#1a3528]/80 hover:bg-[#ffffff] hover:text-[#1a3528]" data-filter="lawn">Lawn Care</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-bold transition-all duration-300 whitespace-nowrap text-[#1a3528]/80 hover:bg-[#ffffff] hover:text-[#1a3528]" data-filter="hedge">Hedge &amp; Shrub</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-bold transition-all duration-300 whitespace-nowrap text-[#1a3528]/80 hover:bg-[#ffffff] hover:text-[#1a3528]" data-filter="planting">Planting &amp; Landscaping</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-bold transition-all duration-300 whitespace-nowrap text-[#1a3528]/80 hover:bg-[#ffffff] hover:text-[#1a3528]" data-filter="specialist">Specialist Treatments</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-bold transition-all duration-300 whitespace-nowrap text-[#1a3528]/80 hover:bg-[#ffffff] hover:text-[#1a3528]" data-filter="clearance">Site Clearance</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-bold transition-all duration-300 whitespace-nowrap text-[#1a3528]/80 hover:bg-[#ffffff] hover:text-[#1a3528]" data-filter="weed">Professional Weed Control</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <button id="scroll-right" class="absolute -right-4 sm:-right-6 lg:-right-12 z-40 w-10 h-10 bg-white rounded-full shadow-xl border border-[#1a3528]/10 hidden sm:flex items-center justify-center text-[#1a3528] transition-all duration-500 opacity-0 translate-x-4 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:translate-x-0 group-hover/nav:pointer-events-auto hover:bg-[#825c3e] hover:text-white" aria-label="Scroll filter right">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
-                            </svg>
-                        </button>
+        <!-- ══ SERVICES GRID ══ -->
+        <section style="background:#ffffff;" class="py-16 md:py-24">
+            <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+
+                    <!-- GROUNDS MAINTENANCE -->
+                    <div class="col-span-full reveal">
+                        <p class="font-body text-sm font-black tracking-widest uppercase text-[#668e78] mb-4 pb-2 border-b border-[#668e78]/20">Grounds Maintenance</p>
                     </div>
-                </div>
 
-                <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full pb-20">
-
-                    <!-- GROUNDS MAINTENANCE (3) -->
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="grounds">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Routine Grass Cutting/Routine_Grass_Cutting_1.jpeg" alt="Routine Grass Cutting" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Routine Grass Cutting</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Expert mowing schedules for large estates and commercial grounds.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/routine-grass-cutting.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:0ms;">
+                        <img src="../assets/imgs/service_imgs/Routine%20Grass%20Cutting/Routine_Grass_Cutting_1.jpeg" alt="Routine Grass Cutting" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Routine Grass Cutting</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Expert mowing schedules for large estates and commercial grounds.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/routine-grass-cutting.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
                             </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="grounds">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Strimming and Edging/Strimming_and_Edging_1.jpeg" alt="Strimming & Edging" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Strimming &amp; Edging</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Precision detailing to keep borders and hard-to-reach areas looking sharp.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/strimming-and-edging.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="grounds">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Site Presentation/Site_Presentation_1.jpeg" alt="Site Presentation" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Site Presentation</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Comprehensive management to ensure your site makes a great first impression.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/site-presentation.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                    <!-- LAWN CARE (4) -->
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="lawn">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Seasonal Fertiliser/Seasonal_Fertiliser_1.jpeg" alt="Seasonal Fertiliser" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Seasonal Fertiliser</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Tailored nutrition programmes to keep your grass healthy throughout the year.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/seasonal-fertiliser.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="lawn">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Weed and Moss Control/Weed_and_Moss_Control_1.jpeg" alt="Weed & Moss Control" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Weed &amp; Moss Control</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Targeted applications to eliminate invasive moss and broadleaf weeds.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/weed-and-moss-control.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="lawn">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Aeration and Scarification/Aeration_and_Scarification_1.jpeg" alt="Aeration & Scarification" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Aeration &amp; Scarification</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Relieving compaction and removing thatch to let your lawn breathe.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/aeration-and-scarification.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="lawn">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Full Lawn Renovations/Full_Lawn_Renovations_1.jpeg" alt="Full Renovations" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Full Lawn Renovations</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Complete overhauls including top-dressing and overseeding for tired turf.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/full-lawn-renovations.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                    <!-- HEDGE CARE (3) -->
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="hedge">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Regular Trimming/Regular_Trimming_1.jpeg" alt="Regular Trimming" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Regular Trimming</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Maintaining tidy and healthy hedge lines throughout the growing season.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/regular-trimming.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="hedge">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Expert Shaping/Expert_Shaping_1.jpeg" alt="Expert Shaping" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Expert Shaping</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Artistic pruning and shaping to enhance the aesthetic of your specimen shrubs.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/expert-shaping.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="hedge">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Plant Health Care/Plant_Health_Care_1.jpeg" alt="Plant Health Care" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Plant Health Care</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Monitoring and treating diseases to protect your landscape investment.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/plant-health-care.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                    <!-- PLANTING (3) -->
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="planting">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Plant Supply and Sourcing/Plant_Supply_and_Sourcing_1.jpeg" alt="Plant Supply & Sourcing" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Plant Supply &amp; Sourcing</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Expertly sourcing high-quality plants and trees for your specific soil type.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/plant-supply-and-sourcing.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="planting">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Custom Planting Schemes/Custom_Planting_Schemes_1.jpeg" alt="Custom Planting Schemes" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Custom Planting Schemes</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Designing seasonal displays and permanent schemes that thrive.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/custom-planting-schemes.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="planting">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Bespoke Border Design/Bespoke_Border_Design_1.jpeg" alt="Bespoke Border Design" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Bespoke Border Design</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Rejuvenating existing borders or creating new ones from scratch.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/bespoke-border-design.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                    <!-- SPECIALIST TREATMENTS (3) -->
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="specialist">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Wetting Agents/Wetting_Agents_1.jpg" alt="Wetting Agents" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Wetting Agents</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Advanced treatments to improve water penetration and reduce drought stress.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/wetting-agents.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="specialist">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Slow Release Nutrition/Slow_Release_Nutrition_1.jpeg" alt="Slow-Release Nutrition" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Slow-Release Nutrition</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Providing steady, long-lasting nutrients for sustained plant health.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/slow-release-nutrition.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="specialist">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Soil Resilience/Soil_Resilience_1.jpeg" alt="Soil Resilience" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Soil Resilience</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Improving soil structure and microbial activity for long-term vitality.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/soil-resilience.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                    <!-- SITE CLEARANCE (3) -->
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="clearance">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Initial Reset Visits/Initial_Reset_Visits_1.jpeg" alt="Initial Reset Visits" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Initial "Reset" Visits</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Bringing neglected spaces back to a manageable standard in one visit.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/initial-reset-visits.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="clearance">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Full Site Clearance/Full_Site_Clearance_1.jpeg" alt="Full Site Clearance" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Full Site Clearance</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Complete removal of scrub, brambles, and green waste from entire plots.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/full-site-clearance.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="clearance">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Overgrown Recovery/Overgrown_Recovery_1.jpeg" alt="Overgrown Recovery" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Overgrown Recovery</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Specialist recovery for gardens that have become wild and inaccessible.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/overgrown-recovery.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                    <!-- WEED CONTROL (4) -->
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="weed">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Certified Herbicide/Certified_Herbicide_1.jpeg" alt="Certified Herbicide" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Certified Herbicide</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Safe, professional herbicide application by NPTC certified specialists.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/certified-herbicide.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="weed">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Lawn Weed Management/Lawn_Weed_Management_1.jpeg" alt="Lawn Weed Management" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Lawn Weed Management</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Eliminating broadleaf weeds without harming your grass.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/lawn-weed-management.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="weed">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Hard Surface Treatment/Hard_Surface_Treatment_1.jpeg" alt="Hard Surface Treatment" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Hard Surface Treatment</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Keeping driveways, patios, and car parks free from weeds and moss.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/hard-surface-treatment.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-
-                                        <div class="service-card-wrapper reveal reveal-up" data-category="weed">
-                        <div class="group relative flex flex-col justify-end overflow-hidden rounded-none border-none aspect-square transition-all duration-500 hover:-translate-y-2">
-                            <!-- Background Image -->
-                            <img src="../assets/imgs/service_imgs/Invasive Species/Invasive_Species_1.jpg" alt="Invasive Species" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
-                            <!-- Dark Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-                            
-                            <!-- Text Content -->
-                            <div class="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
-                                <h3 class="font-heading text-xl lg:text-2xl font-bold mb-2 text-white transition-colors duration-300 group-hover:text-[#d49813]">Invasive Species</h3>
-                                <p class="font-body text-white/80 text-xs lg:text-sm leading-relaxed mb-4">Expert management of Japanese Knotweed and other invasive plants.</p>
-                                <div class="pt-4 border-t border-white/20 w-full flex gap-3 transition-colors duration-300 group-hover:border-[#d49813]/50">
-                                    <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-[#ffffff] text-[#1a3528] font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:text-white transition-all duration-300">Book Now</a>
-                                    <a href="services/invasive-species.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[12px] rounded-none hover:bg-[#825c3e] hover:border-[#825c3e] transition-all duration-300">View Detail</a>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-            </div>
-        </section>
-
-        <!-- Bottom CTA -->
-        <section class="section-dark relative py-20 flex items-center justify-center text-white overflow-hidden border-t border-white/5" style="background:#1a3528;">
-            <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
-                <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 w-full">
-
-                    <div class="w-full lg:w-3/12 reveal order-2 lg:order-1 flex justify-center lg:justify-start">
-                        <div class="relative w-full max-w-sm lg:max-w-none h-[300px] lg:h-[400px] rounded-none overflow-hidden shadow-2xl group">
-                            <img src="../assets/imgs/footer1.png"
-                                alt="Green Seasons team maintaining a residential garden in Oxfordshire" loading="lazy"
-                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         </div>
                     </div>
 
-                    <div class="w-full lg:w-6/12 text-center reveal order-1 lg:order-2 flex flex-col items-center">
-
-                        <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-white hover:text-[#db9f1b] transition-colors duration-300" style="transition-delay: 50ms;">
-                            <span class="border-b-[1.5px] border-current pb-0.5">02</span>
-                        </span>
-
-                        <h2 class="group font-heading font-black text-white leading-[1.15] mb-[22px] flex flex-col items-center text-4xl text-5xl hover:text-[#db9f1b] transition-colors duration-500">
-                            <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
-                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Let's</span></span>
-                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Transform</span></span>
-                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Your</span></span>
-                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">Outdoors</span></span>
-                            </span></h2>
-
-                        <p class="title-underline-anim font-body text-base sm:text-lg md:text-xl mb-10 max-w-md mx-auto leading-relaxed mt-2" style="color:rgba(255,255,255,0.80); animation-delay: 800ms;">
-                            From comprehensive maintenance to specialized treatments, our expert team guarantees stunning results. Contact Tim today for a free, no-obligation quote.
-                        </p>
-
-                        <div class="title-underline-anim" style="animation-delay: 900ms;">
-                            <a href="contact.html"
-                                 class="btn-adaptive">Get in Touch</a>
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:50ms;">
+                        <img src="../assets/imgs/service_imgs/Strimming%20and%20Edging/Strimming_and_Edging_1.jpeg" alt="Strimming & Edging" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Strimming &amp; Edging</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Precision detailing to keep borders and hard-to-reach areas looking sharp.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/strimming-and-edging.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="hidden lg:flex w-full lg:w-3/12 reveal order-3 justify-center lg:justify-end mt-0 lg:mt-16" style="transition-delay:200ms;">
-                        <div class="relative w-full max-w-sm lg:max-w-none h-[300px] lg:h-[400px] rounded-none overflow-hidden shadow-2xl group">
-                            <img src="../assets/imgs/footer2.png"
-                                alt="Freshly turfed lawn by Green Seasons in Oxfordshire" loading="lazy"
-                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:100ms;">
+                        <img src="../assets/imgs/service_imgs/Site%20Presentation/Site_Presentation_1.jpeg" alt="Site Presentation" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Site Presentation</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Comprehensive management to ensure your site makes a great first impression.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/site-presentation.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LAWN CARE -->
+                    <div class="col-span-full reveal" style="transition-delay:0ms;">
+                        <p class="font-body text-sm font-black tracking-widest uppercase text-[#668e78] mt-8 mb-4 pb-2 border-b border-[#668e78]/20">Lawn Care</p>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:0ms;">
+                        <img src="../assets/imgs/service_imgs/Seasonal%20Fertiliser/Seasonal_Fertiliser_1.jpeg" alt="Seasonal Fertiliser" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Seasonal Fertiliser</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Tailored nutrition programmes to keep your grass healthy throughout the year.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/seasonal-fertiliser.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:50ms;">
+                        <img src="../assets/imgs/service_imgs/Weed%20and%20Moss%20Control/Weed_and_Moss_Control_1.jpeg" alt="Weed & Moss Control" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Weed &amp; Moss Control</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Targeted applications to eliminate invasive moss and broadleaf weeds.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/weed-and-moss-control.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:100ms;">
+                        <img src="../assets/imgs/service_imgs/Aeration%20and%20Scarification/Aeration_and_Scarification_1.jpeg" alt="Aeration & Scarification" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Aeration &amp; Scarification</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Relieving compaction and removing thatch to let your lawn breathe.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/aeration-and-scarification.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:150ms;">
+                        <img src="../assets/imgs/service_imgs/Full%20Lawn%20Renovations/Full_Lawn_Renovations_1.jpeg" alt="Full Lawn Renovations" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Full Lawn Renovations</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Complete overhauls including top-dressing and overseeding for tired turf.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/full-lawn-renovations.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HEDGE CARE -->
+                    <div class="col-span-full reveal">
+                        <p class="font-body text-sm font-black tracking-widest uppercase text-[#668e78] mt-8 mb-4 pb-2 border-b border-[#668e78]/20">Hedge &amp; Shrub Care</p>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:0ms;">
+                        <img src="../assets/imgs/service_imgs/Regular%20Trimming/Regular_Trimming_1.jpeg" alt="Regular Trimming" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Regular Trimming</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Maintaining tidy and healthy hedge lines throughout the growing season.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/regular-trimming.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:50ms;">
+                        <img src="../assets/imgs/service_imgs/Expert%20Shaping/Expert_Shaping_1.jpeg" alt="Expert Shaping" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Expert Shaping</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Artistic pruning and shaping to enhance the aesthetic of specimen shrubs.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/expert-shaping.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:100ms;">
+                        <img src="../assets/imgs/service_imgs/Plant%20Health%20Care/Plant_Health_Care_1.jpeg" alt="Plant Health Care" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Plant Health Care</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Monitoring and treating diseases to protect your landscape investment.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/plant-health-care.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PLANTING -->
+                    <div class="col-span-full reveal">
+                        <p class="font-body text-sm font-black tracking-widest uppercase text-[#668e78] mt-8 mb-4 pb-2 border-b border-[#668e78]/20">Planting &amp; Design</p>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:0ms;">
+                        <img src="../assets/imgs/service_imgs/Plant%20Supply%20and%20Sourcing/Plant_Supply_and_Sourcing_1.jpeg" alt="Plant Supply & Sourcing" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Plant Supply &amp; Sourcing</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Expertly sourcing high-quality plants and trees for your specific soil type.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/plant-supply-and-sourcing.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:50ms;">
+                        <img src="../assets/imgs/service_imgs/Custom%20Planting%20Schemes/Custom_Planting_Schemes_1.jpeg" alt="Custom Planting Schemes" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Custom Planting Schemes</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Designing seasonal displays and permanent schemes that thrive.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/custom-planting-schemes.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:100ms;">
+                        <img src="../assets/imgs/service_imgs/Bespoke%20Border%20Design/Bespoke_Border_Design_1.jpeg" alt="Bespoke Border Design" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Bespoke Border Design</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Rejuvenating existing borders or creating new ones from scratch.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/bespoke-border-design.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SPECIALIST TREATMENTS -->
+                    <div class="col-span-full reveal">
+                        <p class="font-body text-sm font-black tracking-widest uppercase text-[#668e78] mt-8 mb-4 pb-2 border-b border-[#668e78]/20">Specialist Treatments</p>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:0ms;">
+                        <img src="../assets/imgs/service_imgs/Wetting%20Agents/Wetting_Agents_1.jpg" alt="Wetting Agents" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Wetting Agents</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Advanced treatments to improve water penetration and reduce drought stress.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/wetting-agents.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:50ms;">
+                        <img src="../assets/imgs/service_imgs/Slow%20Release%20Nutrition/Slow_Release_Nutrition_1.jpeg" alt="Slow-Release Nutrition" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Slow-Release Nutrition</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Providing steady, long-lasting nutrients for sustained plant health.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/slow-release-nutrition.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:100ms;">
+                        <img src="../assets/imgs/service_imgs/Soil%20Resilience/Soil_Resilience_1.jpeg" alt="Soil Resilience" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Soil Resilience</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Improving soil structure and microbial activity for long-term vitality.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/soil-resilience.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SITE CLEARANCE -->
+                    <div class="col-span-full reveal">
+                        <p class="font-body text-sm font-black tracking-widest uppercase text-[#668e78] mt-8 mb-4 pb-2 border-b border-[#668e78]/20">Site Clearance &amp; Recovery</p>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:0ms;">
+                        <img src="../assets/imgs/service_imgs/Initial%20Reset%20Visits/Initial_Reset_Visits_1.jpeg" alt="Initial Reset Visits" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Initial &ldquo;Reset&rdquo; Visits</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Bringing neglected spaces back to a manageable standard in one visit.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/initial-reset-visits.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:50ms;">
+                        <img src="../assets/imgs/service_imgs/Full%20Site%20Clearance/Full_Site_Clearance_1.jpeg" alt="Full Site Clearance" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Full Site Clearance</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Complete removal of scrub, brambles, and green waste from entire plots.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/full-site-clearance.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:100ms;">
+                        <img src="../assets/imgs/service_imgs/Overgrown%20Recovery/Overgrown_Recovery_1.jpeg" alt="Overgrown Recovery" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Overgrown Recovery</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Specialist recovery for gardens that have become wild and inaccessible.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/overgrown-recovery.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WEED CONTROL -->
+                    <div class="col-span-full reveal">
+                        <p class="font-body text-sm font-black tracking-widest uppercase text-[#668e78] mt-8 mb-4 pb-2 border-b border-[#668e78]/20">Weed Control</p>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:0ms;">
+                        <img src="../assets/imgs/service_imgs/Certified%20Herbicide/Certified_Herbicide_1.jpeg" alt="Certified Herbicide" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Certified Herbicide</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Safe, professional herbicide application by NPTC certified specialists.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/certified-herbicide.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:50ms;">
+                        <img src="../assets/imgs/service_imgs/Lawn%20Weed%20Management/Lawn_Weed_Management_1.jpeg" alt="Lawn Weed Management" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Lawn Weed Management</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Eliminating broadleaf weeds without harming your grass.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/lawn-weed-management.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:100ms;">
+                        <img src="../assets/imgs/service_imgs/Hard%20Surface%20Treatment/Hard_Surface_Treatment_1.jpeg" alt="Hard Surface Treatment" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Hard Surface Treatment</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Keeping driveways, patios, and car parks free from weeds and moss.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/hard-surface-treatment.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:150ms;">
+                        <img src="../assets/imgs/service_imgs/Invasive%20Species/Invasive_Species_1.jpg" alt="Invasive Species" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Invasive Species</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">Expert management of Japanese Knotweed and other invasive plants.</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="contact.html" class="flex-1 flex items-center justify-center py-2 bg-white text-[#1a3528] font-bold text-[11px] hover:bg-[#d49813] hover:text-white transition-all duration-300">Get in Touch</a>
+                                <a href="services/invasive-species.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">Learn More</a>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
         </section>
+
     </main>
 
     <div id="footer-placeholder"></div>
     <script src="../global.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const cardWrappers = document.querySelectorAll('.service-card-wrapper');
-            const navContainer = document.getElementById('nav-container');
-            const scrollLeft = document.getElementById('scroll-left');
-            const scrollRight = document.getElementById('scroll-right');
-
-            /* -- Filter Logic -- */
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    
-                    // Update active button state
-                    filterBtns.forEach(b => {
-                        b.classList.remove('bg-[#ffffff]', 'text-white');
-                        b.classList.add('text-white/80');
-                        b.style.background = 'transparent';
-                        b.style.boxShadow = 'none';
-                    });
-                    
-                    btn.classList.add('bg-[#ffffff]', 'text-white');
-                    btn.classList.remove('text-white/80');
-                    btn.style.background = '#ffffff';
-                    btn.style.boxShadow = '0 4px 16px rgba(202, 235, 216, 0.30)';
-
-                    const filter = btn.getAttribute('data-filter');
-
-                    cardWrappers.forEach(wrapper => {
-                        if (filter === 'all' || wrapper.getAttribute('data-category') === filter) {
-                            wrapper.style.display = 'block';
-                            setTimeout(() => wrapper.classList.add('active'), 50);
-                        } else {
-                            wrapper.style.display = 'none';
-                            wrapper.classList.remove('active');
-                        }
-                    });
-
-                    // Force reveal update
-                    window.dispatchEvent(new Event('scroll'));
-                });
-            });
-
-            /* -- Horizontal scroll buttons -- */
-            if (navContainer && scrollLeft && scrollRight) {
-                const amt = 300;
-                scrollLeft.addEventListener('click', () => {
-                    navContainer.scrollBy({ left: -amt, behavior: 'smooth' });
-                });
-                scrollRight.addEventListener('click', () => {
-                    navContainer.scrollBy({ left: amt, behavior: 'smooth' });
-                });
-
-                function toggleArrows() {
-                    const sl = navContainer.scrollLeft;
-                    const max = navContainer.scrollWidth - navContainer.clientWidth;
-                    scrollLeft.style.opacity = sl > 10 ? '1' : '0';
-                    scrollLeft.style.pointerEvents = sl > 10 ? 'auto' : 'none';
-                    scrollRight.style.opacity = sl < max - 10 ? '1' : '0';
-                    scrollRight.style.pointerEvents = sl < max - 10 ? 'auto' : 'none';
-                }
-
-                navContainer.addEventListener('scroll', toggleArrows);
-                window.addEventListener('resize', toggleArrows);
-                setTimeout(toggleArrows, 100);
-            }
-        });
-
-        /* -- Scroll Reveal -- */
-        (function () {
+        // Hero slideshow
+        const slides = document.querySelectorAll('.hero-zoom-slide');
+        let cur = 0;
+        if (slides.length) {
+            setTimeout(() => slides[0].classList.add('active'), 50);
+            setInterval(() => {
+                slides[cur].classList.remove('active');
+                cur = (cur + 1) % slides.length;
+                slides[cur].classList.add('active');
+            }, 5000);
+        }
+        // Scroll reveal
+        (function() {
             var els = document.querySelectorAll('.reveal');
             if (!els.length) return;
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.10 });
-            els.forEach(function (el) { observer.observe(el); });
+            var ob = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('active'); ob.unobserve(e.target); } });
+            }, {threshold: 0.08});
+            els.forEach(function(el) { ob.observe(el); });
         })();
     </script>
 </body>
 </html>
-
-
-

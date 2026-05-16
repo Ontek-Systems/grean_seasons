@@ -180,6 +180,13 @@ img {
   color: var(--gs-fg-muted);
 }
 
+/* Global heading hover — gold on all h1/h2/h3 */
+h1, h2, h3 {
+  cursor: default;
+  transition: color 500ms ease;
+}
+h1:hover, h2:hover, h3:hover { color: #db9f1b; }
+
 /* Stat label (About section) */
 .gs-stat-label {
   font-family: var(--font-body), sans-serif;
@@ -270,6 +277,18 @@ img {
     border-color: #db9f1b;
     background-color: #db9f1b;
     color: #ffffff;
+}
+
+/* -- Green CTA button (default green, gold on hover) --------------------------*/
+.btn-green-cta {
+    background-color: #668e78 !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+}
+.btn-green-cta:hover {
+    background-color: #db9f1b !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
 }
 
 /* --Scroll Reveal Animations --------------------------------------------------*/
@@ -558,6 +577,38 @@ div[onmouseenter][style*="background:#1a3528"] {
     }
 
     /* Underline centring is handled by the rules above (lines 414-430). */
+
+    /* --Buttons: centre on mobile (override align-self: flex-start from base styles) */
+    .btn-primary, .btn-primary-white, .btn-ghost, .btn-adaptive {
+        align-self: center !important;
+        display: block !important;
+        width: fit-content !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* --Who-We-Serve panels that have explicit items-start / text-left on desktop */
+    #who-we-serve-section .flex-col {
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /* --Hero CTA button row: ensure both stacked items are centred */
+    .flex-col .btn-ghost {
+        align-self: center !important;
+    }
+
+    /* --Review QR block: centre on mobile */
+    #testimonials .flex-col {
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /* --Bottom CTA: centre text block */
+    .section-dark .flex-col {
+        align-items: center !important;
+        text-align: center !important;
+    }
 }
 
 

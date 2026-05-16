@@ -2,6 +2,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     await loadComponents();
 
+    // Set mega menu top to bottom edge of header (runs after layout is complete)
+    function updateMegaTop() {
+        const h = document.getElementById('site-header');
+        if (h) document.documentElement.style.setProperty('--header-bottom', h.getBoundingClientRect().bottom + 'px');
+    }
+    requestAnimationFrame(() => { requestAnimationFrame(updateMegaTop); });
+    window.addEventListener('scroll', updateMegaTop, { passive: true });
+    window.addEventListener('resize', updateMegaTop, { passive: true });
+
     // ==========================================
     // 1. MOBILE MENU LOGIC (Smooth Animation)
     // ==========================================
@@ -30,6 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     initHeaderScroll();
     setActiveNav();
+    initServicesMegaMenu();
 
     // ==========================================
     // 2. SCROLL REVEAL ANIMATIONS
@@ -50,7 +60,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         rootMargin: "0px 0px -50px 0px" // Triggers slightly before hitting the bottom of viewport
     });
 
-    revealElements.forEach(el => revealObserver.observe(el));
+    revealElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            // Already in viewport on load — activate immediately, no observer needed
+            el.classList.add('active');
+        } else {
+            revealObserver.observe(el);
+        }
+    });
 
 });
 
@@ -97,11 +115,37 @@ async function loadComponents() {
     }
 }
 
+function initServicesMegaMenu() {
+    const trigger = document.querySelector('.group\\/nav');
+    const menu = document.getElementById('services-mega-wrapper');
+    if (!trigger || !menu) return;
+    let hideTimer;
+
+    function openMenu() {
+        clearTimeout(hideTimer);
+        menu.classList.add('open');
+    }
+    function scheduleClose() {
+        hideTimer = setTimeout(() => menu.classList.remove('open'), 200);
+    }
+
+    trigger.addEventListener('mouseenter', openMenu);
+    trigger.addEventListener('mouseleave', scheduleClose);
+    menu.addEventListener('mouseenter', openMenu);
+    menu.addEventListener('mouseleave', scheduleClose);
+}
+
 function initHeaderScroll() {
     const header = document.getElementById('site-header');
     const container = document.getElementById('header-container');
+    const isServicePage = window.location.pathname.match(/\/pages\/services\/.+\.html/);
 
     if (header && container) {
+        if (isServicePage) {
+            header.classList.add('scrolled');
+            return;
+        }
+
         const handleScroll = () => {
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');

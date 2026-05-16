@@ -17,10 +17,32 @@
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
     }
 
+    #services-mega-wrapper {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+    #services-mega-wrapper.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
     .locked-top-bar {
         padding-top: 0.5rem !important;
         padding-bottom: 0.5rem !important;
         min-height: auto !important;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    #site-header.scrolled .locked-top-bar {
+        max-height: 3rem;
+        opacity: 1;
+        background: #537160 !important;
     }
 
     #header-container {
@@ -63,7 +85,7 @@
 
     <!-- DESKTOP TOP BAR (Hidden on Mobile/Tablet) -->
     <div
-        class="locked-top-bar hidden xl:flex w-full bg-black/20 border-b border-white/5 px-4 lg:px-8 xl:px-12 items-center py-2 text-xs font-medium tracking-wide text-white justify-between">
+        class="locked-top-bar hidden xl:flex w-full border-b border-white/5 px-4 lg:px-8 xl:px-12 items-center py-2 text-xs font-medium tracking-wide text-white justify-between">
 
         <a href="pages/about.html"
             class="flex items-center gap-1.5 hover:text-[#ffffff] transition-colors cursor-pointer">
@@ -129,7 +151,7 @@
 
     <!-- MOBILE/TABLET SCROLLING MARQUEE (Hidden on Desktop) -->
     <div
-        class="locked-top-bar flex xl:hidden w-full bg-black/20 border-b border-white/5 py-2 overflow-hidden text-[11px] md:text-xs font-medium tracking-wide text-white">
+        class="locked-top-bar flex xl:hidden w-full border-b border-white/5 py-2 overflow-hidden text-[11px] md:text-xs font-medium tracking-wide text-white">
         <style>
             @keyframes topBarScroll {
                 0% {
@@ -365,18 +387,13 @@
 
     <!-- 2. Main Navigation -->
     <div id="header-container"
-        class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 flex justify-between items-center">
+        class="relative w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 flex justify-between items-center">
 
         <!-- Logo -->
         <a href="index.html"
-            class="relative flex items-center transition-transform duration-200 hover:scale-105 group/logo">
-            <div class="logo-wrapper relative w-[90px] md:w-[110px] lg:w-[133px]">
-                <img src="assets/imgs/logo.png" alt="Green Seasons"
-                    class="w-full h-auto object-contain absolute inset-0 transition-opacity duration-300 ease-in-out opacity-100 group-hover/logo:opacity-0">
-                <img src="assets/imgs/logo-hovered.png" alt="Green Seasons"
-                    class="w-full h-auto object-contain absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 group-hover/logo:opacity-100">
-                <img src="assets/imgs/logo.png" alt=""
-                    class="w-full h-auto object-contain opacity-0 pointer-events-none">
+            class="relative flex items-center transition-transform duration-300 ease-out hover:scale-110">
+            <div class="logo-wrapper relative w-[108px] md:w-[132px] lg:w-[160px]">
+                <img src="assets/imgs/logo.png" alt="Green Seasons" class="w-full h-auto object-contain">
             </div>
         </a>
 
@@ -393,45 +410,45 @@
                     </svg>
                 </a>
 
-                <!-- Mega Menu (unchanged) -->
-                <div
-                    class="absolute left-1/2 -translate-x-1/2 top-[100%] pt-2 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-300 pointer-events-none group-hover/nav:pointer-events-auto z-50">
+                <!-- Mega Menu -->
+                <div id="services-mega-wrapper"
+                    class="z-[999]" style="position:fixed;left:50%;transform:translateX(-50%);top:var(--header-bottom,77px);">
                     <div
-                        class="bg-[#668e78] border border-white/10 shadow-2xl rounded-3xl p-10 w-[1050px] flex gap-12 text-white">
+                        class="bg-[#668e78] border border-white/10 shadow-2xl rounded-3xl p-10 w-[min(1050px,90vw)] flex gap-12 text-white">
 
                         <!-- Col 1: Grounds & Lawn -->
                         <div class="flex-1">
                             <div class="mb-10">
                                 <a href="pages/services.html"
-                                    class="block text-[#1a3528] font-heading font-bold text-[13px] tracking-widest uppercase mb-4 border-b border-white/10 pb-2 hover:opacity-75 transition-opacity">Grounds
+                                    class="block text-[#db9f1b] font-heading font-extrabold text-[13px] tracking-widest uppercase mb-4 border-b border-white/10 pb-2 hover:opacity-75 transition-opacity">Grounds
                                     &amp; Garden Maintenance</a>
                                 <ul class="flex flex-col gap-2.5 text-[14px] font-medium">
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/routine-grass-cutting.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Routine Grass
                                             Cutting</a></li>
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/strimming-and-edging.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Strimming &amp;
                                             Edging</a></li>
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/site-presentation.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Site
                                             Presentation</a></li>
                                 </ul>
                             </div>
                             <div>
                                 <a href="pages/services.html"
-                                    class="block text-[#1a3528] font-heading font-bold text-[13px] tracking-widest uppercase mb-4 border-b border-white/10 pb-2 hover:opacity-75 transition-opacity">Lawn
+                                    class="block text-[#db9f1b] font-heading font-extrabold text-[13px] tracking-widest uppercase mb-4 border-b border-white/10 pb-2 hover:opacity-75 transition-opacity">Lawn
                                     Care &amp; Renovation</a>
                                 <ul class="flex flex-col gap-2.5 text-[14px] font-medium">
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/seasonal-fertiliser.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Seasonal
                                             Fertiliser</a></li>
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/weed-and-moss-control.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Weed &amp; Moss
                                             Control</a></li>
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/aeration-and-scarification.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Aeration &amp;
                                             Scarification</a></li>
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/full-lawn-renovations.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Full
                                             Renovations</a></li>
                                 </ul>
@@ -442,32 +459,32 @@
                         <div class="flex-1">
                             <div class="mb-10">
                                 <a href="pages/services.html"
-                                    class="block text-[#1a3528] font-heading font-bold text-[13px] tracking-widest uppercase mb-4 border-b border-white/10 pb-2 hover:opacity-75 transition-opacity">Hedge
+                                    class="block text-[#db9f1b] font-heading font-extrabold text-[13px] tracking-widest uppercase mb-4 border-b border-white/10 pb-2 hover:opacity-75 transition-opacity">Hedge
                                     &amp; Shrub Care</a>
                                 <ul class="flex flex-col gap-2.5 text-[14px] font-medium">
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/regular-trimming.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Regular
                                             Trimming</a></li>
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/expert-shaping.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Expert
                                             Shaping</a></li>
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/plant-health-care.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Plant Health
                                             Care</a></li>
                                 </ul>
                             </div>
                             <div>
                                 <a href="pages/services.html"
-                                    class="block text-[#1a3528] font-heading font-bold text-[13px] tracking-widest uppercase mb-4 border-b border-white/10 pb-2 hover:opacity-75 transition-opacity">Planting
+                                    class="block text-[#db9f1b] font-heading font-extrabold text-[13px] tracking-widest uppercase mb-4 border-b border-white/10 pb-2 hover:opacity-75 transition-opacity">Planting
                                     &amp; Landscaping</a>
                                 <ul class="flex flex-col gap-2.5 text-[14px] font-medium">
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/plant-supply-and-sourcing.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Plant Supply
                                             &amp; Sourcing</a></li>
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/custom-planting-schemes.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Custom Planting
                                             Schemes</a></li>
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/bespoke-border-design.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Bespoke Border
                                             Design</a></li>
                                 </ul>
@@ -478,32 +495,32 @@
                         <div class="flex-1">
                             <div class="mb-10">
                                 <a href="pages/services.html"
-                                    class="block text-[#1a3528] font-heading font-bold text-[13px] tracking-widest uppercase mb-4 border-b border-white/10 pb-2 hover:opacity-75 transition-opacity">Specialist
+                                    class="block text-[#db9f1b] font-heading font-extrabold text-[13px] tracking-widest uppercase mb-4 border-b border-white/10 pb-2 hover:opacity-75 transition-opacity">Specialist
                                     Treatments</a>
                                 <ul class="flex flex-col gap-2.5 text-[14px] font-medium">
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/wetting-agents.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Wetting
                                             Agents</a></li>
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/slow-release-nutrition.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Slow-Release
                                             Nutrition</a></li>
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/soil-resilience.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Soil
                                             Resilience</a></li>
                                 </ul>
                             </div>
                             <div>
                                 <a href="pages/services.html"
-                                    class="block text-[#1a3528] font-heading font-bold text-[13px] tracking-widest uppercase mb-4 border-b border-white/10 pb-2 hover:opacity-75 transition-opacity">One-Off
+                                    class="block text-[#db9f1b] font-heading font-extrabold text-[13px] tracking-widest uppercase mb-4 border-b border-white/10 pb-2 hover:opacity-75 transition-opacity">One-Off
                                     Site Clearance</a>
                                 <ul class="flex flex-col gap-2.5 text-[14px] font-medium">
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/initial-reset-visits.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Initial "Reset"
                                             Visits</a></li>
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/full-site-clearance.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Full Site
                                             Clearance</a></li>
-                                    <li><a href="pages/services/service-template.html"
+                                    <li><a href="pages/services/overgrown-recovery.html"
                                             class="hover:text-[#ffffff] transition-colors block py-0.5">Overgrown
                                             Recovery</a></li>
                                 </ul>
@@ -513,19 +530,19 @@
                         <!-- Col 4: Weed Control -->
                         <div class="flex-1">
                             <a href="pages/services.html"
-                                class="block text-[#1a3528] font-heading font-bold text-[13px] tracking-widest uppercase mb-4 border-b border-white/10 pb-2 hover:opacity-75 transition-opacity">Professional
+                                class="block text-[#db9f1b] font-heading font-extrabold text-[13px] tracking-widest uppercase mb-4 border-b border-white/10 pb-2 hover:opacity-75 transition-opacity">Professional
                                 Weed Control</a>
                             <ul class="flex flex-col gap-2.5 text-[14px] font-medium">
-                                <li><a href="pages/services/service-template.html"
+                                <li><a href="pages/services/certified-herbicide.html"
                                         class="hover:text-[#ffffff] transition-colors block py-0.5">Certified
                                         Herbicide</a></li>
-                                <li><a href="pages/services/service-template.html"
+                                <li><a href="pages/services/lawn-weed-management.html"
                                         class="hover:text-[#ffffff] transition-colors block py-0.5">Lawn Weed
                                         Management</a></li>
-                                <li><a href="pages/services/service-template.html"
+                                <li><a href="pages/services/hard-surface-treatment.html"
                                         class="hover:text-[#ffffff] transition-colors block py-0.5">Hard Surface
                                         Treatment</a></li>
-                                <li><a href="pages/services/service-template.html"
+                                <li><a href="pages/services/invasive-species.html"
                                         class="hover:text-[#ffffff] transition-colors block py-0.5">Invasive Species
                                         Control</a></li>
                             </ul>
@@ -544,8 +561,43 @@
             <a href="index.html#testimonials"
                 class="nav-link inline-block whitespace-nowrap transition-all duration-150 hover:scale-105 hover:text-[#ffffff]">Testimonials</a>
 
-            <a href="pages/where-we-serve.html"
-                class="nav-link inline-block whitespace-nowrap transition-all duration-150 hover:scale-105 hover:text-[#ffffff]">Where We Serve</a>
+            <!-- Where We Serve Dropdown -->
+            <div class="relative group/nav">
+                <a href="pages/where-we-serve.html"
+                    class="inline-flex items-center gap-1 whitespace-nowrap transition-all duration-150 hover:scale-105 hover:text-[#ffffff] py-4">
+                    Where We Serve
+                    <svg class="w-4 h-4 transition-transform duration-300 group-hover/nav:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </a>
+                <div class="absolute left-1/2 -translate-x-1/2 top-[100%] pt-2 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-300 pointer-events-none group-hover/nav:pointer-events-auto z-50">
+                    <div class="bg-[#668e78] border border-white/10 shadow-2xl rounded-3xl p-6 w-72 text-white">
+                        <a href="pages/where-we-serve.html" class="block text-[#db9f1b] font-heading font-extrabold text-[13px] tracking-widest uppercase mb-4 border-b border-white/10 pb-2 hover:opacity-75 transition-opacity">Locations</a>
+                        <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-[14px] font-medium max-h-[60vh] overflow-y-auto pr-1">
+                            <li><a href="pages/where-we-serve.html#abingdon" class="hover:text-[#ffffff] transition-colors block py-0.5">Abingdon</a></li>
+                            <li><a href="pages/where-we-serve.html#didcot" class="hover:text-[#ffffff] transition-colors block py-0.5">Didcot</a></li>
+                            <li><a href="pages/where-we-serve.html#oxford" class="hover:text-[#ffffff] transition-colors block py-0.5">Oxford</a></li>
+                            <li><a href="pages/where-we-serve.html#witney" class="hover:text-[#ffffff] transition-colors block py-0.5">Witney</a></li>
+                            <li><a href="pages/where-we-serve.html#wantage" class="hover:text-[#ffffff] transition-colors block py-0.5">Wantage</a></li>
+                            <li><a href="pages/where-we-serve.html#faringdon" class="hover:text-[#ffffff] transition-colors block py-0.5">Faringdon</a></li>
+                            <li><a href="pages/where-we-serve.html#wallingford" class="hover:text-[#ffffff] transition-colors block py-0.5">Wallingford</a></li>
+                            <li><a href="pages/where-we-serve.html#highworth" class="hover:text-[#ffffff] transition-colors block py-0.5">Highworth</a></li>
+                            <li><a href="pages/where-we-serve.html#carterton" class="hover:text-[#ffffff] transition-colors block py-0.5">Carterton</a></li>
+                            <li><a href="pages/where-we-serve.html#kidlington" class="hover:text-[#ffffff] transition-colors block py-0.5">Kidlington</a></li>
+                            <li><a href="pages/where-we-serve.html#woodstock" class="hover:text-[#ffffff] transition-colors block py-0.5">Woodstock</a></li>
+                            <li><a href="pages/where-we-serve.html#burford" class="hover:text-[#ffffff] transition-colors block py-0.5">Burford</a></li>
+                            <li><a href="pages/where-we-serve.html#chalgrove" class="hover:text-[#ffffff] transition-colors block py-0.5">Chalgrove</a></li>
+                            <li><a href="pages/where-we-serve.html#yarnton" class="hover:text-[#ffffff] transition-colors block py-0.5">Yarnton</a></li>
+                            <li><a href="pages/where-we-serve.html#swindon" class="hover:text-[#ffffff] transition-colors block py-0.5">Swindon</a></li>
+                            <li><a href="pages/where-we-serve.html#botley" class="hover:text-[#ffffff] transition-colors block py-0.5">Botley</a></li>
+                            <li><a href="pages/where-we-serve.html#eynsham" class="hover:text-[#ffffff] transition-colors block py-0.5">Eynsham</a></li>
+                            <li><a href="pages/where-we-serve.html#lechlade" class="hover:text-[#ffffff] transition-colors block py-0.5">Lechlade</a></li>
+                            <li><a href="pages/where-we-serve.html#chipping-norton" class="hover:text-[#ffffff] transition-colors block py-0.5">Chipping Norton</a></li>
+                            <li><a href="pages/where-we-serve.html#grove" class="hover:text-[#ffffff] transition-colors block py-0.5">Grove</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             <a href="pages/commercial.html"
                 class="nav-link inline-block whitespace-nowrap transition-all duration-150 hover:scale-105 hover:text-[#ffffff]">Commercial</a>
@@ -570,15 +622,15 @@
 
     <!-- Mobile Nav Drawer -->
     <div id="mobileNav"
-        class="xl:hidden absolute top-full left-0 w-full px-4 pt-2 pb-6 transition-all duration-200 ease-out opacity-0 invisible -translate-y-4 pointer-events-none">
+        class="xl:hidden absolute top-full left-0 w-full transition-all duration-200 ease-out opacity-0 invisible -translate-y-4 pointer-events-none">
         <div
-            class="bg-[#668e78] border border-white/10 shadow-2xl rounded-2xl overflow-hidden max-h-[80vh] overflow-y-auto">
+            class="bg-[#668e78] border-t border-white/10 shadow-2xl overflow-hidden max-h-[80vh] overflow-y-auto">
             <div class="flex flex-col px-6 py-6 space-y-4 text-center font-body text-white">
 
-                <div class="border-y border-white/10 py-4 my-2 flex flex-col items-center">
+                <div class="flex flex-col items-center">
                     <button
                         onclick="document.getElementById('mobileServicesPanel').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180')"
-                        class="inline-flex items-center gap-2 text-lg font-bold text-white hover:text-[#ffffff] mb-2 transition-all duration-150 hover:scale-105">
+                        class="inline-flex items-center gap-2 py-2 text-lg font-medium text-white hover:text-[#ffffff] mb-2 transition-all duration-150 hover:scale-105">
                         Services
                         <svg class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
@@ -594,13 +646,13 @@
                                 class="block text-[13px] font-heading font-bold tracking-widest uppercase text-[#1a3528] mb-2">Grounds
                                 &amp; Garden Maintenance</a>
                             <div class="flex flex-col gap-1.5 text-sm text-white/80 pl-2">
-                                <a href="pages/services/service-template.html"
+                                <a href="pages/services.html"
                                     class="block py-0.5 hover:text-[#ffffff] transition-colors">Routine Grass
                                     Cutting</a>
-                                <a href="pages/services/service-template.html"
+                                <a href="pages/services.html"
                                     class="block py-0.5 hover:text-[#ffffff] transition-colors">Strimming &amp;
                                     Edging</a>
-                                <a href="pages/services/service-template.html"
+                                <a href="pages/services.html"
                                     class="block py-0.5 hover:text-[#ffffff] transition-colors">Site Presentation</a>
                             </div>
                         </div>
@@ -611,12 +663,12 @@
                                 class="block text-[13px] font-heading font-bold tracking-widest uppercase text-[#1a3528] mb-2">Lawn
                                 Care &amp; Renovation</a>
                             <div class="flex flex-col gap-1.5 text-sm text-white/80 pl-2">
-                                <a href="pages/services/service-template.html"
+                                <a href="pages/services.html"
                                     class="block py-0.5 hover:text-[#ffffff] transition-colors">Seasonal Fertiliser</a>
-                                <a href="pages/services/service-template.html"
+                                <a href="pages/services.html"
                                     class="block py-0.5 hover:text-[#ffffff] transition-colors">Weed &amp; Moss
                                     Control</a>
-                                <a href="pages/services/service-template.html"
+                                <a href="pages/services.html"
                                     class="block py-0.5 hover:text-[#ffffff] transition-colors">Aeration &amp;
                                     Scarification</a>
                             </div>
@@ -628,9 +680,9 @@
                                 class="block text-[13px] font-heading font-bold tracking-widest uppercase text-[#1a3528] mb-2">Hedge
                                 &amp; Shrub Care</a>
                             <div class="flex flex-col gap-1.5 text-sm text-white/80 pl-2">
-                                <a href="pages/services/service-template.html"
+                                <a href="pages/services.html"
                                     class="block py-0.5 hover:text-[#ffffff] transition-colors">Regular Trimming</a>
-                                <a href="pages/services/service-template.html"
+                                <a href="pages/services.html"
                                     class="block py-0.5 hover:text-[#ffffff] transition-colors">Expert Shaping</a>
                             </div>
                         </div>
@@ -641,10 +693,10 @@
                                 class="block text-[13px] font-heading font-bold tracking-widest uppercase text-[#1a3528] mb-2">Planting
                                 &amp; Landscaping</a>
                             <div class="flex flex-col gap-1.5 text-sm text-white/80 pl-2">
-                                <a href="pages/services/service-template.html"
+                                <a href="pages/services.html"
                                     class="block py-0.5 hover:text-[#ffffff] transition-colors">Plant Supply &amp;
                                     Sourcing</a>
-                                <a href="pages/services/service-template.html"
+                                <a href="pages/services.html"
                                     class="block py-0.5 hover:text-[#ffffff] transition-colors">Custom Schemes</a>
                             </div>
                         </div>
@@ -655,9 +707,9 @@
                                 class="block text-[13px] font-heading font-bold tracking-widest uppercase text-[#1a3528] mb-2">Weed
                                 Control &amp; Clearance</a>
                             <div class="flex flex-col gap-1.5 text-sm text-white/80 pl-2">
-                                <a href="pages/services/service-template.html"
+                                <a href="pages/services.html"
                                     class="block py-0.5 hover:text-[#ffffff] transition-colors">Certified Herbicide</a>
-                                <a href="pages/services/service-template.html"
+                                <a href="pages/services.html"
                                     class="block py-0.5 hover:text-[#ffffff] transition-colors">Site Clearance</a>
                             </div>
                         </div>
@@ -680,8 +732,40 @@
                 <a href="index.html#testimonials"
                     class="inline-block py-2 text-lg font-medium hover:text-[#ffffff] transition-all duration-150 hover:scale-105">Testimonials</a>
 
-                <a href="pages/where-we-serve.html"
-                    class="inline-block py-2 text-lg font-medium hover:text-[#ffffff] transition-all duration-150 hover:scale-105">Where We Serve</a>
+                <div class="flex flex-col items-center">
+                    <button
+                        onclick="document.getElementById('mobileWherePanel').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180')"
+                        class="inline-flex items-center gap-2 py-2 text-lg font-medium text-white hover:text-[#ffffff] transition-all duration-150 hover:scale-105">
+                        Where We Serve
+                        <svg class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="mobileWherePanel" class="hidden mt-2 mb-2">
+                        <div class="grid grid-cols-2 gap-x-8 gap-y-1.5 text-sm text-white/80 text-left">
+                            <a href="pages/where-we-serve.html#abingdon" class="block py-0.5 hover:text-white transition-colors">Abingdon</a>
+                            <a href="pages/where-we-serve.html#didcot" class="block py-0.5 hover:text-white transition-colors">Didcot</a>
+                            <a href="pages/where-we-serve.html#oxford" class="block py-0.5 hover:text-white transition-colors">Oxford</a>
+                            <a href="pages/where-we-serve.html#witney" class="block py-0.5 hover:text-white transition-colors">Witney</a>
+                            <a href="pages/where-we-serve.html#wantage" class="block py-0.5 hover:text-white transition-colors">Wantage</a>
+                            <a href="pages/where-we-serve.html#faringdon" class="block py-0.5 hover:text-white transition-colors">Faringdon</a>
+                            <a href="pages/where-we-serve.html#wallingford" class="block py-0.5 hover:text-white transition-colors">Wallingford</a>
+                            <a href="pages/where-we-serve.html#highworth" class="block py-0.5 hover:text-white transition-colors">Highworth</a>
+                            <a href="pages/where-we-serve.html#carterton" class="block py-0.5 hover:text-white transition-colors">Carterton</a>
+                            <a href="pages/where-we-serve.html#kidlington" class="block py-0.5 hover:text-white transition-colors">Kidlington</a>
+                            <a href="pages/where-we-serve.html#woodstock" class="block py-0.5 hover:text-white transition-colors">Woodstock</a>
+                            <a href="pages/where-we-serve.html#burford" class="block py-0.5 hover:text-white transition-colors">Burford</a>
+                            <a href="pages/where-we-serve.html#chalgrove" class="block py-0.5 hover:text-white transition-colors">Chalgrove</a>
+                            <a href="pages/where-we-serve.html#yarnton" class="block py-0.5 hover:text-white transition-colors">Yarnton</a>
+                            <a href="pages/where-we-serve.html#swindon" class="block py-0.5 hover:text-white transition-colors">Swindon</a>
+                            <a href="pages/where-we-serve.html#botley" class="block py-0.5 hover:text-white transition-colors">Botley</a>
+                            <a href="pages/where-we-serve.html#eynsham" class="block py-0.5 hover:text-white transition-colors">Eynsham</a>
+                            <a href="pages/where-we-serve.html#lechlade" class="block py-0.5 hover:text-white transition-colors">Lechlade</a>
+                            <a href="pages/where-we-serve.html#chipping-norton" class="block py-0.5 hover:text-white transition-colors">Chipping Norton</a>
+                            <a href="pages/where-we-serve.html#grove" class="block py-0.5 hover:text-white transition-colors">Grove</a>
+                        </div>
+                    </div>
+                </div>
 
                 <a href="pages/contact.html"
                     class="inline-block py-2 text-lg font-medium hover:text-[#ffffff] transition-all duration-150 hover:scale-105">Get in Touch</a>
@@ -733,16 +817,21 @@
         const header = document.getElementById('site-header');
         if (!header) return;
 
-        const updateHeader = () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        };
+        const isServicePage = window.location.pathname.match(/\/pages\/services\/.+\.html/);
 
-        window.addEventListener('scroll', updateHeader);
-        updateHeader(); // Initial check
+        if (isServicePage) {
+            header.classList.add('scrolled');
+        } else {
+            const updateHeader = () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            };
+            window.addEventListener('scroll', updateHeader);
+            updateHeader();
+        }
     })();
 
     // -- Active Nav Underline --

@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Regular Hedge Trimming | Green Seasons</title>
-    <meta name="description" content="Professional hedge trimming services to maintain tidy, dense, and healthy hedge lines throughout the active growing season." />
-    
-    
+    <meta name="description" content="Regular hedge trimming in Oxfordshire. Dense, healthy, perfectly shaped hedges maintained throughout the growing season." />
+    <link rel="canonical" href="https://www.green-seasons.co.uk/pages/services/regular-trimming.html" />
+    <meta property="og:title" content="Regular Hedge Trimming | Green Seasons" />
+    <meta property="og:description" content="Regular hedge trimming in Oxfordshire. Dense, healthy, perfectly shaped hedges maintained throughout the growing season." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.green-seasons.co.uk/assets/imgs/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Regular Hedge Trimming | Green Seasons" />
+    <meta name="twitter:description" content="Regular hedge trimming in Oxfordshire. Dense, healthy, perfectly shaped hedges maintained throughout the growing season." />
     <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
@@ -16,168 +20,464 @@
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="../../style.css">
     <style type="text/tailwindcss">
         @theme {
-            --color-brand-dark:   #1a3528;
-            --color-brand-ocean:  #1a3528;
+            --color-brand-dark:   #668e78;
+            --color-brand-ocean:  #668e78;
             --color-brand-bronze: #d49813;
-            --color-brand-alice:  #F5F3EE;
-            --color-brand-beige:  #F5F3EE;
+            --color-brand-alice:  #ffffff;
+            --color-brand-beige:  #ffffff;
             --color-brand-text:   #1a3528;
             --font-heading: 'Marcus Traianus', 'Cinzel', Georgia, serif;
             --font-body:    'DM Sans', sans-serif;
         }
+        .btn-primary {
+            background-color: #db9f1b !important;
+            color: #ffffff !important;
+            border-color: transparent !important;
+        }
+        .btn-primary:hover {
+            background-color: #668e78 !important;
+            color: #ffffff !important;
+        }
+        .btn-ghost {
+            background-color: rgba(0,0,0,0.25) !important;
+            color: #ffffff !important;
+            border-color: rgba(255,255,255,0.6) !important;
+        }
+        .btn-ghost:hover {
+            background-color: #db9f1b !important;
+            border-color: #db9f1b !important;
+            color: #ffffff !important;
+        }
+    </style>
+    <style>
+        .word-mask { display:inline-block; overflow:hidden; vertical-align:bottom; padding-bottom:0.15em; margin-bottom:-0.15em; }
+        .word-mask-inner { display:inline-block; transform:translateY(110%); transition:transform 0.8s cubic-bezier(0.2,0.8,0.2,1); will-change:transform; }
+        .reveal.active .word-mask-inner { transform:translateY(0); }
+        .title-underline-anim { opacity:0; }
+        .reveal.active .title-underline-anim { animation:revealUnderline 0.8s cubic-bezier(0.2,0.8,0.2,1) 500ms forwards; }
+        @keyframes revealUnderline { from {opacity:0;transform:translateY(20px)} to {opacity:1;transform:translateY(0)} }
+        @keyframes scrollBanner { 0% {transform:translateX(0)} 100% {transform:translateX(-50%)} }
     </style>
 </head>
-
 <body class="flex flex-col min-h-screen antialiased">
 
     <div id="header-placeholder"></div>
 
-    <main class="flex-grow pb-20">
-        <section class="relative pt-32 pb-20 md:pt-48 md:pb-24 w-full flex flex-col items-center overflow-hidden mb-16" style="background:#668e78;">
-            <div class="relative w-full max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-            
-            <div class="text-center max-w-3xl mb-16 reveal reveal-up">
-                <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-[#1a3528] hover:text-[#db9f1b] transition-colors duration-300" style="transition-delay: 50ms;">
-                            <span class="border-b-[1.5px] border-current pb-0.5">01</span>
-                        </span>
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-tight relative pb-6 group flex flex-col items-center">
-                    Regular Trimming
-                    <span class="section-underline absolute bottom-0 left-1/2 -translate-x-1/2"></span>
-                </h1>
-                <p class="text-lg md:text-xl text-[#ffffff] leading-relaxed">
-                    Keep your boundaries looking immaculate. Our regular trimming services ensure your hedges remain dense, healthy, and perfectly shaped throughout the rapid growing seasons.</p>
-            </div>
-        </section>
-        
-        <section class="relative w-full max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-            <!-- Service Images Gallery -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-20 reveal reveal-up" style="transition-delay: 150ms;">
-                <div class="rounded-none overflow-hidden shadow-2xl h-[320px] group cursor-zoom-in" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">
-                    <img src="../../assets/imgs/service_imgs/Regular%20Trimming/Regular_Trimming_1.jpeg" alt="Regular Trimming" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none">
-                </div>
-                <div class="rounded-none overflow-hidden shadow-2xl h-[320px] group cursor-zoom-in" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">
-                    <img src="../../assets/imgs/service_imgs/Regular%20Trimming/Regular_Trimming_2.jpeg" alt="Regular Trimming" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none">
-                </div>
-                <div class="rounded-none overflow-hidden shadow-2xl h-[320px] group cursor-zoom-in" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">
-                    <img src="../../assets/imgs/service_imgs/Regular%20Trimming/Regular_Trimming_3.jpeg" alt="Regular Trimming" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none">
-                </div>
-                <div class="rounded-none overflow-hidden shadow-2xl h-[320px] group cursor-zoom-in" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">
-                    <img src="../../assets/imgs/service_imgs/Regular%20Trimming/Regular_Trimming_4.jpeg" alt="Regular Trimming" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none">
-                </div>
-                <div class="rounded-none overflow-hidden shadow-2xl h-[320px] group cursor-zoom-in" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">
-                    <img src="../../assets/imgs/service_imgs/Regular%20Trimming/Regular_Trimming_5.jpeg" alt="Regular Trimming" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none">
-                </div>
-            </div>
+    <main class="flex-grow">
 
-            <!-- E-commerce Action Bar -->
-            <div class="w-full bg-white rounded-none shadow-2xl border border-black/5 p-8 md:p-10 reveal reveal-up mt-12 mb-20 relative overflow-hidden" style="transition-delay: 250ms;">
-                <!-- Decorative background elements -->
-                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-[#ffffff] rounded-none opacity-[0.10] blur-2xl pointer-events-none"></div>
-                
-                <div class="flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
-                    <!-- Left: Value Proposition / Trust -->
+    <!-- ══ HERO ══ -->
+    <section class="pt-[190px] sm:pt-[207px] pb-10 md:pb-12" style="background:#ffffff;">
+        <!-- Content -->
+        <div class="w-full max-w-[80rem] mx-auto px-4 sm:px-8 lg:px-12 text-center flex flex-col items-center">
+            <!-- Breadcrumb -->
+            <nav class="mb-6 flex items-center gap-2 text-[#1a3528]/40 text-xs font-body tracking-widest uppercase">
+                <a href="../services.html" class="hover:text-[#d49813] transition-colors">Services</a>
+                <span>/</span>
+                <span class="text-[#1a3528]/70">Regular Trimming</span>
+            </nav>
+
+            <h1 class="font-heading font-black text-[2.2rem] sm:text-[3rem] md:text-[3.8rem] text-[#1a3528] leading-[1.15] mb-6">
+                Regular Trimming
+            </h1>
+
+            <p class="font-body text-base sm:text-lg md:text-xl text-[#1a3528]/70 font-medium leading-relaxed max-w-2xl mb-10">
+                Keep your boundaries looking immaculate. Our regular trimming services ensure your hedges remain dense, healthy, and perfectly shaped throughout the rapid growing seasons.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center gap-5 justify-center">
+                <a href="../contact.html" class="btn-primary" style="font-size:0.85rem;">Get a Free Quote</a>
+                <a href="tel:+447545285408" class="font-body font-bold text-sm text-[#1a3528]/60 tracking-wide underline underline-offset-[8px] decoration-2 decoration-[#1a3528]/20 hover:decoration-[#d49813] hover:text-[#d49813] transition-all duration-300">or Call Tim</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ IMAGE GALLERY ══ -->
+    <section style="background:#ffffff;" class="pt-4 pb-16 md:pt-6 md:pb-24">
+        <div class="w-full max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
+                <div class="overflow-hidden h-[280px] sm:h-[320px]">
+                    <img src="../../assets/imgs/service_imgs/Regular%20Trimming/Regular_Trimming_1.jpeg" alt="Regular Trimming" loading="eager" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none">
+                </div>
+                <div class="overflow-hidden h-[280px] sm:h-[320px]">
+                    <img src="../../assets/imgs/service_imgs/Regular%20Trimming/Regular_Trimming_2.jpeg" alt="Regular Trimming" loading="eager" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none">
+                </div>
+                <div class="overflow-hidden h-[280px] sm:h-[320px]">
+                    <img src="../../assets/imgs/service_imgs/Regular%20Trimming/Regular_Trimming_3.jpeg" alt="Regular Trimming" loading="eager" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none">
+                </div>
+                <div class="overflow-hidden h-[280px] sm:h-[320px]">
+                    <img src="../../assets/imgs/service_imgs/Regular%20Trimming/Regular_Trimming_4.jpeg" alt="Regular Trimming" loading="eager" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none">
+                </div>
+                <div class="overflow-hidden h-[280px] sm:h-[320px]">
+                    <img src="../../assets/imgs/service_imgs/Regular%20Trimming/Regular_Trimming_5.jpeg" alt="Regular Trimming" loading="eager" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ ACTION BAR ══ -->
+    <section style="background:#ffffff;" class="pb-16 md:pb-24">
+        <div class="w-full max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="border border-black/8 p-8 md:p-10 reveal" style="background:#f9f9f7;">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
                     <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
-                        <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-[#1a3528] hover:text-[#db9f1b] transition-colors duration-300" style="transition-delay: 50ms;">
-                            <span class="border-b-[1.5px] border-current pb-0.5">02</span>
-                        </span>
-                        <h2 class="text-3xl md:text-4xl font-bold text-[#1a3528] mb-4">Maintain Your Hedges</h2>
-                        <div class="flex flex-wrap justify-center lg:justify-start gap-5 text-sm font-bold tracking-wide" style="color:rgba(20,18,41,0.75);">
-                            <span class="flex items-center gap-2">Seasonal Pruning</span>
-                            <span class="flex items-center gap-2">Clean Lines</span>
-                            <span class="flex items-center gap-2">Health Checks</span>
+                        <p class="font-body text-sm font-black tracking-widest uppercase text-[#668e78] mb-4 pb-2 border-b border-[#668e78]/20">Request a Quote</p>
+                        <h2 class="font-heading text-2xl md:text-3xl font-bold text-[#1a3528] mb-4">Maintain Your Hedges</h2>
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-4 text-sm font-body font-medium text-[#1a3528]/70">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-[#668e78] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span>Seasonal Pruning</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-[#668e78] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span>Clean Lines</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-[#668e78] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span>Health Checks</span>
+                    </div>
                         </div>
                     </div>
-
-                    <!-- Right: Action Buttons -->
-                    <div class="flex flex-col sm:flex-row w-full lg:w-auto gap-4 justify-center items-center">
-                        <a href="tel:+447445064666" class="btn-primary-white">Call Us Now</a>
-                        <a href="#contact-form" class="btn-primary-white">Get a Quote</a>
+                    <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+                        <a href="tel:+447545285408" class="btn-primary" style="font-size:0.85rem;">Call Us Now</a>
+                        <a href="../contact.html" class="btn-primary btn-green-cta" style="font-size:0.85rem;">Get a Quote</a>
                     </div>
                 </div>
             </div>
-
-        </section>
-</main>
-
-        <section class="section-dark py-24 md:py-32 text-white overflow-hidden relative border-t border-white/5" style="background:#1a3528;">
-            <div class="container mx-auto px-6 max-w-[90rem] relative z-20">
-
-                <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
-
-                    <div class="w-full lg:w-3/12 reveal reveal-up order-2 lg:order-1 flex justify-center lg:justify-start">
-                        <div class="relative w-full max-w-sm lg:max-w-none h-[300px] lg:h-[400px] rounded-none overflow-hidden shadow-2xl border-2 border-white/10 group">
-                            <img src="../../assets/imgs/c8.jpeg"
-                                alt="Perfectly trimmed garden hedge"
-                                loading="lazy"
-                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        </div>
-                    </div>
-
-                    <div class="w-full lg:w-5/12 text-center reveal reveal-up order-1 lg:order-2 flex flex-col items-center">
-
-                        <h2 class="group font-heading font-black text-white leading-[1.15] flex flex-col items-center mb-[22px] cursor-default text-4xl text-5xl hover:text-[#db9f1b] transition-colors duration-500">
-                            Structured Elegance</h2>
-
-                        <p class="font-body text-lg lg:text-xl mb-10 max-w-md mx-auto leading-relaxed" style="color:rgba(255,255,255,0.80);">
-                            A well trimmed hedge provides privacy, shelter, and a beautiful architectural framework for your garden. We meticulously prune to encourage thick, even growth.</p>
-
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <a href="../gallery.html"
-                                 
-                                style="border-color:rgba(255,255,255,0.30); color:#F5F3EE;"
-                                onmouseenter="this.style.borderColor='#d49813';" onmouseleave="this.style.borderColor='rgba(255,255,255,0.30)';" class="btn-adaptive">Gallery</a>
-
-                            <a href="../services.html"
-                                 
-                                 class="btn-adaptive">All Services</a>
-                        </div>
-                    </div>
-
-                    <div class="w-full lg:w-3/12 reveal reveal-up order-3 flex justify-center lg:justify-end mt-0 lg:mt-16" style="transition-delay:200ms;">
-                        <div class="relative w-full max-w-sm lg:max-w-none h-[300px] lg:h-[400px] rounded-none overflow-hidden shadow-2xl border-2 border-white/10 group">
-                            <img src="../../assets/imgs/a5.jpeg"
-                                alt="Perfectly trimmed garden hedge"
-                                loading="lazy"
-                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        </div>
-                    </div>
-
-                </div>
+        </div>
+    </section>
+    <!-- ══ RELATED SERVICES ══ -->
+    <section style="background:#ffffff; border-top:1px solid rgba(26,53,40,0.05);" class="py-14 md:py-20">
+        <style>
+            .related-carousel-track {
+                width: max-content;
+            }
+        </style>
+        <div class="w-full max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+            <h2 class="font-heading text-2xl md:text-3xl font-bold text-[#1a3528]">Related Services</h2>
+        </div>
+        <div class="overflow-hidden">
+            <div class="related-carousel-track flex gap-6 px-6">
+                <a href="routine-grass-cutting.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">I</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Routine Grass Cutting</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Regular mowing &amp; presentation</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="strimming-and-edging.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">II</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Strimming &amp; Edging</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Crisp borders &amp; clean edges</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="site-presentation.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">III</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Site Presentation</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Immaculate grounds, every visit</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="seasonal-fertiliser.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">IV</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Seasonal Fertiliser</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Nutrition tailored to the season</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="weed-and-moss-control.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">V</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Weed &amp; Moss Control</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Targeted treatment &amp; prevention</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="aeration-and-scarification.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">VI</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Aeration &amp; Scarification</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Improve drainage &amp; root health</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="full-lawn-renovations.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">VII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Full Lawn Renovations</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Complete lawn transformation</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="regular-trimming.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">VIII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Regular Trimming</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Shaped hedges &amp; neat shrubs</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="expert-shaping.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">IX</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Expert Shaping</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Precision cuts &amp; defined form</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="plant-health-care.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">X</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Plant Health Care</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Diagnosis, treatment &amp; care</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="plant-supply-and-sourcing.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XI</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Plant Supply &amp; Sourcing</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Quality plants, expertly chosen</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="custom-planting-schemes.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Custom Planting Schemes</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Bespoke planting to your vision</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="bespoke-border-design.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XIII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Bespoke Border Design</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Beautiful, designed borders</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="wetting-agents.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XIV</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Wetting Agents</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Improve water penetration</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="slow-release-nutrition.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XV</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Slow-Release Nutrition</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Sustained feeding all season</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="soil-resilience.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XVI</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Soil Resilience</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Stronger soil, healthier growth</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="initial-reset-visits.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XVII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Initial Reset Visits</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">One-off restoration service</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="full-site-clearance.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XVIII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Full Site Clearance</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Complete outdoor clearance</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="overgrown-recovery.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XIX</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Overgrown Recovery</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Reclaim neglected spaces</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="certified-herbicide.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XX</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Certified Herbicide</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Professional weed elimination</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="lawn-weed-management.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XXI</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Lawn Weed Management</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Selective, targeted weed control</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="hard-surface-treatment.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XXII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Hard Surface Treatment</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Paths, patios &amp; driveways</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="invasive-species.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XXIII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Invasive Species Control</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Safe removal &amp; management</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="routine-grass-cutting.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">I</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Routine Grass Cutting</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Regular mowing &amp; presentation</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="strimming-and-edging.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">II</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Strimming &amp; Edging</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Crisp borders &amp; clean edges</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="site-presentation.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">III</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Site Presentation</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Immaculate grounds, every visit</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="seasonal-fertiliser.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">IV</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Seasonal Fertiliser</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Nutrition tailored to the season</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="weed-and-moss-control.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">V</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Weed &amp; Moss Control</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Targeted treatment &amp; prevention</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="aeration-and-scarification.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">VI</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Aeration &amp; Scarification</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Improve drainage &amp; root health</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="full-lawn-renovations.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">VII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Full Lawn Renovations</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Complete lawn transformation</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="regular-trimming.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">VIII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Regular Trimming</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Shaped hedges &amp; neat shrubs</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="expert-shaping.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">IX</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Expert Shaping</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Precision cuts &amp; defined form</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="plant-health-care.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">X</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Plant Health Care</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Diagnosis, treatment &amp; care</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="plant-supply-and-sourcing.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XI</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Plant Supply &amp; Sourcing</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Quality plants, expertly chosen</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="custom-planting-schemes.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Custom Planting Schemes</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Bespoke planting to your vision</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="bespoke-border-design.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XIII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Bespoke Border Design</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Beautiful, designed borders</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="wetting-agents.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XIV</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Wetting Agents</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Improve water penetration</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="slow-release-nutrition.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XV</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Slow-Release Nutrition</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Sustained feeding all season</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="soil-resilience.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XVI</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Soil Resilience</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Stronger soil, healthier growth</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="initial-reset-visits.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XVII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Initial Reset Visits</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">One-off restoration service</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="full-site-clearance.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XVIII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Full Site Clearance</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Complete outdoor clearance</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="overgrown-recovery.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XIX</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Overgrown Recovery</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Reclaim neglected spaces</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="certified-herbicide.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XX</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Certified Herbicide</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Professional weed elimination</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="lawn-weed-management.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XXI</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Lawn Weed Management</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Selective, targeted weed control</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="hard-surface-treatment.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XXII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Hard Surface Treatment</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Paths, patios &amp; driveways</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
+                <a href="invasive-species.html" class="group block relative border border-black/8 p-8 hover:border-[#c9a84c] transition-colors duration-300 shrink-0 w-[300px]" style="background:#ffffff;">
+                    <span class="absolute top-4 right-5 font-heading text-[#c9a84c] text-5xl font-bold select-none leading-none">XXIII</span>
+                    <h3 class="font-heading text-xl font-bold text-[#1a3528] mb-2 pr-16 group-hover:text-[#c9a84c] transition-colors duration-300">Invasive Species Control</h3>
+                    <p class="font-body text-sm text-black/70 mb-3">Safe removal &amp; management</p>
+                    <span class="font-body text-sm text-[#c9a84c] font-medium">Learn more &rarr;</span>
+                </a>
             </div>
-        </section>
+        </div>
+        <script>
+        (function () {
+            var track = document.querySelector('.related-carousel-track');
+            if (!track) return;
+            var pos = 0;
+            var speed = 0.5;
+            var targetSpeed = 0.5;
+            var NORMAL = 0.5;
+            var SLOW = 0.06;
+            var container = track.parentElement;
+            container.addEventListener('mouseenter', function () { targetSpeed = SLOW; });
+            container.addEventListener('mouseleave', function () { targetSpeed = NORMAL; });
+            function tick() {
+                speed += (targetSpeed - speed) * 0.04;
+                pos += speed;
+                var half = track.scrollWidth / 2;
+                if (pos >= half) pos -= half;
+                track.style.transform = 'translateX(-' + pos + 'px)';
+                requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        })();
+        </script>
+    </section>
 
+    </main>
 
     <div id="footer-placeholder"></div>
-
     <script src="../../global.js"></script>
-    
-    <!-- Lightbox Script -->
-    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center opacity-0 transition-opacity duration-300 backdrop-blur-sm cursor-zoom-out" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="Perfectly trimmed garden hedge" class="max-w-[90vw] max-h-[90vh] object-contain rounded-none shadow-2xl transition-transform duration-300 scale-95">
-    </div>
     <script>
-        function openLightbox(src, alt) {
-            const lb = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
-            img.src = src; img.alt = alt;
-            lb.classList.remove('hidden'); lb.classList.add('flex');
-            setTimeout(() => { lb.classList.remove('opacity-0'); lb.classList.add('opacity-100'); img.classList.remove('scale-95'); img.classList.add('scale-100'); }, 10);
-            document.body.style.overflow = 'hidden';
-        }
-        function closeLightbox() {
-            const lb = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
-            lb.classList.remove('opacity-100'); lb.classList.add('opacity-0');
-            img.classList.remove('scale-100'); img.classList.add('scale-95');
-            setTimeout(() => { lb.classList.remove('flex'); lb.classList.add('hidden'); document.body.style.overflow = ''; }, 300);
-        }
+        (function() {
+            var els = document.querySelectorAll('.reveal');
+            if (!els.length) return;
+            var ob = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('active'); ob.unobserve(e.target); } });
+            }, {threshold: 0.10});
+            els.forEach(function(el) { ob.observe(el); });
+        })();
     </script>
 </body>
 </html>
-

@@ -17,10 +17,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-
     <link rel="stylesheet" href="../style.css">
     <style type="text/tailwindcss">
         @theme {
@@ -34,109 +33,276 @@
             --font-body:    'DM Sans', sans-serif;
         }
     </style>
+    <style>
+        .word-mask { display:inline-block; overflow:hidden; vertical-align:bottom; padding-bottom:0.15em; margin-bottom:-0.15em; }
+        .word-mask-inner { display:inline-block; transform:translateY(110%); transition:transform 0.8s cubic-bezier(0.2,0.8,0.2,1); will-change:transform; }
+        .reveal.active .word-mask-inner { transform:translateY(0); }
+        .title-underline-anim { opacity:0; }
+        .reveal.active .title-underline-anim { animation:revealUnderline 0.8s cubic-bezier(0.2,0.8,0.2,1) 500ms forwards; }
+        @keyframes revealUnderline { from {opacity:0;transform:translateY(20px)} to {opacity:1;transform:translateY(0)} }
+    </style>
 </head>
 
 <body class="flex flex-col min-h-screen antialiased">
 
     <div id="header-placeholder"></div>
 
-    <main class="flex-1">
+    <main class="flex-grow">
 
-        <!-- Hero -->
-        <section class="section-dark pt-40 pb-24 px-6 text-center">
-            <p class="gs-tagline mb-4">Serving Oxfordshire &amp; Beyond</p>
-            <h1 class="gs-heading text-4xl md:text-5xl lg:text-6xl mb-6">Where We Serve</h1>
-            <p class="gs-body max-w-2xl mx-auto text-lg opacity-80">Based in Oxfordshire, Green Seasons covers a wide area across the county and neighbouring regions. Get in touch to confirm we cover your location.</p>
+        <!-- ══ PAGE HEADER ══ -->
+        <section style="background:#668e78;" class="pt-40 pb-14 text-white text-center">
+            <span class="inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-5 text-white border-b border-current pb-0.5 hover:text-[#db9f1b] transition-colors duration-300 cursor-default">01</span>
+            <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-4">Where We Serve</h1>
+            <p class="font-body text-white/75 text-base sm:text-lg max-w-xl mx-auto">Areas we cover across Oxfordshire.</p>
         </section>
 
-        <!-- Locations grid -->
-        <section class="py-24 px-6 max-w-5xl mx-auto">
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                <div id="abingdon" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Abingdon</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="didcot" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Didcot</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="oxford" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Oxford</h2>
-                    <p class="gs-body text-sm opacity-70">city and suburbs</p>
-                </div>
-                <div id="witney" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Witney</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="wantage" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Wantage</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="faringdon" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Faringdon</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="wallingford" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Wallingford</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="highworth" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Highworth</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="carterton" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Carterton</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="kidlington" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Kidlington</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="woodstock" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Woodstock</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="burford" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Burford</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="chalgrove" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Chalgrove</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="yarnton" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Yarnton</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="swindon" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Swindon</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="botley" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Botley</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="eynsham" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Eynsham</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="lechlade" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Lechlade</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="chipping-norton" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Chipping Norton</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-                <div id="grove" class="p-6 border border-[#668e78]/20 rounded-xl">
-                    <h2 class="gs-heading text-lg mb-1">Grove</h2>
-                    <p class="gs-body text-sm opacity-70">and surrounding villages</p>
-                </div>
-            </div>
+        <!-- ══ LOCATIONS GRID ══ -->
+        <section style="background:#ffffff;" class="py-16 md:py-24">
+            <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10">
 
-            <div class="mt-16 text-center">
-                <p class="gs-body mb-6 opacity-70">Not sure if we cover your area? Just ask.</p>
-                <a href="contact.html" class="btn-adaptive">Get in Touch</a>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:0ms;">
+                        <img src="../assets/imgs/location_imgs/Abingdon.jpg" alt="Abingdon" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Abingdon</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/abingdon.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:50ms;">
+                        <img src="../assets/imgs/location_imgs/Didcot.jpg" alt="Didcot" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Didcot</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/didcot.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:100ms;">
+                        <img src="../assets/imgs/location_imgs/Oxford.jpg" alt="Oxford" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Oxford</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">city and suburbs</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/oxford.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:150ms;">
+                        <img src="../assets/imgs/location_imgs/Witney.jpg" alt="Witney" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Witney</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/witney.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:0ms;">
+                        <img src="../assets/imgs/location_imgs/Wantage.jpg" alt="Wantage" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Wantage</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/wantage.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:50ms;">
+                        <img src="../assets/imgs/location_imgs/Faringdon.jpg" alt="Faringdon" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Faringdon</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/faringdon.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:100ms;">
+                        <img src="../assets/imgs/location_imgs/Wallingford.jpg" alt="Wallingford" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Wallingford</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/wallingford.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:150ms;">
+                        <img src="../assets/imgs/location_imgs/Highworth.jpg" alt="Highworth" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Highworth</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/highworth.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:0ms;">
+                        <img src="../assets/imgs/location_imgs/Carterton.jpg" alt="Carterton" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Carterton</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/carterton.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:50ms;">
+                        <img src="../assets/imgs/location_imgs/Kidlington.jpg" alt="Kidlington" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Kidlington</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/kidlington.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:100ms;">
+                        <img src="../assets/imgs/location_imgs/Woodstock.jpg" alt="Woodstock" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Woodstock</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/woodstock.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:150ms;">
+                        <img src="../assets/imgs/location_imgs/Burford.jpg" alt="Burford" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Burford</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/burford.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:0ms;">
+                        <img src="../assets/imgs/location_imgs/Chalgrove.jpg" alt="Chalgrove" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Chalgrove</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/chalgrove.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:50ms;">
+                        <img src="../assets/imgs/location_imgs/Yarnton.jpg" alt="Yarnton" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Yarnton</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/yarnton.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:100ms;">
+                        <img src="../assets/imgs/location_imgs/Swindon.jpg" alt="Swindon" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Swindon</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/swindon.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:150ms;">
+                        <img src="../assets/imgs/location_imgs/Botley.jpg" alt="Botley" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Botley</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/botley.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:0ms;">
+                        <img src="../assets/imgs/location_imgs/Eynsham.jpg" alt="Eynsham" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Eynsham</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/eynsham.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:50ms;">
+                        <img src="../assets/imgs/location_imgs/Lechlade.jpg" alt="Lechlade" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Lechlade</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/lechlade.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:100ms;">
+                        <img src="../assets/imgs/location_imgs/Chipping%20Norton.jpg" alt="Chipping Norton" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Chipping Norton</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/chipping-norton.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col justify-end overflow-hidden aspect-square reveal" style="transition-delay:150ms;">
+                        <img src="../assets/imgs/location_imgs/Grove.jpg" alt="Grove" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a3528]/95 via-[#1a3528]/40 to-transparent z-10"></div>
+                        <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+                            <h3 class="font-heading text-xl font-bold text-white mb-2">Grove</h3>
+                            <p class="font-body text-white/75 text-xs leading-relaxed mb-4">and surrounding villages</p>
+                            <div class="flex gap-3 pt-4 border-t border-white/20">
+                                <a href="./locations/grove.html" class="flex-1 flex items-center justify-center py-2 border border-white/30 text-white font-bold text-[11px] hover:bg-[#d49813] hover:border-[#d49813] transition-all duration-300">View Location</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
@@ -144,6 +310,17 @@
 
     <div id="footer-placeholder"></div>
     <script src="../global.js"></script>
+
+    <script>
+        (function() {
+            var els = document.querySelectorAll('.reveal');
+            if (!els.length) return;
+            var ob = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('active'); ob.unobserve(e.target); } });
+            }, {threshold: 0.08});
+            els.forEach(function(el) { ob.observe(el); });
+        })();
+    </script>
 
 </body>
 </html>

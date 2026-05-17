@@ -74,10 +74,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function loadComponents() {
     const path = window.location.pathname;
-    const isPagesServiceDir = path.includes('/pages/services/');
-    const isPagesDir = !isPagesServiceDir && path.includes('/pages/');
+    const isPagesLocationsDir = path.includes('/pages/locations/');
+    const isPagesServiceDir = !isPagesLocationsDir && path.includes('/pages/services/');
+    const isPagesDir = !isPagesServiceDir && !isPagesLocationsDir && path.includes('/pages/');
     let basePath = '';
-    if (isPagesServiceDir) basePath = '../../';
+    if (isPagesServiceDir || isPagesLocationsDir) basePath = '../../';
     else if (isPagesDir) basePath = '../';
 
     const headerPlaceholder = document.getElementById('header-placeholder');
@@ -178,6 +179,7 @@ function setActiveNav() {
         { test: p => p.includes('/pages/about'), label: 'About' },
         { test: p => p.includes('/pages/gallery'), label: 'Gallery' },
         { test: p => p.includes('/pages/contact'), label: 'Contact' },
+        { test: p => p.includes('/pages/locations/'), label: 'Where We Serve' },
     ];
 
     let activeLabel = null;

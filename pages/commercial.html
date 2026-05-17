@@ -2,81 +2,722 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Commercial Services | Green Seasons | Grounds Maintenance, Oxfordshire</title>
-    <meta name="description" content="Green Seasons provides professional commercial grounds maintenance across Oxfordshire. Reliable, owner-led services for businesses, estates, and developments." />
-    <link rel="canonical" href="https://www.green-seasons.co.uk/pages/commercial.html" />
+  <title>Commercial Grounds Maintenance | Green Seasons | Oxfordshire</title>
+  <meta name="description" content="Green Seasons provides professional commercial grounds maintenance across Oxfordshire. Reliable, owner-led services for business parks, residential developments, private estates, and public spaces." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.green-seasons.co.uk/pages/commercial.html" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-    <link rel="manifest" href="../site.webmanifest">
-    <link rel="shortcut icon" href="../favicon.ico">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.green-seasons.co.uk/pages/commercial.html" />
+  <meta property="og:title" content="Commercial Grounds Maintenance | Green Seasons" />
+  <meta property="og:description" content="Professional, owner-led commercial grounds maintenance across Oxfordshire. Business parks, residential developments, private estates, and more." />
+  <meta property="og:image" content="https://www.green-seasons.co.uk/assets/imgs/og-image.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="Green Seasons" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="shortcut icon" href="../favicon.ico">
 
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../style.css">
-    <style type="text/tailwindcss">
-        @theme {
-            --color-brand-dark:   #668e78;
-            --color-brand-ocean:  #668e78;
-            --color-brand-bronze: #d49813;
-            --color-brand-alice:  #ffffff;
-            --color-brand-beige:  #ffffff;
-            --color-brand-text:   #1a3528;
-            --font-heading: 'Marcus Traianus', 'Cinzel', Georgia, serif;
-            --font-body:    'DM Sans', sans-serif;
-        }
-    </style>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+  <link rel="stylesheet" href="../style.css">
+  <style type="text/tailwindcss">
+    @theme {
+      --color-brand-dark:   #668e78;
+      --color-brand-ocean:  #668e78;
+      --color-brand-bronze: #d49813;
+      --color-brand-alice:  #ffffff;
+      --color-brand-beige:  #ffffff;
+      --color-brand-text:   #1a3528;
+      --font-heading: 'Marcus Traianus', 'Cinzel', Georgia, serif;
+      --font-body:    'DM Sans', sans-serif;
+    }
+
+    .btn-primary {
+      background-color: #db9f1b !important;
+      color: #ffffff !important;
+      border-color: transparent !important;
+      align-self: flex-start;
+      width: auto !important;
+    }
+    .btn-primary:hover {
+      background-color: #668e78 !important;
+      border-color: transparent !important;
+      color: #ffffff !important;
+    }
+    .btn-ghost {
+      background-color: transparent !important;
+      color: #ffffff !important;
+      border-color: #ffffff !important;
+      align-self: flex-start;
+      width: auto !important;
+    }
+    .btn-ghost:hover {
+      background-color: #db9f1b !important;
+      border-color: #db9f1b !important;
+      color: #ffffff !important;
+    }
+  </style>
 </head>
 
 <body class="flex flex-col min-h-screen antialiased">
 
-    <div id="header-placeholder"></div>
+  <div id="header-placeholder"></div>
 
-    <main class="flex-1">
+  <main>
 
-        <!-- Hero -->
-        <section class="section-dark pt-40 pb-24 px-6 text-center">
-            <p class="gs-tagline mb-4">Professional Grounds Management</p>
-            <h1 class="gs-heading text-4xl md:text-5xl lg:text-6xl mb-6">Commercial Services</h1>
-            <p class="gs-body max-w-2xl mx-auto text-lg opacity-80">From business parks and retail sites to private estates and residential developments — Green Seasons delivers consistent, professional grounds maintenance you can rely on.</p>
-            <div class="mt-10">
-                <a href="contact.html" class="btn-adaptive">Get a Free Quote</a>
+    <!-- -------------------------------------------------- 
+      HERO
+    -------------------------------------------------- -->
+    <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 flex items-center justify-center overflow-hidden" style="background:#668e78;">
+
+      <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20 text-center text-white reveal flex flex-col items-center">
+
+        <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-white/80 hover:text-white transition-colors duration-300" style="transition-delay: 50ms;">
+          <span class="border-b-[1.5px] border-current pb-0.5">01</span>
+        </span>
+
+        <h1 class="group font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight flex flex-col items-center cursor-default" style="color:#ffffff;">
+          <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Commercial</span></span>
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 150ms;">Grounds</span></span>
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Maintenance</span></span>
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 250ms;">Across</span></span>
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Oxfordshire</span></span>
+          </span>
+        </h1>
+
+        <p class="title-underline-anim font-body text-lg lg:text-xl mt-8 max-w-3xl mx-auto leading-relaxed text-white/70" style="animation-delay: 500ms;">
+          Whether you manage a business park, retail site, private estate, or residential development, Green Seasons delivers consistent, professional grounds maintenance you can rely on.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- -------------------------------------------------- 
+      SCROLLING BANNER
+    -------------------------------------------------- -->
+    <style>
+      .scrolling-wrapper {
+        overflow: hidden;
+        white-space: nowrap;
+        display: flex;
+        width: 100%;
+        cursor: default;
+      }
+      .scrolling-track {
+        display: flex;
+        width: max-content;
+        animation: scrollBanner 25s linear infinite;
+      }
+      .scrolling-wrapper:hover .scrolling-track,
+      .scrolling-track:hover {
+        animation-play-state: running !important;
+      }
+      @keyframes scrollBanner {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .hover-item { transition: opacity 0.3s ease; }
+      .scrolling-wrapper:hover .hover-item { opacity: 0.5; }
+      .scrolling-wrapper .hover-item:hover { opacity: 1; }
+    </style>
+
+    <div style="background:#668e78;" class="text-[#ffffff] py-5 border-y border-white/10 shadow-inner">
+      <div class="scrolling-wrapper">
+        <div class="scrolling-track flex items-center font-body font-medium tracking-wide text-sm md:text-base">
+
+          <div class="flex items-center gap-12 md:gap-20 px-6 md:px-10">
+            <div class="flex items-center gap-3 hover-item">
+              <svg class="w-4 h-4 shrink-0 text-[#d49813]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Grounds Maintenance</span>
             </div>
-        </section>
-
-        <!-- Content placeholder -->
-        <section class="py-24 px-6 max-w-5xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-10">
-                <div>
-                    <h2 class="gs-heading text-xl mb-3">Business Parks &amp; Offices</h2>
-                    <p class="gs-body opacity-80">Regular maintenance contracts tailored to commercial schedules, keeping your grounds presentable year-round.</p>
-                </div>
-                <div>
-                    <h2 class="gs-heading text-xl mb-3">Residential Developments</h2>
-                    <p class="gs-body opacity-80">Communal area upkeep for housing estates and apartment complexes, managed professionally and reliably.</p>
-                </div>
-                <div>
-                    <h2 class="gs-heading text-xl mb-3">Private Estates</h2>
-                    <p class="gs-body opacity-80">Comprehensive grounds management for large properties, including lawn care, planting, and specialist treatments.</p>
-                </div>
+            <div class="flex items-center gap-3 hover-item">
+              <svg class="w-4 h-4 shrink-0 text-[#d49813]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Lawn Care &amp; Renovation</span>
             </div>
-            <div class="mt-16 text-center">
-                <a href="contact.html" class="btn-adaptive">Discuss Your Requirements</a>
+            <div class="flex items-center gap-3 hover-item">
+              <svg class="w-4 h-4 shrink-0 text-[#d49813]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Hedge Cutting</span>
             </div>
-        </section>
+            <div class="flex items-center gap-3 hover-item">
+              <svg class="w-4 h-4 shrink-0 text-[#d49813]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Weed Control</span>
+            </div>
+            <div class="flex items-center gap-3 hover-item">
+              <svg class="w-4 h-4 shrink-0 text-[#d49813]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Site Clearance</span>
+            </div>
+          </div>
 
-    </main>
+          <div class="flex items-center gap-12 md:gap-20 px-6 md:px-10">
+            <div class="flex items-center gap-3 hover-item">
+              <svg class="w-4 h-4 shrink-0 text-[#d49813]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Grounds Maintenance</span>
+            </div>
+            <div class="flex items-center gap-3 hover-item">
+              <svg class="w-4 h-4 shrink-0 text-[#d49813]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Lawn Care &amp; Renovation</span>
+            </div>
+            <div class="flex items-center gap-3 hover-item">
+              <svg class="w-4 h-4 shrink-0 text-[#d49813]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Hedge Cutting</span>
+            </div>
+            <div class="flex items-center gap-3 hover-item">
+              <svg class="w-4 h-4 shrink-0 text-[#d49813]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Weed Control</span>
+            </div>
+            <div class="flex items-center gap-3 hover-item">
+              <svg class="w-4 h-4 shrink-0 text-[#d49813]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Site Clearance</span>
+            </div>
+          </div>
 
-    <div id="footer-placeholder"></div>
-    <script src="../global.js"></script>
+          <div class="flex items-center gap-12 md:gap-20 px-6 md:px-10">
+            <div class="flex items-center gap-3 hover-item">
+              <svg class="w-4 h-4 shrink-0 text-[#d49813]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Grounds Maintenance</span>
+            </div>
+            <div class="flex items-center gap-3 hover-item">
+              <svg class="w-4 h-4 shrink-0 text-[#d49813]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Lawn Care &amp; Renovation</span>
+            </div>
+            <div class="flex items-center gap-3 hover-item">
+              <svg class="w-4 h-4 shrink-0 text-[#d49813]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Hedge Cutting</span>
+            </div>
+            <div class="flex items-center gap-3 hover-item">
+              <svg class="w-4 h-4 shrink-0 text-[#d49813]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Weed Control</span>
+            </div>
+            <div class="flex items-center gap-3 hover-item">
+              <svg class="w-4 h-4 shrink-0 text-[#d49813]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Site Clearance</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- -------------------------------------------------- 
+      COMMERCIAL INTRO SECTION (DUAL PARALLAX LAYOUT)
+    -------------------------------------------------- -->
+    <section id="commercial-intro-section"
+      class="relative py-16 lg:py-24 flex flex-col items-center justify-center overflow-hidden"
+      style="background:#ffffff;">
+
+      <style>
+        .word-mask {
+          display: inline-block;
+          overflow: hidden;
+          vertical-align: bottom;
+          padding-bottom: 0.15em;
+          margin-bottom: -0.15em;
+        }
+        .word-mask-inner {
+          display: inline-block;
+          transform: translateY(110%);
+          transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+          will-change: transform;
+        }
+        .reveal.active .word-mask-inner {
+          transform: translateY(0);
+        }
+        .title-underline-anim {
+          opacity: 0;
+        }
+        .reveal.active .title-underline-anim {
+          animation: revealUnderline 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 500ms forwards;
+        }
+        @keyframes revealUnderline {
+          from { opacity: 0; transform: translateY(20px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        #commercial-intro-section .btn-primary {
+          background-color: #db9f1b;
+          color: #ffffff;
+          border-color: transparent;
+        }
+        #commercial-intro-section .btn-primary:hover {
+          background-color: #668e78;
+          border-color: transparent;
+          color: #ffffff;
+        }
+      </style>
+
+      <!-- Background image: right half -->
+      <div class="absolute right-0 top-0 bottom-0 w-full lg:w-[40vw] overflow-hidden z-0">
+        <div class="absolute inset-0 bg-white/80 lg:bg-transparent z-10 pointer-events-none"></div>
+        <img src="../assets/imgs/Private estates and large properties homepage.jpeg"
+          alt="Commercial grounds maintenance Oxfordshire" loading="lazy"
+          class="w-full h-full object-cover">
+      </div>
+
+      <!-- Front image (desktop parallax) -->
+      <div class="js-parallax-commercial hidden lg:flex absolute top-1/2 right-[40vw] translate-x-1/2 z-10 w-[22vw] xl:w-[20vw] h-[365px] xl:h-[418px] items-center justify-center will-change-transform" data-speed="0.3" style="margin-top: -209px;">
+        <div class="relative w-full h-full overflow-hidden shadow-2xl shadow-black/50 z-10">
+          <img src="../assets/imgs/WhatsApp Image 2026-05-01 at 07.39.44 copy.jpeg"
+            alt="Professional commercial site maintenance" loading="lazy"
+            class="w-full h-full object-cover scale-[1.15]">
+        </div>
+      </div>
+
+      <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+        <!-- Left column: text & stats -->
+        <div class="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left reveal z-20">
+
+          <span class="gs-tagline word-mask-inner" style="transition-delay: 50ms;">
+            <span class="border-b-[1.5px] border-current pb-0.5">01</span>
+          </span>
+
+          <h2 class="gs-heading group mb-[22px] flex flex-col items-center lg:items-start w-full">
+            <span class="flex flex-wrap justify-center lg:justify-start gap-x-3 lg:gap-x-4 leading-tight">
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Grounds</span></span>
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Maintenance</span></span>
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Built</span></span>
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">for</span></span>
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 500ms;">Commercial</span></span>
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 600ms;">Sites</span></span>
+            </span>
+          </h2>
+
+          <div class="gs-body title-underline-anim space-y-5 mb-7 w-full max-w-xl mx-auto lg:mx-0" style="animation-delay: 700ms;">
+            <p>
+              Green Seasons works with commercial property managers, facilities teams, managing agents, and business owners who need grounds maintenance they can depend on, week in, week out, regardless of season.
+            </p>
+            <p>
+              We operate across Oxfordshire, maintaining everything from front-of-house entrances and business park grounds to communal estates, private sites, and public spaces. Every visit is owner-led, meaning the standard you agree is the standard you receive.
+            </p>
+            <p>
+              Regular maintenance contracts, one-off site clears, seasonal programmes, and specialist treatments, all tailored to the specific demands of your site.
+            </p>
+          </div>
+
+          <!-- Stats -->
+          <div id="commercial-stats"
+            class="title-underline-anim flex flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-10 lg:gap-12 mb-8 w-full max-w-lg mx-auto lg:mx-0" style="animation-delay: 800ms;">
+            <div class="group flex flex-col items-center lg:items-start cursor-default">
+              <p class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-[#1a3528] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#db9f1b] whitespace-nowrap">
+                <span class="auto-counter" data-target="8">0</span>+
+              </p>
+              <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-[#1a3528]/60">Years Exp.</p>
+            </div>
+            <div class="group flex flex-col items-center lg:items-start cursor-default">
+              <p class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-[#1a3528] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#db9f1b] whitespace-nowrap">
+                5-Star
+              </p>
+              <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-[#1a3528]/60">Google Rating</p>
+            </div>
+            <div class="group flex flex-col items-center lg:items-start cursor-default">
+              <p class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-[#1a3528] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#db9f1b] whitespace-nowrap">
+                <span class="auto-counter" data-target="100">0</span>%
+              </p>
+              <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-[#1a3528]/60">Owner-Led</p>
+            </div>
+          </div>
+
+          <div class="title-underline-anim" style="animation-delay: 900ms;">
+            <a href="contact.html" class="btn-adaptive">Discuss Your Site</a>
+          </div>
+
+        </div>
+
+        <!-- Mobile front image -->
+        <div class="lg:hidden w-full relative h-[400px] sm:h-[500px] mt-8 reveal reveal-up delay-100">
+          <div class="w-full h-full overflow-hidden shadow-2xl">
+            <img src="../assets/imgs/WhatsApp Image 2026-05-01 at 07.39.44 copy.jpeg"
+              alt="Commercial grounds maintenance" loading="lazy"
+              class="w-full h-full object-cover scale-[1.15]">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Parallax script -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const section = document.getElementById('commercial-intro-section');
+          const frontImg = document.querySelector('.js-parallax-commercial');
+          if (!section || !frontImg || window.innerWidth < 1024) return;
+          let ticking = false;
+          const updateParallax = () => {
+            const rect = section.getBoundingClientRect();
+            const offset = (rect.top + rect.height / 2) - window.innerHeight / 2;
+            const speed = parseFloat(frontImg.dataset.speed) || 0.3;
+            frontImg.style.transform = `translate3d(0, ${offset * speed}px, 0)`;
+            ticking = false;
+          };
+          window.addEventListener('scroll', () => {
+            if (!ticking) { window.requestAnimationFrame(updateParallax); ticking = true; }
+          }, { passive: true });
+          updateParallax();
+        });
+      </script>
+
+      <!-- Counter script -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const counters = document.querySelectorAll('#commercial-stats .auto-counter');
+          if (counters.length === 0) return;
+          const speed = 2000;
+          const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const target = +entry.target.getAttribute('data-target');
+                const update = () => {
+                  const current = +entry.target.innerText;
+                  const increment = target / (speed / 16);
+                  if (current < target) { entry.target.innerText = Math.ceil(current + increment); setTimeout(update, 16); }
+                  else { entry.target.innerText = target; }
+                };
+                update();
+                obs.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.5 });
+          counters.forEach(c => observer.observe(c));
+        });
+      </script>
+
+    </section>
+
+    <!-- -------------------------------------------------- 
+      WHO WE SERVE — ALTERNATING BLOCKS
+    -------------------------------------------------- -->
+    <section id="commercial-clients-section" class="relative pt-20 md:pt-32 pb-0 overflow-hidden" style="background:#ffffff; border-top: 1px solid rgba(26,53,40,0.05);">
+
+      <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20">
+        <div class="flex flex-col items-center text-center mb-8 md:mb-12 reveal">
+          <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-[#1a3528] hover:text-[#db9f1b] transition-colors duration-300" style="transition-delay: 50ms;">
+            <span class="border-b-[1.5px] border-current pb-0.5">02</span>
+          </span>
+          <h2 class="group font-heading font-black text-4xl sm:text-5xl text-[#1a3528] mb-[22px] leading-[1.15] flex flex-col items-center text-center cursor-default w-full hover:text-[#db9f1b] transition-colors duration-500">
+            <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Who</span></span>
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">We</span></span>
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Work</span></span>
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">With</span></span>
+            </span>
+          </h2>
+          <p class="title-underline-anim font-body text-lg md:text-xl text-[#1a3528]/80 max-w-2xl mx-auto leading-relaxed mt-2" style="animation-delay: 600ms;">
+            Commercial clients who need reliable, scheduled grounds maintenance delivered to a consistently high standard, across every site, every visit.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col w-full gap-y-0 relative">
+
+        <!-- Gold centre line (desktop only) -->
+        <div class="hidden lg:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-1.5 z-30 pointer-events-none" style="background:#db9f1b;"></div>
+
+        <!-- 1: Business Parks & Offices (image left) -->
+        <div class="flex flex-col lg:flex-row items-stretch w-full lg:min-h-[500px] xl:min-h-[600px] group">
+          <div class="w-full lg:w-[calc(50%-3px)] relative overflow-hidden min-h-[280px] sm:min-h-[380px] lg:min-h-0">
+            <img src="../assets/imgs/WhatsApp Image 2026-05-01 at 07.39.44 copy.jpeg" alt="Business Parks & Offices grounds maintenance" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+          </div>
+          <div class="w-full lg:w-[calc(50%-3px)] flex flex-col justify-center p-8 sm:p-10 lg:p-16 xl:p-24 bg-[#f5fef8] reveal reveal-right relative overflow-hidden" style="transition-delay:0.4s">
+            <div class="absolute top-0 left-0 w-1.5 h-full bg-[#ffffff] transform scale-y-0 origin-bottom transition-transform duration-700 group-hover:scale-y-100"></div>
+            <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-6 cursor-default text-[#1a3528] hover:text-[#db9f1b] transition-colors duration-300"><span class="border-b-[1.5px] border-current pb-0.5">03</span></span>
+            <h3 class="font-heading font-black text-4xl sm:text-5xl text-[#1a3528] mb-[22px] leading-[1.15] hover:text-[#db9f1b] transition-colors duration-500 cursor-default">Business Parks &amp; Offices</h3>
+            <p class="font-body text-base sm:text-lg text-[rgba(26,53,40,0.80)] leading-relaxed mb-7">Regular maintenance contracts tailored to commercial schedules. Front-of-house grounds, car park borders, entrance planting, and hard surface weed control, keeping your site presentable year-round. First impressions start at the kerb, not the front door.</p>
+            <a href="contact.html" class="btn-primary inline-block">Get a Quote</a>
+          </div>
+        </div>
+
+        <!-- 2: Residential Developments (image right) -->
+        <div class="flex flex-col lg:flex-row-reverse items-stretch w-full lg:min-h-[500px] xl:min-h-[600px] group">
+          <div class="w-full lg:w-[calc(50%-3px)] relative overflow-hidden min-h-[280px] sm:min-h-[380px] lg:min-h-0">
+            <img src="../assets/imgs/Residential developments and estate management .jpeg" alt="Residential Developments grounds maintenance" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+          </div>
+          <div class="w-full lg:w-[calc(50%-3px)] flex flex-col justify-center p-8 sm:p-10 lg:p-16 xl:p-24 bg-white reveal reveal-left relative overflow-hidden text-left items-start" style="transition-delay:0.4s">
+            <div class="absolute top-0 right-0 w-1.5 h-full bg-[#ffffff] transform scale-y-0 origin-bottom transition-transform duration-700 group-hover:scale-y-100 lg:block hidden"></div>
+            <div class="absolute top-0 left-0 w-1.5 h-full bg-[#ffffff] transform scale-y-0 origin-bottom transition-transform duration-700 group-hover:scale-y-100 lg:hidden block"></div>
+            <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-6 cursor-default text-[#1a3528] hover:text-[#db9f1b] transition-colors duration-300"><span class="border-b-[1.5px] border-current pb-0.5">04</span></span>
+            <h3 class="font-heading font-black text-4xl sm:text-5xl text-[#1a3528] mb-[22px] leading-[1.15] hover:text-[#db9f1b] transition-colors duration-500 cursor-default">Residential Developments</h3>
+            <p class="font-body text-base sm:text-lg text-[rgba(26,53,40,0.80)] leading-relaxed mb-7">Communal area upkeep for housing estates and apartment complexes, managed professionally and reliably. We work directly with managing agents and estate management companies who need consistent presentation across multiple sites without constant chasing.</p>
+            <a href="contact.html" class="btn-primary inline-block">Get a Quote</a>
+          </div>
+        </div>
+
+        <!-- 3: Private Estates (image left) -->
+        <div class="flex flex-col lg:flex-row items-stretch w-full lg:min-h-[500px] xl:min-h-[600px] group">
+          <div class="w-full lg:w-[calc(50%-3px)] relative overflow-hidden min-h-[280px] sm:min-h-[380px] lg:min-h-0">
+            <img src="../assets/imgs/Private estates and large properties homepage.jpeg" alt="Private Estates grounds management" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+          </div>
+          <div class="w-full lg:w-[calc(50%-3px)] flex flex-col justify-center p-8 sm:p-10 lg:p-16 xl:p-24 bg-[#f5fef8] reveal reveal-right relative overflow-hidden" style="transition-delay:0.4s">
+            <div class="absolute top-0 left-0 w-1.5 h-full bg-[#ffffff] transform scale-y-0 origin-bottom transition-transform duration-700 group-hover:scale-y-100"></div>
+            <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-6 cursor-default text-[#1a3528] hover:text-[#db9f1b] transition-colors duration-300"><span class="border-b-[1.5px] border-current pb-0.5">05</span></span>
+            <h3 class="font-heading font-black text-4xl sm:text-5xl text-[#1a3528] mb-[22px] leading-[1.15] hover:text-[#db9f1b] transition-colors duration-500 cursor-default">Private Estates</h3>
+            <p class="font-body text-base sm:text-lg text-[rgba(26,53,40,0.80)] leading-relaxed mb-7">Comprehensive grounds management for large properties, including formal lawns, planting, hedgerow maintenance, and specialist treatments. A higher standard of care for spaces that demand it, delivered by someone with the horticultural knowledge to back it up.</p>
+            <a href="contact.html" class="btn-primary inline-block">Get a Quote</a>
+          </div>
+        </div>
+
+        <!-- 4: Public & Community Spaces (image right) -->
+        <div class="flex flex-col lg:flex-row-reverse items-stretch w-full lg:min-h-[500px] xl:min-h-[600px] group">
+          <div class="w-full lg:w-[calc(50%-3px)] relative overflow-hidden min-h-[280px] sm:min-h-[380px] lg:min-h-0">
+            <img src="../assets/imgs/WhatsApp Image 2026-05-01 at 17.15.58 copy.jpeg" alt="Public & Community Spaces maintenance" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+          </div>
+          <div class="w-full lg:w-[calc(50%-3px)] flex flex-col justify-center p-8 sm:p-10 lg:p-16 xl:p-24 bg-white reveal reveal-left relative overflow-hidden text-left items-start" style="transition-delay:0.4s">
+            <div class="absolute top-0 right-0 w-1.5 h-full bg-[#ffffff] transform scale-y-0 origin-bottom transition-transform duration-700 group-hover:scale-y-100 lg:block hidden"></div>
+            <div class="absolute top-0 left-0 w-1.5 h-full bg-[#ffffff] transform scale-y-0 origin-bottom transition-transform duration-700 group-hover:scale-y-100 lg:hidden block"></div>
+            <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-6 cursor-default text-[#1a3528] hover:text-[#db9f1b] transition-colors duration-300"><span class="border-b-[1.5px] border-current pb-0.5">06</span></span>
+            <h3 class="font-heading font-black text-4xl sm:text-5xl text-[#1a3528] mb-[22px] leading-[1.15] hover:text-[#db9f1b] transition-colors duration-500 cursor-default">Public &amp; Community Spaces</h3>
+            <p class="font-body text-base sm:text-lg text-[rgba(26,53,40,0.80)] leading-relaxed mb-7">Maintenance for parish councils, schools, churchyards, and village greens that need to look cared for and welcoming year-round. We understand the visibility and accountability that comes with public contracts, and we deliver accordingly.</p>
+            <a href="contact.html" class="btn-primary inline-block">Get a Quote</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -------------------------------------------------- 
+      PROCESS SECTION
+    -------------------------------------------------- -->
+    <section id="commercial-process-section" class="relative bg-white">
+
+      <style>
+        #commercial-process-scroll-wrapper { position: relative; height: 420vh; }
+        #commercial-process-sticky {
+          position: sticky; top: 15px; height: 100vh; overflow: hidden;
+          display: flex; flex-direction: column; align-items: center; justify-content: center;
+          gap: 2.5rem; padding: 5.5rem 0 1rem;
+        }
+        #commercial-process-card-stage {
+          position: relative; width: 100%; height: 260px; flex-shrink: 0; overflow: hidden;
+        }
+        #commercial-process-card-stage::before,
+        #commercial-process-card-stage::after {
+          content: ''; position: absolute; top: 0; bottom: 0; width: 200px; z-index: 2; pointer-events: none;
+        }
+        #commercial-process-card-stage::before { left: 0;  background: linear-gradient(to right, #fff 30%, transparent 100%); }
+        #commercial-process-card-stage::after  { right: 0; background: linear-gradient(to left,  #fff 30%, transparent 100%); }
+        #commercial-process-card-rail {
+          position: absolute; top: 0; left: 0; height: 100%;
+          display: flex; align-items: stretch; gap: 24px;
+          will-change: transform;
+        }
+        .commercial-process-card {
+          flex-shrink: 0; width: 420px; height: 100%;
+          background: #fff; border: 1px solid rgba(26,53,40,0.12);
+          padding: 2rem 2.5rem; box-sizing: border-box;
+          display: flex; flex-direction: column; justify-content: center;
+          position: relative; overflow: hidden;
+        }
+        .commercial-process-dot { transition: background 0.25s, transform 0.25s; }
+        @media (max-width: 1023px) {
+          #commercial-process-scroll-wrapper { height: auto; }
+          #commercial-process-sticky { position: relative; height: auto; overflow: visible; padding: 5rem 2rem; gap: 2.5rem; }
+          #commercial-process-card-stage { height: auto; overflow: visible; }
+          #commercial-process-card-stage::before, #commercial-process-card-stage::after { display: none; }
+          #commercial-process-card-rail { position: relative; flex-direction: column; height: auto; transform: none !important; }
+          .commercial-process-card { width: 100%; height: auto; }
+          #commercial-process-dots { display: none; }
+        }
+      </style>
+
+      <div id="commercial-process-scroll-wrapper">
+        <div id="commercial-process-sticky">
+
+          <div class="w-full max-w-3xl mx-auto px-8 flex flex-col items-center text-center flex-shrink-0 reveal">
+            <span class="word-mask-inner inline-block font-body font-extrabold text-base tracking-widest uppercase mb-4 cursor-default text-[#1a3528] hover:text-[#db9f1b] transition-colors duration-300" style="transition-delay: 50ms;">
+              <span class="border-b-[1.5px] border-current pb-0.5">07</span>
+            </span>
+            <h2 class="font-heading font-black text-4xl sm:text-5xl text-[#1a3528] leading-tight mb-4 hover:text-[#db9f1b] transition-colors duration-500 cursor-default flex justify-center gap-x-4">
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">How</span></span>
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">We</span></span>
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Work</span></span>
+            </h2>
+            <p class="title-underline-anim font-body text-base sm:text-lg md:text-xl text-[#1a3528]/80 leading-relaxed max-w-[25.6rem]" style="animation-delay: 400ms;">
+              Once you reach out to us, our process is completely straightforward, transparent, and built around delivering the highest standard of service for your site.
+            </p>
+          </div>
+
+          <div id="commercial-process-card-stage">
+            <div id="commercial-process-card-rail">
+
+              <div class="commercial-process-card">
+                <span class="absolute -top-2 right-4 font-heading font-black text-[6rem] leading-none select-none pointer-events-none" style="color: #db9f1b;">01</span>
+                <span class="text-[#db9f1b] font-body font-bold text-sm tracking-widest uppercase mb-3 block">Step 1</span>
+                <h3 class="font-heading font-bold text-[1.725rem] text-[#1a3528] mb-3">Initial Enquiry</h3>
+                <p class="font-body text-[#1a3528]/70 text-base leading-relaxed">Reach out by phone or email to discuss your site and requirements. Tim will personally get back to you to arrange a completely free, no-obligation site visit at a time that suits you.</p>
+              </div>
+
+              <div class="commercial-process-card">
+                <span class="absolute -top-2 right-4 font-heading font-black text-[6rem] leading-none select-none pointer-events-none" style="color: #db9f1b;">02</span>
+                <span class="text-[#db9f1b] font-body font-bold text-sm tracking-widest uppercase mb-3 block">Step 2</span>
+                <h3 class="font-heading font-bold text-[1.725rem] text-[#1a3528] mb-3">Free Site Assessment</h3>
+                <p class="font-body text-[#1a3528]/70 text-base leading-relaxed">Tim will walk your site, assess its condition and specific requirements, and discuss what a maintenance programme would look like, covering frequency, scope, and any specialist work needed.</p>
+              </div>
+
+              <div class="commercial-process-card">
+                <span class="absolute -top-2 right-4 font-heading font-black text-[6rem] leading-none select-none pointer-events-none" style="color: #db9f1b;">03</span>
+                <span class="text-[#db9f1b] font-body font-bold text-sm tracking-widest uppercase mb-3 block">Step 3</span>
+                <h3 class="font-heading font-bold text-[1.725rem] text-[#1a3528] mb-3">Clear, Fair Quote</h3>
+                <p class="font-body text-[#1a3528]/70 text-base leading-relaxed">You'll receive a comprehensive, transparent quotation covering every aspect of the agreed works. No hidden charges, no vague line items. Honest pricing from the start.</p>
+              </div>
+
+              <div class="commercial-process-card">
+                <span class="absolute -top-2 right-4 font-heading font-black text-[6rem] leading-none select-none pointer-events-none" style="color: #db9f1b;">04</span>
+                <span class="text-[#db9f1b] font-body font-bold text-sm tracking-widest uppercase mb-3 block">Step 4</span>
+                <h3 class="font-heading font-bold text-[1.725rem] text-[#1a3528] mb-3">Reliable, Scheduled Service</h3>
+                <p class="font-body text-[#1a3528]/70 text-base leading-relaxed">Punctual, professional service on every visit. We maintain consistently high standards throughout the duration of your contract. No drop-off, no sending a different crew each time.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div id="commercial-process-dots" class="flex gap-3 items-center flex-shrink-0">
+            <div class="commercial-process-dot w-2 h-2 rounded-full bg-[#1a3528]/25"></div>
+            <div class="commercial-process-dot w-2 h-2 rounded-full bg-[#1a3528]/25"></div>
+            <div class="commercial-process-dot w-2 h-2 rounded-full bg-[#1a3528]/25"></div>
+            <div class="commercial-process-dot w-2 h-2 rounded-full bg-[#1a3528]/25"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <script>
+        (function() {
+          if (window.innerWidth < 1024) return;
+          var wrapper = document.getElementById('commercial-process-scroll-wrapper');
+          var rail    = document.getElementById('commercial-process-card-rail');
+          var stage   = document.getElementById('commercial-process-card-stage');
+          var cards   = Array.prototype.slice.call(rail.querySelectorAll('.commercial-process-card'));
+          var dots    = Array.prototype.slice.call(document.querySelectorAll('.commercial-process-dot'));
+          var n = cards.length;
+          var targetP = 0, currentP = 0;
+          var GAP = 24;
+
+          function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+
+          function render(p) {
+            var stageW = stage.offsetWidth;
+            var cardW  = cards[0].offsetWidth;
+            var txStart = stageW - 180;
+            var txEnd   = -((n - 1) * (cardW + GAP) + cardW / 2);
+            var tx = txStart + p * (txEnd - txStart);
+            rail.style.transform = 'translateX(' + tx.toFixed(2) + 'px)';
+            var idx = Math.min(n - 1, Math.round(p * (n - 1)));
+            dots.forEach(function(dot, i) {
+              dot.style.background = i === idx ? '#db9f1b' : 'rgba(26,53,40,0.25)';
+              dot.style.transform  = i === idx ? 'scale(1.5)' : 'scale(1)';
+            });
+          }
+
+          function onScroll() {
+            var maxScroll = wrapper.offsetHeight - window.innerHeight;
+            targetP = clamp(-wrapper.getBoundingClientRect().top / maxScroll);
+          }
+
+          function tick() {
+            currentP += (targetP - currentP) * 0.14;
+            render(currentP);
+            requestAnimationFrame(tick);
+          }
+
+          render(0);
+          window.addEventListener('scroll', onScroll, { passive: true });
+          requestAnimationFrame(tick);
+        })();
+      </script>
+
+    </section>
+
+    <!-- -------------------------------------------------- 
+      CTA SECTION
+    -------------------------------------------------- -->
+    <section class="relative py-24 md:py-32 overflow-hidden" style="background:#1a3528;">
+
+      <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-28 reveal reveal-up">
+
+          <div class="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:w-7/12">
+            <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-white hover:text-[#db9f1b] transition-colors duration-300" style="transition-delay: 50ms;">
+              <span class="border-b-[1.5px] border-current pb-0.5">08</span>
+            </span>
+            <h2 class="group font-heading font-black text-4xl sm:text-5xl text-white mb-7 leading-[1.15] cursor-default hover:text-[#db9f1b] transition-colors duration-500">
+              Ready to Discuss Your Site?
+            </h2>
+            <p class="font-body text-base sm:text-lg md:text-xl mb-10 max-w-lg leading-relaxed" style="color:rgba(255,255,255,0.80);">
+              Whether you manage a single commercial site or multiple properties across Oxfordshire, Tim will personally assess your grounds and put together a clear, honest proposal. No obligation, no pressure. Just a straightforward conversation about what you need.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center lg:items-start gap-5 sm:gap-8">
+              <a href="contact.html" class="btn-ghost">Get a Free Quote</a>
+              <a href="tel:+447545285408"
+                class="font-body font-bold text-base sm:text-sm text-white tracking-wide underline underline-offset-[8px] decoration-2 decoration-white hover:decoration-[#d49813] hover:text-[#d49813] transition-all duration-300 whitespace-nowrap pt-2 sm:pt-0">
+                or Call Tim directly
+              </a>
+            </div>
+          </div>
+
+          <!-- Trust signals -->
+          <div class="flex flex-col items-center lg:items-end w-full lg:w-5/12 gap-6">
+            <div class="grid grid-cols-1 gap-4 w-full max-w-sm">
+              <div class="flex items-start gap-4 p-5 border border-white/10">
+                <svg class="w-6 h-6 shrink-0 text-[#d49813] mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <div>
+                  <p class="font-heading font-bold text-white text-base mb-1">Owner-Led, Every Visit</p>
+                  <p class="font-body text-white/70 text-sm leading-relaxed">Tim personally oversees all commercial contracts. No subcontracting, no rotating crews.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-5 border border-white/10">
+                <svg class="w-6 h-6 shrink-0 text-[#d49813] mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <div>
+                  <p class="font-heading font-bold text-white text-base mb-1">Reliable, Scheduled Maintenance</p>
+                  <p class="font-body text-white/70 text-sm leading-relaxed">Regular contracts structured around your site's seasonal needs and operational requirements.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-5 border border-white/10">
+                <svg class="w-6 h-6 shrink-0 text-[#d49813] mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <div>
+                  <p class="font-heading font-bold text-white text-base mb-1">Transparent Pricing</p>
+                  <p class="font-body text-white/70 text-sm leading-relaxed">Clear, itemised quotes before any work begins. No hidden fees, no scope creep without discussion.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Scroll reveal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const revealEls = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealEls.forEach(el => revealObserver.observe(el));
+    });
+  </script>
+
+  <div id="footer-placeholder"></div>
+  <script src="../global.js"></script>
 
 </body>
 </html>

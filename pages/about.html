@@ -45,15 +45,6 @@
             --font-body:    'DM Sans', sans-serif;
         }
 
-        @keyframes infinite-scroll {
-            0%   { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-infinite-scroll {
-            animation: infinite-scroll 35s linear infinite;
-            width: max-content;
-        }
-
         /* Premium Word Mask Animation */
         .word-mask { 
             display: inline-block; 
@@ -146,357 +137,235 @@
         <!-- 
              STORY SECTION
          -->
-        <section class="relative min-h-[100svh] py-20 flex items-center justify-center overflow-hidden" style="background:#ffffff;">
-            <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
-                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 w-full reveal reveal-up">
+        <section id="about-story-section"
+            class="relative py-16 lg:py-24 flex flex-col items-center justify-center overflow-hidden"
+            style="background:#ffffff; border-top: 1px solid rgba(26,53,40,0.05);">
 
-                    <!-- Text -->
-                    <div class="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left order-2 lg:order-1 mt-4 lg:mt-0">
+            <!-- Back/Right Image — bleeds to right edge on desktop -->
+            <div class="absolute right-0 top-0 bottom-0 w-full lg:w-[40vw] overflow-hidden z-0">
+                <div class="absolute inset-0 bg-white/80 lg:bg-transparent z-10 pointer-events-none"></div>
+                <img src="../assets/imgs/aboutusback.jpeg"
+                    alt="Professional grounds maintenance by Tim Harris, Oxfordshire" loading="lazy"
+                    class="w-full h-full object-cover"
+                    style="filter:saturate(1.20) brightness(1.10);">
+            </div>
 
-                        <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-[#1a3528] hover:text-[#db9f1b] transition-colors duration-300" style="transition-delay: 50ms;">
-                            <span class="border-b-[1.5px] border-current pb-0.5">02</span>
+            <!-- Front Image — desktop only, straddling the column break with parallax -->
+            <div class="js-parallax-fast-about hidden lg:flex absolute top-1/2 right-[40vw] translate-x-1/2 z-10 w-[22vw] xl:w-[20vw] h-[365px] xl:h-[418px] items-center justify-center will-change-transform" data-speed="0.3" style="margin-top:-209px;">
+                <div class="relative w-full h-full overflow-hidden shadow-2xl shadow-black/50 z-10">
+                    <img src="../assets/imgs/tim.jpg"
+                        alt="Tim Harris - owner-led garden care in Oxfordshire" loading="lazy"
+                        class="w-full h-full object-cover scale-[1.15]"
+                        style="filter:saturate(1.44) brightness(1.10);">
+                </div>
+            </div>
+
+            <!-- Main content container -->
+            <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+                <!-- Left Column: Text & Stats -->
+                <div class="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left reveal z-20">
+
+                    <span class="gs-tagline word-mask-inner" style="transition-delay: 50ms;">
+                        <span class="border-b-[1.5px] border-current pb-0.5">02</span>
+                    </span>
+
+                    <h2 class="gs-heading group mb-[22px] flex flex-col items-center lg:items-start w-full">
+                        <span class="flex flex-wrap justify-center lg:justify-start gap-x-3 lg:gap-x-4 leading-tight">
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Born</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Into</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">the</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">Garden</span></span>
                         </span>
+                    </h2>
 
-                        <h2 class="group font-heading font-black text-[#1a3528] leading-[1.15] mb-[22px] flex flex-col items-center items-start cursor-default text-4xl text-5xl hover:text-[#db9f1b] transition-colors duration-500">
-                            <span class="flex flex-wrap justify-center lg:justify-start gap-x-3 lg:gap-x-4 leading-tight">
-                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Born</span></span>
-                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Into</span></span>
-                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">the</span></span>
-                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">Garden</span></span>
-                            </span></h2>
+                    <div class="gs-body title-underline-anim space-y-5 mb-7 w-full max-w-xl mx-auto lg:mx-0" style="animation-delay: 700ms;">
+                        <p>Green Seasons was founded by Tim Harris, a second-generation horticulturalist who grew up with a trowel in hand and a genuine love of plants. That heritage runs through everything we do - from the way we approach a new planting scheme to how we advise clients on the best time to prune a struggling shrub.</p>
+                        <p>Unlike many contractors who simply cut and move on, we are true plant people. We understand how plants grow, when they thrive, and what they need to reach their full potential. That depth of knowledge means you receive guidance and care that goes far beyond a standard maintenance visit.</p>
+                        <p>Based in Oxfordshire, we serve private homeowners, commercial landlords, housing developments, and local authority spaces right across the county - including Oxford, Abingdon, Didcot, Wantage, Witney and the surrounding villages.</p>
+                    </div>
 
-                        <div class="space-y-6 font-body text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0" style="color:rgba(26,53,40,0.80);">
-                            <p>Green Seasons was founded by Tim Harris, a second-generation horticulturalist who grew up with a trowel in hand and a genuine love of plants. That heritage runs through everything we do, from the way we approach a new planting scheme to how we advise clients on the best time to prune a struggling shrub.</p>
-                            <p class="hidden sm:block">Unlike many contractors who simply cut and move on, we are true plant people. We understand how plants grow, when they thrive, and what they need to reach their full potential. That depth of knowledge means you receive guidance and care that goes far beyond a standard maintenance visit.</p>
-                            <p>Based in we serve private homeowners, commercial landlords, housing developments, and local authority spaces right across Oxfordshire, including Oxford, Abingdon, Didcot, Wantage, Witney and the surrounding villages.</p>
+                    <!-- Compact Stats with animated counters -->
+                    <div id="about-story-stats"
+                        class="title-underline-anim flex flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-10 lg:gap-12 mb-8 w-full max-w-lg mx-auto lg:mx-0" style="animation-delay: 800ms;">
+                        <div class="group flex flex-col items-center lg:items-start cursor-default">
+                            <p class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-[#1a3528] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#db9f1b] whitespace-nowrap">
+                                <span class="about-counter" data-target="8">0</span>+
+                            </p>
+                            <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-[#1a3528]/60">Years Exp.</p>
+                        </div>
+                        <div class="group flex flex-col items-center lg:items-start cursor-default">
+                            <p class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-[#1a3528] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#db9f1b] whitespace-nowrap">5-Star</p>
+                            <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-[#1a3528]/60">Google Rating</p>
+                        </div>
+                        <div class="group flex flex-col items-center lg:items-start cursor-default">
+                            <p class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-[#1a3528] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#db9f1b] whitespace-nowrap">
+                                <span class="about-counter" data-target="100">0</span>%
+                            </p>
+                            <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-[#1a3528]/60">Owner-Led</p>
                         </div>
                     </div>
 
-                    <!-- Image -->
-                    <div class="w-full lg:w-1/2 relative order-1 lg:order-2">
-                        <div class="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] rounded-none overflow-hidden shadow-2xl group border border-black/5">
-                            <img src="../assets/imgs/tim.jpg"
-                                alt="Tim Harris, owner of Green Seasons, working in a Oxfordshire garden"
-                                loading="lazy" decoding="async"
-                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        </div>
-                        <!-- Floating stat badge -->
-                        <div class="group absolute -bottom-8 -left-6 lg:-left-12 bg-[#668e78] hover:bg-[#825c3e] p-6 lg:p-8 rounded-none shadow-2xl border border-white/10 hidden md:flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-2 z-10 cursor-default">
-                            <p class="font-body font-bold tracking-tight font-bold text-4xl lg:text-5xl mb-1 text-white transition-colors duration-500">8+</p>
-                            <p class="font-body text-xs lg:text-sm font-bold uppercase tracking-widest text-white transition-colors duration-500">Years of Service</p>
-                        </div>
+                    <div class="title-underline-anim" style="animation-delay: 900ms;">
+                        <a href="contact.html" class="btn-adaptive">Get a Free Quote</a>
                     </div>
 
                 </div>
+
+                <!-- Mobile image (hidden on lg+, shown below text on small screens) -->
+                <div class="lg:hidden w-full relative h-[400px] sm:h-[500px] mt-4 reveal reveal-up" style="transition-delay:100ms;">
+                    <div class="w-full h-full overflow-hidden shadow-2xl">
+                        <img src="../assets/imgs/tim2.jpeg"
+                            alt="High-standard garden care in Oxfordshire" loading="lazy"
+                            class="w-full h-full object-cover scale-[1.15]"
+                            style="filter:saturate(1.25) brightness(1.10);">
+                    </div>
+                </div>
+
             </div>
+
+            <!-- Parallax script for front image -->
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var section  = document.getElementById('about-story-section');
+                var frontImg = document.querySelector('.js-parallax-fast-about');
+                if (!section || !frontImg || window.innerWidth < 1024) return;
+                var ticking = false;
+                function updateParallax() {
+                    var rect          = section.getBoundingClientRect();
+                    var viewportCenter = window.innerHeight / 2;
+                    var sectionCenter  = rect.top + rect.height / 2;
+                    var offset = sectionCenter - viewportCenter;
+                    var speed  = parseFloat(frontImg.dataset.speed) || 0.3;
+                    frontImg.style.transform = 'translate3d(0,' + (offset * speed) + 'px,0)';
+                    ticking = false;
+                }
+                window.addEventListener('scroll', function() {
+                    if (!ticking) { requestAnimationFrame(updateParallax); ticking = true; }
+                }, { passive: true });
+                updateParallax();
+            });
+            </script>
+
+            <!-- Animated counter script -->
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var counters = document.querySelectorAll('.about-counter');
+                if (!counters.length) return;
+                var speed = 2000;
+                var observer = new IntersectionObserver(function(entries, obs) {
+                    entries.forEach(function(entry) {
+                        if (!entry.isIntersecting) return;
+                        var el     = entry.target;
+                        var target = +el.getAttribute('data-target');
+                        function tick() {
+                            var current   = +el.innerText;
+                            var increment = target / (speed / 16);
+                            if (current < target) { el.innerText = Math.ceil(current + increment); setTimeout(tick, 16); }
+                            else { el.innerText = target; }
+                        }
+                        tick();
+                        obs.unobserve(el);
+                    });
+                }, { threshold: 0.5 });
+                counters.forEach(function(c) { observer.observe(c); });
+            });
+            </script>
+
         </section>
 
         <!-- 
-             COMMITMENT CAROUSEL
+             COMMITMENT SECTION
          -->
-        <section class="min-h-[100vh] py-16 md:py-20 border-t flex flex-col justify-center w-full relative overflow-hidden"
-            style="background:#FFFFFF; border-color:rgba(26,53,40,0.10);">
+        <section class="relative py-20 lg:py-32 overflow-hidden" style="background:#f5fef8; border-top: 1px solid rgba(26,53,40,0.05);">
+            <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
 
-            <div class="w-full mx-auto flex flex-col justify-center items-center">
-
-                <div class="text-center mb-12 md:mb-16 px-4 md:px-8 w-full reveal reveal-up flex flex-col items-center">
-
+                <div class="flex flex-col items-center text-center mb-16 lg:mb-20 reveal">
                     <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-[#1a3528] hover:text-[#db9f1b] transition-colors duration-300" style="transition-delay: 50ms;">
-                            <span class="border-b-[1.5px] border-current pb-0.5">03</span>
+                        <span class="border-b-[1.5px] border-current pb-0.5">03</span>
+                    </span>
+                    <h2 class="group font-heading font-black text-4xl sm:text-5xl text-[#1a3528] mb-[22px] leading-[1.15] flex flex-col items-center text-center cursor-default w-full hover:text-[#db9f1b] transition-colors duration-500">
+                        <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Our</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Commitment</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">to</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">You</span></span>
                         </span>
-
-                    <h2 class="group font-heading text-[4.5rem] font-black text-[#1a3528] mb-[22px] leading-[1.15] flex flex-col items-center text-center cursor-default w-full text-4xl text-5xl hover:text-[#db9f1b] transition-colors duration-500">
-                        Our Commitment to You</h2>
+                    </h2>
+                    <p class="title-underline-anim font-body text-lg md:text-xl text-[#1a3528]/80 max-w-2xl mx-auto leading-relaxed mt-4" style="animation-delay: 500ms;">
+                        Six principles that shape every visit, every quote, and every conversation we have with our clients.
+                    </p>
                 </div>
 
-                <!-- Carousel track -->
-                <div class="relative w-full overflow-hidden py-4">
-                    <div class="absolute inset-y-0 left-0 w-12 md:w-24 z-10 pointer-events-none"
-                        style="background:linear-gradient(to right,white,transparent);"></div>
-                    <div class="absolute inset-y-0 right-0 w-12 md:w-24 z-10 pointer-events-none"
-                        style="background:linear-gradient(to left,white,transparent);"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full">
 
-                    <!--
-                        CAROUSEL CARDS, key animation notes:
-                        1. `transition` is in the inline style alongside background so the JS
-                           onmouseenter colour swap is always smooth regardless of CSS cascade.
-                        2. The duplicate set 2 below is identical, required for seamless loop.
-                    -->
-                    <div class="flex animate-infinite-scroll" id="commitment-carousel">
-
-                        <!-- --SET 1 ---->
-                        <div class="flex gap-6 pr-6">
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Reliability You Can Count On</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">We show up when we say we will, consistently, professionally, and without the need for chasing. Your grounds are in safe, dependable hands every single visit.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">True Plant Knowledge</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">We don't just cut and go. As plant people, we advise on pruning, planting, training, and long-term care, knowledge that most gardeners simply don't carry.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Residential &amp; Commercial</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">From private estates and family gardens to business parks and housing developments, we deliver the same high standard of care whatever the scale or setting.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Tailored to You</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">No two gardens are alike. We work flexibly around your needs, whether that's a one-off clearance, seasonal treatments, or a fully managed year-round maintenance programme.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Professional-Grade Equipment</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">We invest in professional equipment to ensure every job is completed efficiently, safely, and to the highest possible finish, from compact residential plots to large open grounds.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Property Value Enhancement</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">A well-maintained garden adds real kerb appeal and long-term value. Our consistent, high-standard approach protects and enhances your property investment over time.</p>
-                            </div>
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Reliability You Can Count On</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">We show up when we say we will, consistently, professionally, and without the need for chasing. Your grounds are in safe, dependable hands every single visit.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">True Plant Knowledge</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">We don't just cut and go. As plant people, we advise on pruning, planting, training, and long-term care, knowledge that most gardeners simply don't carry.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Residential &amp; Commercial</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">From private estates and family gardens to business parks and housing developments, we deliver the same high standard of care whatever the scale or setting.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Tailored to You</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">No two gardens are alike. We work flexibly around your needs, whether that's a one-off clearance, seasonal treatments, or a fully managed year-round maintenance programme.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Professional-Grade Equipment</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">We invest in professional equipment to ensure every job is completed efficiently, safely, and to the highest possible finish, from compact residential plots to large open grounds.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Property Value Enhancement</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">A well-maintained garden adds real kerb appeal and long-term value. Our consistent, high-standard approach protects and enhances your property investment over time.</p>
-                            </div>
+                    <div class="group flex flex-col items-center text-center p-8 md:p-10 hover:-translate-y-2 shadow-lg hover:shadow-xl cursor-default transition-all duration-500 reveal reveal-up" style="background:#668e78; transition-delay:0ms;" onmouseenter="this.style.background='#1a3528';" onmouseleave="this.style.background='#668e78';">
+                        <div class="flex items-center justify-center mb-6 text-[#d49813] transition-all duration-400">
+                            <svg class="w-12 h-12 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                         </div>
-
-                        <!-- --SET 2 ---->
-                        <div class="flex gap-6 pr-6">
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Reliability You Can Count On</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">We show up when we say we will, consistently, professionally, and without the need for chasing. Your grounds are in safe, dependable hands every single visit.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">True Plant Knowledge</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">We don't just cut and go. As plant people, we advise on pruning, planting, training, and long-term care, knowledge that most gardeners simply don't carry.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Residential &amp; Commercial</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">From private estates and family gardens to business parks and housing developments, we deliver the same high standard of care whatever the scale or setting.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Tailored to You</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">No two gardens are alike. We work flexibly around your needs, whether that's a one-off clearance, seasonal treatments, or a fully managed year-round maintenance programme.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Professional-Grade Equipment</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">We invest in professional equipment to ensure every job is completed efficiently, safely, and to the highest possible finish, from compact residential plots to large open grounds.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Property Value Enhancement</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">A well-maintained garden adds real kerb appeal and long-term value. Our consistent, high-standard approach protects and enhances your property investment over time.</p>
-                            </div>
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Reliability You Can Count On</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">We show up when we say we will, consistently, professionally, and without the need for chasing. Your grounds are in safe, dependable hands every single visit.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">True Plant Knowledge</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">We don't just cut and go. As plant people, we advise on pruning, planting, training, and long-term care, knowledge that most gardeners simply don't carry.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Residential &amp; Commercial</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">From private estates and family gardens to business parks and housing developments, we deliver the same high standard of care whatever the scale or setting.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Tailored to You</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">No two gardens are alike. We work flexibly around your needs, whether that's a one-off clearance, seasonal treatments, or a fully managed year-round maintenance programme.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Professional-Grade Equipment</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">We invest in professional equipment to ensure every job is completed efficiently, safely, and to the highest possible finish, from compact residential plots to large open grounds.</p>
-                            </div>
-
-                            <div class="group flex flex-col items-center text-center p-8 md:p-12 rounded-none hover:-translate-y-2 shadow-lg hover:shadow-xl border border-[#825c3e]/15 cursor-default w-[280px] md:w-[320px] shrink-0 transition-all duration-500"
-                                style="background:#668e78;"
-                                onmouseenter="this.style.background='#825c3e';" onmouseleave="this.style.background='#668e78';">
-                                <div class="flex items-center justify-center mb-6 md:mb-8 group-hover:-translate-y-2 transition-all duration-400 text-[#d49813] group-hover:text-white">
-                                    <svg class="w-14 h-14 md:w-16 md:h-16 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/></svg>
-                                </div>
-                                <h3 class="font-heading text-2xl md:text-3xl font-bold text-white transition-colors duration-400 mb-4">Property Value Enhancement</h3>
-                                <p class="font-body text-white/80 group-hover:text-white transition-colors duration-400 leading-relaxed text-base md:text-lg">A well-maintained garden adds real kerb appeal and long-term value. Our consistent, high-standard approach protects and enhances your property investment over time.</p>
-                            </div>
-                        </div>
-                       
+                        <h3 class="font-heading text-2xl font-bold text-white mb-3">Reliability You Can Count On</h3>
+                        <p class="font-body text-white/80 group-hover:text-white/90 transition-colors duration-400 leading-relaxed text-base">We show up when we say we will, consistently, professionally, and without the need for chasing. Your grounds are in safe, dependable hands every single visit.</p>
                     </div>
+
+                    <div class="group flex flex-col items-center text-center p-8 md:p-10 hover:-translate-y-2 shadow-lg hover:shadow-xl cursor-default transition-all duration-500 reveal reveal-up" style="background:#668e78; transition-delay:60ms;" onmouseenter="this.style.background='#1a3528';" onmouseleave="this.style.background='#668e78';">
+                        <div class="flex items-center justify-center mb-6 text-[#d49813] transition-all duration-400">
+                            <svg class="w-12 h-12 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-white mb-3">True Plant Knowledge</h3>
+                        <p class="font-body text-white/80 group-hover:text-white/90 transition-colors duration-400 leading-relaxed text-base">We don't just cut and go. As plant people, we advise on pruning, planting, training, and long-term care - knowledge that most gardeners simply don't carry.</p>
+                    </div>
+
+                    <div class="group flex flex-col items-center text-center p-8 md:p-10 hover:-translate-y-2 shadow-lg hover:shadow-xl cursor-default transition-all duration-500 reveal reveal-up" style="background:#668e78; transition-delay:120ms;" onmouseenter="this.style.background='#1a3528';" onmouseleave="this.style.background='#668e78';">
+                        <div class="flex items-center justify-center mb-6 text-[#d49813] transition-all duration-400">
+                            <svg class="w-12 h-12 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-white mb-3">Residential &amp; Commercial</h3>
+                        <p class="font-body text-white/80 group-hover:text-white/90 transition-colors duration-400 leading-relaxed text-base">From private estates and family gardens to business parks and housing developments, we deliver the same high standard of care whatever the scale or setting.</p>
+                    </div>
+
+                    <div class="group flex flex-col items-center text-center p-8 md:p-10 hover:-translate-y-2 shadow-lg hover:shadow-xl cursor-default transition-all duration-500 reveal reveal-up" style="background:#668e78; transition-delay:180ms;" onmouseenter="this.style.background='#1a3528';" onmouseleave="this.style.background='#668e78';">
+                        <div class="flex items-center justify-center mb-6 text-[#d49813] transition-all duration-400">
+                            <svg class="w-12 h-12 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-white mb-3">Tailored to You</h3>
+                        <p class="font-body text-white/80 group-hover:text-white/90 transition-colors duration-400 leading-relaxed text-base">No two gardens are alike. We work flexibly around your needs - whether that's a one-off clearance, seasonal treatments, or a fully managed year-round maintenance programme.</p>
+                    </div>
+
+                    <div class="group flex flex-col items-center text-center p-8 md:p-10 hover:-translate-y-2 shadow-lg hover:shadow-xl cursor-default transition-all duration-500 reveal reveal-up" style="background:#668e78; transition-delay:240ms;" onmouseenter="this.style.background='#1a3528';" onmouseleave="this.style.background='#668e78';">
+                        <div class="flex items-center justify-center mb-6 text-[#d49813] transition-all duration-400">
+                            <svg class="w-12 h-12 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-white mb-3">Professional-Grade Equipment</h3>
+                        <p class="font-body text-white/80 group-hover:text-white/90 transition-colors duration-400 leading-relaxed text-base">We invest in professional equipment to ensure every job is completed efficiently, safely, and to the highest possible finish - from compact residential plots to large open grounds.</p>
+                    </div>
+
+                    <div class="group flex flex-col items-center text-center p-8 md:p-10 hover:-translate-y-2 shadow-lg hover:shadow-xl cursor-default transition-all duration-500 reveal reveal-up" style="background:#668e78; transition-delay:300ms;" onmouseenter="this.style.background='#1a3528';" onmouseleave="this.style.background='#668e78';">
+                        <div class="flex items-center justify-center mb-6 text-[#d49813] transition-all duration-400">
+                            <svg class="w-12 h-12 transition-transform duration-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/></svg>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-white mb-3">Property Value Enhancement</h3>
+                        <p class="font-body text-white/80 group-hover:text-white/90 transition-colors duration-400 leading-relaxed text-base">A well-maintained garden adds real kerb appeal and long-term value. Our consistent, high-standard approach protects and enhances your property investment over time.</p>
+                    </div>
+
                 </div>
 
-                <!-- CTA buttons -->
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 mt-8 w-full px-4 reveal reveal-up z-20">
-
-                    <a href="services.html"
-                         
-                         class="btn-primary">Explore Our Services</a>
-
-                    <a href="contact.html"
-                         
-                         class="btn-primary">Get a Free Quote</a>
-
+                <div class="mt-16 lg:mt-20 flex flex-col sm:flex-row justify-center items-center gap-5 reveal reveal-up">
+                    <a href="services.html" class="btn-adaptive">Explore Our Services</a>
+                    <a href="contact.html" class="font-body font-semibold text-sm text-[#1a3528] hover:text-[#db9f1b] transition-colors duration-300 underline underline-offset-4">Get a Free Quote</a>
                 </div>
+
             </div>
         </section>
 
         <!-- 
              WHY CHOOSE GREEN SEASONS
          -->
-        <section class="relative min-h-[100svh] py-16 flex items-center justify-center overflow-hidden" style="background:#ffffff;">
+        <section class="relative py-20 lg:py-32 flex items-center justify-center overflow-hidden" style="background:#ffffff; border-top: 1px solid rgba(26,53,40,0.05);">
             <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20">
                 <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 reveal">
 
                     <!-- Image -->
-                    <div class="w-full lg:w-1/2 relative">
+                    <div class="w-full lg:w-1/2 relative reveal reveal-up">
                         <div class="relative z-10 rounded-none overflow-hidden shadow-[0_20px_50px_rgba(26,53,40,0.15)] border-2 border-white/50">
                             <img src="../assets/imgs/tim2.jpeg"
                                 alt="Beautifully maintained garden by Green Seasons in Oxfordshire"
@@ -508,13 +377,13 @@
                     </div>
 
                     <!-- Text -->
-                    <div class="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left">
+                    <div class="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left reveal">
 
                         <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-[#1a3528] hover:text-[#db9f1b] transition-colors duration-300" style="transition-delay: 50ms;">
                             <span class="border-b-[1.5px] border-current pb-0.5">04</span>
                         </span>
 
-                        <h2 class="group font-heading font-black text-[#1a3528] mb-[22px] leading-[1.15] flex flex-col items-center items-start cursor-default text-4xl text-5xl hover:text-[#db9f1b] transition-colors duration-500">
+                        <h2 class="group font-heading font-black text-[#1a3528] mb-[22px] leading-[1.15] flex flex-col items-start cursor-default text-4xl sm:text-5xl hover:text-[#db9f1b] transition-colors duration-500">
                             <span class="flex flex-wrap justify-center lg:justify-start gap-x-3 lg:gap-x-4 leading-tight">
                                 <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Far</span></span>
                                 <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">More</span></span>
@@ -582,7 +451,7 @@
                             <span class="border-b-[1.5px] border-current pb-0.5">05</span>
                         </span>
 
-                        <h2 class="group font-heading font-black text-white leading-[1.15] mb-[22px] flex flex-col items-center text-4xl text-5xl hover:text-[#db9f1b] transition-colors duration-500">
+                        <h2 class="group font-heading font-black text-white leading-[1.15] mb-[22px] flex flex-col items-center text-4xl sm:text-5xl hover:text-[#db9f1b] transition-colors duration-500">
                             <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
                                 <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Ready</span></span>
                                 <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">for</span></span>
@@ -591,7 +460,8 @@
                                 <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 500ms;">You're</span></span>
                                 <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 600ms;">Proud</span></span>
                                 <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 700ms;">Of?</span></span>
-                            </span></h2>
+                            </span>
+                        </h2>
 
                         <p class="title-underline-anim font-body text-base sm:text-lg md:text-xl mb-10 max-w-md mx-auto leading-relaxed mt-2" style="color:rgba(255,255,255,0.80); animation-delay: 800ms;">
                             Whether you need a one-off tidy-up or a fully managed maintenance programme, we'd love to hear about your garden. Contact Tim today for a free, no-obligation quote.
@@ -619,6 +489,14 @@
 
     <div id="footer-placeholder"></div>
     <script src="../global.js"></script>
+
+    <!-- Suppress the footer's global CTA on this page (about has its own) -->
+    <script>
+    window.addEventListener('load', function() {
+        var el = document.querySelector('section[style*="537160"]');
+        if (el) el.remove();
+    });
+    </script>
 
     <script>
         /* --Scroll Reveal --------------------------------------------------           Same IntersectionObserver pattern as index.html.

@@ -1363,6 +1363,12 @@
 
     <div id="footer-placeholder"></div>
     <script src="../global.js"></script>
+    <script>
+    window.addEventListener('load', function() {
+        var el = document.querySelector('section[style*="537160"]');
+        if (el) el.remove();
+    });
+    </script>
 
     <!-- Scroll Reveal -->
     <script>

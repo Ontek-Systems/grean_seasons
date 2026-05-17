@@ -85,7 +85,7 @@
     </style>
 </head>
 
-<body class="flex flex-col min-h-screen antialiased">
+<body class="flex flex-col min-h-screen antialiased" data-suppress-footer-cta>
 
     <div id="header-placeholder"></div>
 
@@ -489,14 +489,6 @@
 
     <div id="footer-placeholder"></div>
     <script src="../global.js"></script>
-
-    <!-- Suppress the footer's global CTA on this page (about has its own) -->
-    <script>
-    window.addEventListener('load', function() {
-        var el = document.querySelector('section[style*="537160"]');
-        if (el) el.remove();
-    });
-    </script>
 
     <script>
         /* --Scroll Reveal --------------------------------------------------           Same IntersectionObserver pattern as index.html.

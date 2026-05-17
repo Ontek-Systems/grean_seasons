@@ -109,6 +109,10 @@ async function loadComponents() {
                     return `${p1}="${basePath + p2}"`;
                 });
             }
+            if (document.body.hasAttribute('data-suppress-footer-cta')) {
+                const footerStart = html.indexOf('<footer');
+                if (footerStart !== -1) html = html.slice(footerStart);
+            }
             footerPlaceholder.outerHTML = html;
         } catch (e) {
             console.error('Error loading footer:', e);

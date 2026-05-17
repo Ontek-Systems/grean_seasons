@@ -43,7 +43,7 @@
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen antialiased">
+<body class="flex flex-col min-h-screen antialiased" data-suppress-footer-cta>
 
     <div id="header-placeholder"></div>
 
@@ -1363,12 +1363,7 @@
 
     <div id="footer-placeholder"></div>
     <script src="../global.js"></script>
-    <script>
-    window.addEventListener('load', function() {
-        var el = document.querySelector('section[style*="537160"]');
-        if (el) el.remove();
-    });
-    </script>
+
 
     <!-- Scroll Reveal -->
     <script>
